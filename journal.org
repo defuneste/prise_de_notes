@@ -1,0 +1,388 @@
+# -*- mode: org -*- # -*- coding: utf-8 -*-
+#+STARTUP: overview indent inlineimages logdrawer
+#+TITLE:       Journal Olivier
+#+AUTHOR:      Olivier Leroy
+#+LANGUAGE:    en/fr
+#+TAGS: Rstats(Rstats) HOME(H) Rspatial(Rspatial) Blog(B) noexport(n) Stats(S)
+#+TAGS: Epistemology(E) Vulgarization(V) Teaching(T) R(R) OrgMode(O) Python(P)
+#+EXPORT_SELECT_TAGS: Blog
+#+OPTIONS:   H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+COLUMNS: %25ITEM %TODO %3PRIORITY %TAGS
+#+SEQ_TODO: TODO(t!) STARTED(s!) WAITING(w@) APPT(a!) | DONE(d!) CANCELLED(c!) DEFERRED(f!)
+
+* 2018
+** 2018-02 March
+*** 2018-02-12 Monday
+**** Demonstrating Emacs/Orgmode shortcuts
+These informations were gathered and first demonstrated in my [[https://github.com/alegrand/RR_webinars/blob/master/1_replicable_article_laboratory_notebook/index.org][First
+webinar on reproducible research: litterate programming]].
+**** Emacs shortcuts
+Here are a few convenient emacs shortcuts for those that have never
+used emacs. In all of the emacs shortcuts, =C=Ctrl=, =M=Alt/Esc or Cmd with MacOs= and
+=S=Shift=.  Note that you may want to use two hours to follow the emacs
+tutorial (=C-h t=). In the configuration file CUA keys have been
+activated and allow you to use classical copy/paste (=C-c/C-v=)
+shortcuts. This can be changed from the Options menu.
+  - =C-x C-c= exit
+  - =C-x C-s= save buffer
+  - =C-g= panic mode ;) type this whenever you want to exit an awful
+    series of shortcuts
+  - =C-Space= start selection marker although selection with shift and
+    arrows should work as well
+  - =C-l= reposition the screen
+  - =C-_= (or =C-z= if CUA keys have been activated)
+  - =C-s= search
+  - =M-%= replace
+  - =C-x C-h= get the list of emacs shortcuts
+  - =C-c C-h= get the list of emacs shortcuts considering the mode you are
+    currently using (e.g., C, Lisp, org, ...)
+  - With the "/reproducible research/" emacs configuration, ~C-x g~ allows
+    you to invoke [[https://magit.vc/][Magit]] (provided you installed it beforehand!) which
+    is a nice git interface for Emacs.
+  There are a bunch of cheatsheets also available out there (e.g.,
+  [[http://www.shortcutworld.com/en/linux/Emacs_23.2.1.html][this one for emacs]] and [[http://orgmode.org/orgcard.txt][this one for org-mode]].
+**** Org-mode
+Many emacs shortcuts start by =C-x=. Org-mode's shortcuts generaly
+  start with =C-c=.
+  - =Tab= fold/unfold
+  - =C-c c= capture (finish capturing with =C-c C-c=, this is explained on
+    the top of the buffer that just opened)
+  - =C-c C-c= do something useful here (tag, execute, ...)
+  - =C-c C-o= open link
+  - =C-c C-t= switch todo
+  - =C-c C-e= export
+  - =M-Enter= new item/section
+  - =C-c a= agenda (try the =L= option)
+  - =C-c C-a= attach files
+  - =C-c C-d= set a deadl1ine (use =S-arrows= to navigate in the dates)
+  - =A-arrows= move subtree (add shift for the whole subtree)
+**** Org-mode Babel (for literate programming)
+  - =<s + tab= template for source bloc. You can easily adapt it to get
+    this:
+    #+BEGIN_EXAMPLE
+      #+BEGIN_SRC shell
+      ls
+      #+end_src
+    #+END_EXAMPLE
+    Now if you =C-c C-c=, it will execute the block.
+    #+BEGIN_EXAMPLE
+  #+RESULTS:
+  | #journal.org# |
+  | journal.html  |
+  | journal.org   |
+  | journal.org~  |
+    #+END_EXAMPLE
+  
+  - Source blocks have many options (formatting, arguments, names,
+    sessions,...), which is why I have my own shortcuts =<b + tab= bash
+    block (or =B= for sessions).
+    #+BEGIN_EXAMPLE 
+  #+begin_src shell :results output :exports both
+  ls /tmp/*201*.pdf
+  #+end_src
+
+  #+RESULTS:
+  : /tmp/2015_02_bordeaux_otl_tutorial.pdf
+  : /tmp/2015-ASPLOS.pdf
+  : /tmp/2015-Europar-Threadmap.pdf
+  : /tmp/europar2016-1.pdf
+  : /tmp/europar2016.pdf
+  : /tmp/M2-PDES-planning-examens-janvier2016.pdf
+    #+END_EXAMPLE
+  - I have defined many such templates in my configuration. You can
+    give a try to =<r=, =<R=, =<RR=, =<g=, =<p=, =<P=, =<m= ...
+  - Some of these templates are not specific to babel: e.g., =<h=, =<l=,
+    =<L=, =<c=, =<e=, ...
+* 2022
+SCHEDULED: <2022-01-20 Thu>
+** 2022-01-03
+SCHEDULED: <2022-01-04 Tue>
+Mairie papiers:
+    - [X] Passeport Hector
+    - [X] Papier parking
+    - [-] CNI Olivier
+
+*** Lecture Intro to S
+
+**** Chapitre 1
+
+`identify` est toujours une fonction sous estimée
+elle fonctionne sur un scatterplot commme `identify(x, y, x)` le dernier x peut etre un y ou un autre vecteur de meme taille.
+
+*** Note de choses utiles emacs
+
+**** c/c entre le reste du monde et emacs
+
+La gestion de projet semble pouvoir se faire via [[https://docs.projectile.mx/projectile/usage.html][projectile]]
+
+"Select the text you want in Firefox-- you just have to highlight the text, you don't actually need to select Copy or anything. Then in the Emacs window, click the middle mouse button at the point where you want the text to be inserted. That's it."
+
+**** Mettre un correcteur francais
+
+Vu [[https://www.tenderisthebyte.com/blog/2019/06/09/spell-checking-emacs/][ici]]
+
+sudo apt-get install aspell ispell aspell-fr
+
+Puis dans emacs:
+
+M-x ispell-change-diction RET francais
+
+Il y a la possibilité de faire des fonctions elisp pour en changer
+
+Plus de [[https://docs.doomemacs.org/latest/modules/checkers/spell/][ressources]]
+
+*** Statistical rethinking 2022
+
+Liste des [[https://docs.doomemacs.org/latest/modules/checkers/spell/][liens]]
+
+** 2022-01-04
+*** emacs aventure
+
+Série de vidéos [[https://www.youtube.com/watch?v=BRqjaN4-gGQ][intéressantes]]
+
+**** Gestion de projet
+On peut créer un projet avec projectile juste en créant un fichier vide `.projectile`. un répertoire .git devrait aussi marcher.
+
+J'aime bien `touch .projectile` au besoin.
+
+Commandes utiles:
+
+<SPC> o - p ouvre sur le coté un navigateur
+<SPC> o - e ouvre un eshell (j'aimerais bien utiliser vterm plutôt mais je garde pour plus tard)
+<SPC> w - c ferme la fenêtre active
+**** Dired
+Si on ouvre un répertoire plutôt qu'un fichier on tombe sur Dired (directory editor).
+
+Il y a beaucoup à apprendre sur Dired et je devrais pe y revenir
+
+Pour commencer simplement
+
+D met un flag de delete
+U enlève ce flag
+
+Si on x (execute) le fichier/répertoire est supprimer
+
+On peut ajouter un nouveau fichier/répertoire juste avec <shift> et on tape ce que l'on veut
+
+i (on passe en insert mode) permet de renommer directement. Il faut cependant directement enregistrer le buffer.
+
+*** Statistical rethinking
+
+vidéo [[https://www.youtube.com/watch?v=guTdrfycW2Q&list=PLDcUM9US4XdMROZ57-OIRtIK0aOynbgZN&index=4][Bayesian inference]]
+** 2022-01-05
+*** SO
+[[https://stackoverflow.com/questions/70573152/the-distinct-command-in-sf/70589512#70589512][Question]]
+
+`lengths()` est une fonction super pour travailler sur ce type de listes
+
+*** Statistical rethinks
+
+   Je reprends la seconde vidéo.
+
+   Il faut suivre l'installation [[https://github.com/rmcelreath/rethinking/][ici]]
+
+   Je l'avais dejà fait et n'ai pas eu de problème particulier. J'avais déja pas mal de briques logiciel dont le compileur.
+*** emacs aventure
+il m'arrive des Nul bytes dans ce doc (aucune idée de comment)
+
+`sed -i s/"\x0"// file.org` fait le taff
+
+[[https://emacs.stackexchange.com/questions/21467/getting-no-conversion-nil-encoding-each-time-when-opening-a-file-which-should][crédit]]
+
+en mode markdown $$ peut être utilisé pour écrire des maths
+
+** 2022-01-06
+*** Emacs aventure
+Il faut activer certaines fonts dans ESS pour avoir toutes la coloration syntaxique
+
+ [[https://emacs.stackexchange.com/questions/21467/getting-no-conversion-nil-encoding-each-time-when-opening-a-file-which-should][cf]]
+
+**** buffers
+
+Un buffer peut contenir un fichier, du contenu, des données. On peut avoir un fichier de code, de text, un terminal, une hiérarchie de fichier
+
+<SPC> b b : liste les buffers du projets
+<SPC> b B : liste les buffers de toute la session emacs
+<SPC> b K : kill un buffer
+<SPC> b N : ouvre un buffer vide (il faudra le sauver)
+
+**** Windows
+
+Le fenêtres sont des sous partie d'une frame. Dans le langage courant windows = pane et frame = windows
+
+C-w-v : split vertical
+C-w-s : split horizontal
+C-w-Q : quitter window
+C-W-= : pour egaliser les fenêtre
+
+*** git et gitignore
+
+Parfois gitgnore déconne
+
+git rm -r --cached .
+git add .
+git commit -m ".gitignore Fixed"
+
+*** statistical rethinking
+
+Seconde partie: Ok
+dépôt [[https://github.com/defuneste/cours_work][github]]
+** 2022-01-07
+*** Emacs aventure
+
+pour redemarer R : C-c C-e C-r
+
+*** statistical rethinking
+
+visio du vendredi + chapitre 03 et exo week 1
+
+** 2022-01-08
+*** SO
+[[https://stackoverflow.com/questions/70631517/points-not-added-to-the-map-plot/70632652#70632652][Question]]
+
+** 2022-01-09
+*** Geocomputation with
+Traduction jusqu'à la ligne 200 du ch02
+*** emacs aventure
+
+v e permet de sélectionner un mot, continuer d'utiliser e poursuit la sélection
+
+<ctl> RET : créer une entête de même niveau
+<alt> uparrow downarrow :  déplacer l'élément de la liste
+<alt> h l : promouvoir ou demote un élement
+
+**** Ajouter des liens
+`+[[]]` permet de faire des liens avec des entête ou des lignes dans un document
+
+C-c C-l : pour un lien web
+
+Il est possible de lier aussi à des fonctions elisp, du shell etc..
+** 2022-01-10
+*** SO
+
+[[https://stackoverflow.com/questions/70648868/modifying-contingency-tables/70649644#70649644][Question 1]] attr(mon_objet, "le_nom_a_set")
+
+[[https://stackoverflow.com/questions/70540269/na-outcome-when-running-over-between-a-spatialpoints-and-spatialpolygonsdatafr/70652931#70652931][Question 2]] encore un pb de CRS
+
+*** Statistical rethinking
+
+- rajout prise de note ch03
+
+- debut vidéo 3
+
+** 2022-01-11
+*** recherche
+
+Pour les arbres OSM suppose ou veux la completude mais est ce que l'on peut le croire ? question de la qualité de données
+
+Pour albiziapp: il ne faut pas partir du comptage de tous les arbres de la zone mais de ce qu'il est possible en terme de temps pour les participants de compter
+
+
+*** Statistical rethinking
+
+Vidéo 3!
+
+** 2022-01-12
+
+*** Statistical rethinking
+
+vidéo 3 fin
+
+*** SO
+
+[[https://stackoverflow.com/questions/70680765/add-csv-data-containing-coordinates-to-a-map-generated-from-a-shp-file-and-obtai/70684747#70684747][Question]]
+
+** 2022-01-13
+*** Statistical rethinking
+vidéo 4 !
+
+*** SO
+
+[[https://stackoverflow.com/questions/70699139/cant-rename-files-in-r-because-of-french-accent/70699801#70699801][Question]]
+J'y ai apris `iconv()` très pratique pour changer simplifier des encodages.
+
+** 2022-01-14
+*** Statistical rethinking
+vidéo 4
+** 2022-01-15
+*** SO
+
+[[https://stackoverflow.com/questions/70721869/r-loops-for-basic-data-cleaning/70722016#70722016][Question]] sapply est très proche de apply(array, 2, fun)
+** 2022-01-16
+*** Geocomputation with R
+
+ch02 autour de ligne 300
+
+*** Emacs aventure
+
+R dired! il est possible d'avoir une liste des objets de R
+
+Pas mal d'info ici: https://github.com/ess-intro/presentation-ess-customization
+
+J'ai pris une part du setup de conseiller : F9 pour le lancer
+
+Pour mettre en place se setup j'ai créer un fichier +ess.el qui contient ma config ess et qui est appelé (load! "+ess.el") dans config.el
+
+C'est aussi la dedans que l'on peut rajouter des choses comme le choix des fonts etc
+
+Il y a un syntax checker mais je ne pense pas bien l'avoir configuré
+
+Sinon C-c C-c :execute un bloc de code, bloc definit jusqu'a un saut de ligne on dirait.
+
+** 2022-01-17
+*** statistical rethinking
+homework week 2 + un peu de correction prise de notebook
+
+** 2022-01-18
+*** Papier
+Papier ambassade
+
+*** statistical rethinking
+
+homework 2
+
+** 2022-01-19
+*** SO
+
+[[https://stackoverflow.com/questions/70743950/aggregate-interpolated-data-at-county-level-with-r/70770970#70770970][Question]]
+
+*** statistical rethinking
+video 5
+
+** 2022-01-20
+
+*** statistical rethinking
+    video 5
+** 2022-01-21
+*** statistical rethinking
+- video 6
+- correction homeworks
+- session debrief
+
+*** frictionless data
+:LOGBOOK:
+- State "TODO"       from "STARTED"    [2022-01-22 Sat 22:39]
+- State "STARTED"    from "WAITING"    [2022-01-22 Sat 22:39]
+- State "STARTED"    from "WAITING"    [2022-01-22 Sat 22:39]
+- State "STARTED"    from "TODO"       [2022-01-22 Sat 22:38]
+- State "TODO"       from              [2022-01-22 Sat 22:38]
+- State "TODO"       from              [2022-01-22 Sat 22:38]
+- State "TODO"       from              [2022-01-22 Sat 22:38]
+- State "TODO"       from              [2022-01-22 Sat 22:38]
+- State "TODO"       from              [2022-01-22 Sat 22:38]
+:END:
+
+https://frictionlessdata.io/
+
+Deux issues sur une proposition d'amelioration de la prise en charge de la donnée geo
+https://github.com/datagistips/geo4TableSchema/issues/4
+
+** 2022-01-22
+*** statistical rethinking
+Petite corrections video 5 +
+Test et exo Dagitty: http://dagitty.net/
+*** Geocomputation with R
+Traduction jusqu'à ligne 489
