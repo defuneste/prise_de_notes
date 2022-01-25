@@ -3,8 +3,8 @@
 #+TITLE:       Journal Olivier
 #+AUTHOR:      Olivier Leroy
 #+LANGUAGE:    en/fr
-#+TAGS: Rstats(Rstats) HOME(H) Rspatial(Rspatial) Blog(B) noexport(n) Stats(S)
-#+TAGS: Epistemology(E) Vulgarization(V) Teaching(T) R(R) OrgMode(O) Python(P)
+#+TAGS: Rstats(R) Rspatial(S) Blog(B) noexport(n) Emacs(E)
+#+TAGS: Unix(U) Teaching(T) OrgMode(O) Python(P)
 #+EXPORT_SELECT_TAGS: Blog
 #+OPTIONS:   H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
 #+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
@@ -103,11 +103,11 @@ SCHEDULED: <2022-01-04 Tue>
 Mairie papiers:
     - [X] Passeport Hector
     - [X] Papier parking
-    - [-] CNI Olivier
+    - [X] CNI Olivier
 
 *** Lecture Intro to S
 
-**** Chapitre 1
+**** Chapitre 1 :Rstats:
 
 `identify` est toujours une fonction sous estimée
 elle fonctionne sur un scatterplot commme `identify(x, y, x)` le dernier x peut etre un y ou un autre vecteur de meme taille.
@@ -363,17 +363,6 @@ video 5
 - session debrief
 
 *** frictionless data
-:LOGBOOK:
-- State "TODO"       from "STARTED"    [2022-01-22 Sat 22:39]
-- State "STARTED"    from "WAITING"    [2022-01-22 Sat 22:39]
-- State "STARTED"    from "WAITING"    [2022-01-22 Sat 22:39]
-- State "STARTED"    from "TODO"       [2022-01-22 Sat 22:38]
-- State "TODO"       from              [2022-01-22 Sat 22:38]
-- State "TODO"       from              [2022-01-22 Sat 22:38]
-- State "TODO"       from              [2022-01-22 Sat 22:38]
-- State "TODO"       from              [2022-01-22 Sat 22:38]
-- State "TODO"       from              [2022-01-22 Sat 22:38]
-:END:
 
 https://frictionlessdata.io/
 
@@ -386,3 +375,21 @@ Petite corrections video 5 +
 Test et exo Dagitty: http://dagitty.net/
 *** Geocomputation with R
 Traduction jusqu'à ligne 489
+** 2022-01-23
+*** $\alpha$
+test C-C C-C C-l pour une preview besoin de latex de dvipng
+*** emacs adventure
+look like Org roam is great, I need to put note on it here
+
+** 2022-01-24
+*** statistical rethinking
+exercise 1 et 2 homework + lecture chapter 5 à approfondir
+
+** 2022-01-25
+*** statistical rethinking
+fin video 6 sur table 2 fallacy
+
+*** SO
+[[https://stackoverflow.com/questions/70841300/transforming-from-epsg4326-to-epsg3857-massively-inflates-longitude-and-latitu/70846341#70846341][encore un pb de CRS]]
+
+[[https://stackoverflow.com/questions/70851177/how-to-create-a-new-data-frame-where-existing-columns-become-a-new-column-in-r/70851628#70851628][wide to long]]
