@@ -377,9 +377,15 @@ Test et exo Dagitty: http://dagitty.net/
 Traduction jusqu'à ligne 489
 ** 2022-01-23
 *** $\alpha$
-test C-C C-C C-l pour une preview besoin de latex de dvipng
-*** emacs adventure
+test C-C C-x C-l pour une preview besoin de latex de dvipng
+*** emacs adventure :Emacs:
 look like Org roam is great, I need to put note on it here
+
+on peut rajouter des menus dans dooms emacs en ajoutant:
+
+(menu-bar-mode 1) dans config.el. Je l'ai fait mais je pense retirer
+
+Dans org: C-c C-Q ajoute les tags
 
 ** 2022-01-24
 *** statistical rethinking
@@ -393,3 +399,20 @@ fin video 6 sur table 2 fallacy
 [[https://stackoverflow.com/questions/70841300/transforming-from-epsg4326-to-epsg3857-massively-inflates-longitude-and-latitu/70846341#70846341][encore un pb de CRS]]
 
 [[https://stackoverflow.com/questions/70851177/how-to-create-a-new-data-frame-where-existing-columns-become-a-new-column-in-r/70851628#70851628][wide to long]]
+** 2022-01-26
+*** Statistical rethinking
+vidéo 7
+
+** 2022-01-27
+*** Statistical rethinking
+
+vidéo 8
+
+** 2022-01-28
+*** Statistical rethinking
+
+Homework semaine 3, j'aurais besoin de les refaire
+
+*** SO
+
+[[https://stackoverflow.com/questions/70888831/cant-read-a-list-of-shp-file-in-r/70891197#70891197][question]] il faut pas oublier que parfois on a des `.shp.xml` dans ses detections de pattern sur des shapefiles
