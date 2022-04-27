@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       2ff8d1a9-3757-48d4-823b-f5d028ebfac3
+:END:
+#+title: Bayes
+
+Je souhaite centraliser un peu ce que j'apprends sur Bayes et les statistiques.
+
+Une grosse partie de mes notes vont reprendre le livre et le cours de Richard McElreath:[[id:e3687fc7-3b71-43e7-96e0-8c47d7064a64][Statistical Rethinking]]
+
+Le reste va se composer de ressources à explorer:[[id:48a28e13-eb27-4663-927c-26c91b7ce942][ressources bayes]]

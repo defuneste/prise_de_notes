@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       48a28e13-eb27-4663-927c-26c91b7ce942
+:END:
+#+title: Ressources pour stats bayesienne
+
+
+[[id:c4e4345b-9fc6-4b24-99b4-f174844fa6dc][Distributions]]

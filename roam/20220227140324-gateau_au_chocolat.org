@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       ee84eb44-b316-46b5-912f-03fdc56660ba
+:END:
+#+title: Gâteau au chocolat
+
+** Ingrédients:
+- Chocolat noir 200g
+- Oeuf 4
+- Sucre 150g
+- Farine 80g
+- Beurre 200g
+
+
+** Préparation
+1. Préchauffer le four à 200C
+2. Casser la tablette de chocolat et le faire fondre avec le beurre
+3. Mélanger les oeufs, le sucre et la farine
+4. Verser le chocolat fondue dans le saladier, bien mélanger
+5. Beurrer un plat et mettre la pate dedans
+6. Autour de 18-19 mins au foud

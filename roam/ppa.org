@@ -1,0 +1,10 @@
+#+TITLE: Ppa
+
+Je vais reprendre pas mal de lecture sur tout ce qui est point partern analysis (ppa). La ressource principale est le livre de réference (cf ressources).
+
+
+
+
+*  Ressources
+
+- [[https://www.routledge.com/Spatial-Point-Patterns-Methodology-and-Applications-with-R/Baddeley-Rubak-Turner/p/book/9781482210200][Spatial Point Patterns: Methodology and Applications with R]]

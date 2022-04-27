@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       2cff5e0d-4dc0-4cf5-9aa0-2ad9968e0552
+:END:
+#+title: org-roam-manual
+#+filetags:
+
+Voici le lien vers le manuel. C'est aussi mon premier test vers la création d'une node.
+
+
+[[https://www.orgroam.com/manual.html][lien vers le manuel de roam]]

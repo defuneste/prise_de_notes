@@ -1,0 +1,47 @@
+:PROPERTIES:
+:ID:       8f5db22d-9667-475b-9d20-a1f6387e6558
+:END:
+#+title: Poisson
+
+
+La distribution de Poisson est une loi de probabilité *discrète* qui décrit un nombre d'évènement se produisant sur un intervalle de temps (et aussi des intervalles spatiaux).
+
+C'est un cas particulier de la distribution Binomial où l'on a une probabilité faible d'evenement/très grande nombre d'essais. Dans ce cas la variance est proche de la moyenne.
+
+Elle est décrite par un paramètre:
+
+- $\lambda$ (lambda ou /rate/): correspond au nombre d'occurrences dans un intervalle de temps fixé
+
+  C'est aussi son espérance (nombre moyen d'occurrences dans un intervalle).
+
+** Echantillonner dans une distribution de Poisson
+
+#+begin_src R :results output :session *R* :exports both
+nb_obs <- 5
+lambda <- 10
+rpois(nb_obs, lambda)
+#+end_src
+
+#+RESULTS:
+: [1] 11 10  9  8  6
+
+** Probabilité d'obtenir une valeur dans telle distribution
+
+#+begin_src R :results output :session *R* :exports both
+valeur <- 13
+dpois(valeur, lambda)
+#+end_src
+
+#+RESULTS:
+: [1] 0.07290795
+
+** Probabilité cumulée
+
+#+begin_src R :results output :session *R* :exports both
+ppois(valeur, lambda) # si on veut 0 --> 13
+ppois(valeur, lambda, lower.tail = FALSE) # 13+ ou 1 - ppois(valeur, lambda)
+#+end_src
+
+#+RESULTS:
+: [1] 0.8644644
+: [1] 0.1355356

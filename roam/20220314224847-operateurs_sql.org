@@ -1,0 +1,111 @@
+:PROPERTIES:
+:ID:       5622cd55-8baa-4095-9962-fbd311bc7a4f
+:END:
+#+title: Opérateurs SQL
+
+Les opérateurs s'utilisent dans une clause WHERE
+
+** Les opérateurs peuvent servir à des comparaisons:
+
+| $=$  | égale                   |
+| $<>$ | pas égale               |
+| $>$  | plus grand que          |
+| $<$  | plus petit que          |
+| $>=$ | plus grand que ou égale |
+| $<=$ | plus petit que ou égale |
+
+** ou a tester des conditions logiques
+
+| ALL     | TRUE si toutes les comparaisons sont vrais                  |
+| AND     | TRUE si les deux expressions sont vrais                     |
+| ANY     | TRUE si au moins une comparaisons est vrais                 |
+| BETWEEN | TRUE si opérande est dans l'intervalle                      |
+| EXISTS  | TRUE si la requête contient au moins une ligne              |
+| IN      | TRUE si opérande est égale à une des valeurs dans une liste |
+| LIKE    | TRUE si opérande correspond à un patron                     |
+| NOT     | Renverse un opérateur booléens                              |
+| OR      | TRUE si au moins une est vrai                               |
+| IS NULL | TRUE is NULL sinon FALSE                                    |
+| SOME    | TRUE si des expressions sont vrais                          |
+
+*** AND
+
+|       | TRUE  | FALSE | NULL  |
+| TRUE  | TRUE  | FALSE | NULL  |
+| FALSE | FALSE | FALSE | FALSE |
+| NULL  | NULL  | FALSE | NULL  |
+
+
+Si une est fausse AND retourne FALSE même contre NULL.
+
+*** OR
+
+|       | TRUE | FALSE | NULL |
+| TRUE  | TRUE | TRUE  | TRUE |
+| FALSE | TRUE | FALSE | NULL |
+| NULL  | TRUE | NULL  | NULL |
+
+Si une est TRUE, TRUE est retourné même contre NULL
+
+*Attention* si l'on veut utiliser deux opérateur de comparaisons il faut utiliser des parenthèses:
+
+#+name: AND_plus_OR
+#+begin_src sql
+SELECT
+	first_name,
+	last_name,
+	hire_date,
+	department_id
+FROM
+	employees
+WHERE
+	department_id = 3
+AND (
+	YEAR (hire_date) = 1997
+	OR YEAR (hire_date) = 1998
+)
+ORDER BY
+	first_name,
+	last_name;
+#+end_src
+
+
+Le système de la DB évalue OR après AND et sans les parenthèses on aura tous les départements pour 1998.
+
+
+*** LIKE
+
+LIKE accepte deux *wildcards* ~%~ qui indique 0, un ou plusieurs caractère et ~_~ qui en représente un seul.
+
+*** ALL
+
+ALL compare une valeur à un ensemble de valeurs, en général cette ensemble est produit par une sous requête.
+
+#+name: exemple-all
+#+begin_src sql
+ SELECT
+    first_name, last_name, salary
+FROM
+    employees
+WHERE
+    salary >= ALL (SELECT
+            salary
+        FROM
+            employees
+        WHERE
+            department_id = 8)
+ORDER BY salary DESC;
+#+end_src
+
+*** ANY
+
+Très proche d'ALL dans la structure : ~comparison_operator ANY(subquery)~
+SOME est un alias d'ANY
+
+*** BETWEEN et NOT BETWEEN
+
+~expression BETWEEN low AND high;~
+
+*** EXISTS et NOT EXISTS
+
+Vérifie si une subquery retourne une ligne (attention même si cette ligne contient NULL)

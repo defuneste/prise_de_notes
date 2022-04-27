@@ -1,0 +1,68 @@
+:PROPERTIES:
+:ID:       c75a51da-a6cc-4ec2-b7f5-2dbfb72b9982
+:END:
+#+title: data_type_postgresql
+
+On put obtenir les types de données en interrogeant la table INFORMATION_SCHEMA.COLUMNS. INFORMATION_SCHEMA est un schema (yes..) qui contient aussi les tables (INFORMATION_SCHEMA.tables).
+
+#+begin_src sql
+SELECT
+        column_name,
+        data_type
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE column_name in ('le', 'nom', 'des', 'colonnes')
+AND table_name = 'le_nom_de_la_table';
+#+end_src
+
+
+** Données textuelles
+
+- CHAR
+
+- VARCHAR
+
+- TEXT : non limité en nombre de caractères
+
+** Données numériques
+
+- INT
+
+- DECIMAL
+
+** Données de date et temporelle
+
+- DATE: la date: 2022-04-26
+
+- TIME: l'heure: 18:58:07
+
+- TIMESTAMP contient les valeurs pour les dates et pour le temps. Le format est le ISO 8601 (yyyy-mm-dd).
+
+- INTERVAL: perdiode de temps exemple: 2 jours
+
+  #+begin_src sql
+-- le jeux de données du loueur de dvd
+SELECT rental_date + INTERVAL '3 days' as date_de_retour
+FROM rental;
+  #+end_src
+
+Cette requête va retourner la date de retour 3jours plus tard.
+
+** Arrays
+
+Cela semble une spécificité de PostgreSQL qui permet de stocker des tableaux multidimensionnels dans une colonnes. Dans R ce serait des listes.
+
+On les définie lors du CREATE en ajoutant ~[]~ après la définition du type.
+
+Ex: ~email text [][]~ permet par exemple de créer une colonne avec deux éléments le premier peut être le type d'adresse (pro/perso) et le second l'adresse.
+
+On peut les utiliser dans des SELECT ou des WHERE : ~email[1][1] as type~ donne le type d'adresse pour le premier élément.
+
+NB: index commence par 1 et pas 0.
+
+Il est aussi possible d'utiliser ANY:
+
+~WHERE 'ce_que_je_cherche' =  ANY(mon_array)~
+
+On peut aussi utiliser @>:
+
+~WHERE mon_array @> ARRAY['ce_que_je_cherche']~

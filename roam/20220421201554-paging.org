@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       0985e0e1-36bb-4f32-83fb-465216163bae
+:END:
+#+title: paging
+
+Paging est l'action de diviser des données en plusieurs groupe a peu près équivalent.
+
+Un des exemples les plus courant est de séparer en quantiles avec la fonction ~NTILE(n)~. ~n~ correspond au nombre de divisions misent en place.

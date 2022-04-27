@@ -1,0 +1,49 @@
+:PROPERTIES:
+:ID:       35d45279-cd99-4d43-b43b-e8ab24eb7881
+:END:
+#+title: Binomiale
+
+
+La distribution (loi) binomiale est une distribution *discrète*. Elle permet d'obtenir le nombre de succès dans une séquence de tirage *indépendant*.
+
+Elle prend deux paramètres:
+
+- $n$ : nombre de tirage
+
+- $p$ : probabilité de succès, entre 0 et 1
+
+On obtient l'espèrance (/expected value/) = $ n * p$
+
+** un exemple simple
+
+#+begin_src R :results output :session *R* :exports both
+nb <- 1 # nb de tirage
+piece <- 1 # nb de pièce
+proba <- 0.5 # proba
+rbinom(nb, piece, proba)
+#+end_src
+
+#+RESULTS:
+: [1] 0
+
+
+** Une densité
+
+#+begin_src R :results output :session *R* :exports both
+# proba d'avoir 5 piles sur 10 lancés
+dbinom(5, 10, 0.5)
+#+end_src
+
+#+RESULTS:
+: [1] 0.009765625
+
+** Une probabilité cumulée
+
+#+begin_src R :results output :session *R* :exports both
+# proba d'avoir 1, 2, 3, 4, 5 sur 10 lancés
+pbinom(5, 10, 0.5)
+# proche de sum(dbinom(1:5, 10, 0.5))
+#+end_src
+
+#+RESULTS:
+: [1] 0.6230469

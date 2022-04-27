@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       d51bff39-fe18-4e04-aa8c-eab2928a8e76
+:END:
+#+title: Sort-Tile-Recursive R-tree
+
+
+C'est un algorithme pour des jeux de données en deux dimensions.
+
+La bibliothèque R `geos` utilise son API C pour l'utiliser.
+
+Ressources:
+
+- [[https://en.wikipedia.org/wiki/R-tree][wiki]]
+- [[https://dewey.dunnington.ca/post/2022/profiling-point-in-polygon-joins-in-r/][post de blog]]
+- [[https://locationtech.github.io/jts/javadoc/org/locationtech/jts/index/strtree/STRtree.html][Doc de GEOS]]

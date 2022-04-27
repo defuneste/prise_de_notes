@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       f5d676d8-3692-4d71-8b03-9118d546e860
+:END:
+#+title: Index spatiaux
+
+Il y en a plusieurs types.
+
+Le [[id:d51bff39-fe18-4e04-aa8c-eab2928a8e76][Sort-Tile-Recursive R-tree]] et ..
+
+** Ressources
+
+- Pour [[CREATE INDEX ix_code_restaurants_geom
+  ON ch01.restaurants USING gist(geom);][sf]]
+- Pour [[CREATE INDEX ix_code_restaurants_geom
+  ON ch01.restaurants USING gist(geom);][PostGIS]]
+- Dans PostGIS in action p 541 459

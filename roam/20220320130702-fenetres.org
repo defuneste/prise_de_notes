@@ -1,0 +1,78 @@
+:PROPERTIES:
+:ID:       2949803a-742e-40f3-a0d9-4b7a7c092002
+:END:
+#+title: fenêtres
+
+Les fenêtres ou /windows/ permettent des grouper plusieurs lignes, un peu comme avec GROUP BY mais toutes les lignes restent dans la sortie plutôt que de le regrouper.
+
+Elles sont utilisées pour du [[id:0985e0e1-36bb-4f32-83fb-465216163bae][paging]].
+
+OVER est une clause qui permet d'assigner à chaque ligne une fenêtre. si OVER() est vide alors la fenêtre est toute la table.
+
+Les fenêtres font partie du SELECT donc:
+
+FROM + JOIN -> WHERE -> GROUP BY -> HAVING -> SELECT (ici) -> ORDER BY -> LIMIT
+
+La structure de base est de ce type:
+
+#+begin_src sql
+SELECT
+     un_truc,
+     [une expresion] OVER ([définition de ma fenêtre])
+FROM
+     bob_table;
+#+end_src
+
+C'est pas mal d'utiliser un alias:
+
+~[une expression] OVER () AS mon_resultat~
+
+** Il est aussi possible d'attribuer des fonctions dans l'expression:
+
+- ~ROW_NUMBER()~ pour attribuer un numéro de ligne, ~RANK()~ va assigner un même numéro aux lignes ayant une même valeur si ce cas est présent on va sauter un numéro (ex: 1, 1,3). ~DENSE_RANK()~ permet de ne pas sauter de numéro (1,1,2).
+
+~ROW_NUMBER() OVER() AS num_row~
+
+- ~LAG(column, n)~ qui renvoie la ~colonne~ à la ~n~ lignes avant la ligne actuelle
+
+- ~LEAD(column, n)~ renvoie la ~colonne~ à la ~n~ lignes après la ligne actuelle
+
+LAG et LEAD sont relative à l'endroit de la ligne mais on peut avoir besoin de valeur absolue dans ce cas on peut utiliser ~FIRST_VALUE~ ou ~LAST_VALUE~ qui retourneront la première et dernière valeur de toute la colonne.
+
+- des fonctions d'agrégations comme ~SUM~ ou ~MAX~ peuvent aussi être utilisé. Dans le cas de sum on va produire une somme cumulée et dans le cas de max on va garder la valeur la plus haute mais dans un contexte de fenêtre mouvante.
+
+
+** Sous clauses
+ la
+On peut utiliser des clauses à l'intérieur d'OVER.
+
+**** ORDER BY
+
+Permet d'ordonner avec ASC ou DESC en fonction d'une colonne.
+
+Ex: ~ROW_NUMBER() OVER(ORDER BY salary DESC) AS row_sal~ va numéroter les salaires par ordre décroissant.
+
+Comme ORDER BY vient après un OVER(ORDER BY) on peut attribuer un row_sal et ordonner par un autre critère le tableau de sortie.
+
+**** PARTITION BY
+
+Permet de diviser la table en fonction de la valeur d'une colonne (ou plusieurs).  Ainsi si on utilise LAG cela sera sur la même valeur ou si on utilise ROW_NUMBER cela sera par valeur (une sorte de group by pour définir une fenêtre). Si on l'utilise avec du ranking le ranking sera relatif à chaque partition.
+
+** Frames
+
+Par défaut quand on utilise une fenêtre elle prend soit toute la table soit est fractionnée par les partitions.
+
+Il est aussi possible d'utiliser une *frame* qui prend cette forme :
+
+~RANGE BETWEEN UNBOUNDED PRECEDING AND UNOUNDED FOLLOWING~
+
+Ou:
+
+~ROWS BETWEEN [DEBUT] AND [FIN]~
+
+
+Début et fin peuvent être ~n PRECEDING~ (n lignes avant la ligne actuelle), ~CURRENT ROW~ (ligne actuelle) et ~n FOLLOWING~.
+
+Attention: lorsque le l'on compte il ne faut pas oublier la ligne actuelle: Si on a ~2 preceding and 1 following~ cela donne 5 lignes.
+
+La différence entre ~ROWS BETWEEN~ et ~RANGE BETWEEN~ est que le second considère les dupliquats produit par l'ORDER BY dans la fonction OVER comme une entité unique.

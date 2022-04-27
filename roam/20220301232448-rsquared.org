@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       3c7beba7-b042-4b59-8f42-cfbcee6a40ab
+:END:
+#+title: Rsquared
+
+R², R carré, ou *variance explained* correspond, dans un contexte de modèle linaire gaussien à une très mauvaise mesure de qualité de prédiction d'un modèle.
+
+Il peut s'écrire ainsi :
+
+$$ R^2 = 1 - \frac{var(residuals)}{var(outcome)} $$
+
+Ce n'est pas un bon estimateur de la qualité de la prédiction car plus on rajoute de paramètres meilleur il est (même si ses variables n'ont rien à voir avec l'outcome).

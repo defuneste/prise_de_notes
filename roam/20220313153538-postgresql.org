@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       1d9417f1-f239-4855-b3ea-3e3d2ef2e6d5
+:END:
+#+title: PostgreSQL
+
+* liste des commandes pratiques en psql:
+
+- `\dn`: liste les schémas dans une DB
+
+C'est proche ce `SELECT schema_name FROM information_schema.schemata;`
+
+- `\timing` débute et termine un chronomètre
+
+* [[id:c75a51da-a6cc-4ec2-b7f5-2dbfb72b9982][Data types]]

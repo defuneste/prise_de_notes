@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       e3687fc7-3b71-43e7-96e0-8c47d7064a64
+:END:
+#+title: Statistical Rethinking
+
+Ici je vais collecter mes notes sur le cours de [[https://github.com/rmcelreath/stat_rethinking_2022][2022]].
+
+Le cours suit presque le livre et mes notes se font en suivant l'ordre des vidéos:
+
+1. [[id:947f6452-29df-4fab-ae92-f74925b98a94][The Golem of Prague]]
+2. [[id:a8fca553-728a-474e-92d1-481831b2de4a][Bayesian Inference]]

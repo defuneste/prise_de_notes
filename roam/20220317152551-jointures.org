@@ -1,0 +1,55 @@
+:PROPERTIES:
+:ID:       8fe684d1-89e7-4334-b3e8-4c666bb4a659
+:END:
+#+title: Jointures
+
+Ce sont des opérations, s'intégrant dans [[id:16110d04-e3c8-4cca-abb9-4f80c10d00dd][SELECT]] statement, qui visent à joindre plusieurs tables. Elles se mettent en place au même niveau que FROM et donc sont dans les première exécutées.
+
+| A |
+| 1 |
+| 2 |
+| 3 |
+| 4 |
+
+et
+
+| B |
+| 3 |
+| 4 |
+| 5 |
+| 6 |
+
+Une *inner join* correspond aux lignes correspondantes entre les deux tableaux : 3 et 4
+
+Si la colonne de A est ~a~ et celle B est ~b~ alors
+
+#+name: exemple_inner_join
+#+begin_src sql
+SELECT a
+FROM A
+     INNER JOIN
+            B ON b = a; -- on place l'inner join dans le FROM
+#+end_src
+
+
+Dans une base de données relationnelles il peut y avoir des relations:
+
+- *one-to-many*
+
+
+Il faut faire attention quand l'on fait des jointures many-to-many car on peut se retrouver avec des effets indésirables.
+
+
+** Types de jointures
+
+INNER JOIN : Ne garde que les lignes correspondantes entre les deux tableaux
+
+LEFT JOIN : Garde tout A (la table de gauche) ici : ~1 2 3 4~
+
+SELF JOIN : joindre une table à elle même entre deux colonnes différentes
+
+FULL (OUTER) JOIN : Une combinaison entre un LEFT JOIN et UN RIGHT JOIN, on va souvent avoir des valeurs manquantes (NULL).
+
+CROSS JOIN : Produit cartésien entre deux tables ou plus
+
+une table A avec une colonne n contenant 1 , 2 , 3 ~CROSS JOIN~ une table B avec une colonne c   contenant X, Y, Z donne : une nouvelle table avec deux colonnes n et c. La première contient 1, 1, 1, 2, 2, 2, 3, 3, 3 et la seconde contient X, Y, Z, X, Y, Z, X, Y, Z.

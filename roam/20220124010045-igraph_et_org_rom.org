@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       58444397-ba1c-4950-909c-21b342349940
+:END:
+#+title: igraph et org-roam
+
+[[https://lucidmanager.org/data-science/visualise-org-roam/][visu org roam]]
+[[id:2cff5e0d-4dc0-4cf5-9aa0-2ad9968e0552][org-roam-manual]]

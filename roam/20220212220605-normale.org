@@ -1,0 +1,22 @@
+:PROPERTIES:
+:ID:       bd6e667f-4bf2-4369-99d4-0b6ec818b949
+:END:
+#+title: Normale
+
+
+La Loi (ou distribution) normale est une *distribution continue symétrique* (autour de la moyenne). Elle est parfois également nommée lois de Gauss, gaussiennes ou lois de Laplace-Gauss.
+
+Elle a deux paramètres :
+
+- $\mu$ la moyenne (ou espérance)
+- $\sigma$ l'écart type (ou la variance $\sigma^2$) qui est postif
+
+#+begin_src R :results output :session *R* :exports both
+moy <- 10
+sd <- 2
+# proba dávoir neuf avec une distribution ayant moy et sd
+pnorm(9, moy, sd)
+#+end_src
+
+#+RESULTS:
+: [1] 0.3085375

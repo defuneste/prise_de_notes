@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       2b55d59d-be0f-41dd-a0ed-8792576de027
+:END:
+#+title: spatial join
+
+Ici je vais mettre des choses ranger.
+
+Afin de faciliter la jointure un index spatial est crée dans `sf`. Il est crée sur l'argument `x` de la fonction `st_join`. C'est pourquoi on peut accélérer les requêtes en testant `st_join(x, y)` versus `st_join(y, x)`
+
+
+L'index utilisé est [[id:d51bff39-fe18-4e04-aa8c-eab2928a8e76][Sort-Tile-Recursive R-tree]]
+
+Ressources :
+
+https://dewey.dunnington.ca/post/2022/profiling-point-in-polygon-joins-in-r/i
+
+https://r-spatial.org/r/2017/06/22/spatial-index.html

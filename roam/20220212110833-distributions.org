@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       c4e4345b-9fc6-4b24-99b4-f174844fa6dc
+:END:
+#+title: Distributions
+
+* Liste des distributions et exemples:
+
+** [[id:35d45279-cd99-4d43-b43b-e8ab24eb7881][Binomiale]]
+** [[id:bd6e667f-4bf2-4369-99d4-0b6ec818b949][Normale]]
+** [[id:8f5db22d-9667-475b-9d20-a1f6387e6558][Poisson]]
+
+* Famille Exponentielle
+
+[[file:img/exponetial_family.png][Richrad McElreath Rethinking Stats]]
+
+* Ressources
+
+- Distributions Zoo : https://ben18785.shinyapps.io/distribution-zoo/

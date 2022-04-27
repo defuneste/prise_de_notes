@@ -1,0 +1,75 @@
+:PROPERTIES:
+:ID:       985de3f3-3ae5-49bc-8497-4782ace5e177
+:END:
+#+title: Syntaxe de SQL
+
+La syntaxe de SQL est déclarative:
+
+Un *statement* commence par un *verbe* décrivant une action suivit d'un sujet ou d'un prédicat.
+
+A noter: par convention les verbes et prédicats sont en MAJUSCULE et les *identifiers* (un objet, comme une table, un champs spécifique à la base) sont en minuscule.
+
+Ici nous avons un exemple de *statement* contenant différentes *clauses* :
+
+#+name: un_exemple_de_requête
+#+begin_src sql
+-- select clause
+  SELECT
+        first_name
+-- from clause
+  FROM
+        mytable
+-- where clause
+  WHERE
+        hire_date < '1990-01-01'; -- à la fin -> ;
+#+end_src
+
+** Voici les différents *statements* possibles:
+
+- [[id:16110d04-e3c8-4cca-abb9-4f80c10d00dd][SELECT]]
+
+** NULL et autres
+
+`NULL` représente une valeur manquante et/ou inconnue. NULL ne peut être égale à rien même pas à lui même.
+
+Comme NULL n'est pas égale à lui même ~WHERE X = NULL~ ne marche pas à la place il faut utiliser ~WHERE X IS NULL~ ou ~NOT NULL~ pour non null.
+
+Un des façons de gérer les NULL est d'utiliser la fonction COALESCE. Cette fonction retourne la première valeur qui n'est pas NULL.
+
+** Aliasing
+
+~AS~ est utilisé pour renommer des colonnes. Dans le cas d'espace il faut utiliser des guillemets.
+
+Attention à bien se rappeler l'ordre d'opérations si un alias est par exemple utilisé dans SELECT il n'est pas possible de le voire dans un WHERE du même statement (FROM -> WHERE -> SELECT -> ORDER BY).i
+
+On peut aussi aliaser les tables, c'est pratique dans le cas où on va joindre deux tables avec potentiellement
+les mêmes noms de colonnes.  Ex: ~e.department_id d.department_id~
+
+** Subquery
+
+C'est une requête à l'intérieur d'un statements. Elle est placé en parenthèse.
+
+Elles peuvent être utilisé avec:
+- IN et NOT IN,
+- dans des opérateurs de comparaison,
+- EXISTS et NOT EXISTS,
+- ANY et ALL,
+- dans un FROM
+- dans un SELECT
+
+Il est possible de distinguer des *subqueries* en fonction du fait qu'elles dépendent (*correlated subquery)*  ou pas (*plain subquery*) de la requête parente. Une /plain subquery/ peut s'exécuter sans le besoin de la parente.
+
+** Pivot
+
+Une des options est d'utiliser l'extension tablefunc (elle contient CROSSTAB). On peut installer une extension (comme postgis) comme suit:
+
+#+begin_src sql
+CREATE EXTENSION IF NOT EXISTS tablefunc;
+
+SELECT * FROM CROSSTAB($$
+-- la requête qui produit le tableau que l; on veut pivoter
+
+               )
+ORDER BY patatati DESC;
+
+#+end_src

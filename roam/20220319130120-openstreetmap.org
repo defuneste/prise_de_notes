@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       50faa239-de83-4e82-8ab3-dd782dc18298
+:END:
+#+title: OpenStreetMap
+
+Il y a moultes moyens d'utiliser les données d'OSM.
+
+Pour inspecter une relation :
+
+~https://www.openstreetmap.org/relation/11914034~ le dernier chiffre est l'id de la relation.

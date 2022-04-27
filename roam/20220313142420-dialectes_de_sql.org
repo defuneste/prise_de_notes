@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       fb87c94f-612a-40cc-9636-2464bb762f4d
+:END:
+#+title: Dialectes de SQL
+
+
+Il y a plusieurs dialèctes:
+
+- PL/SQL pour /procedural language/SQL/ utilisé pour les bases Oracle
+
+- Transact-SQL pour Microsoft SQL server
+
+- PL/pgSQL pour PostgreSQL

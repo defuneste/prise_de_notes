@@ -1,0 +1,29 @@
+:PROPERTIES:
+:ID:       e5b7a62d-ef4e-4a64-a206-4b6e0440388d
+:END:
+#+title: SQL
+
+
+SQL: structured Query language. Utilisé pour gérer des /Relational Database Management system/ (RDBMS)
+
+Inventé par IBM au début des années 70, standardisation 80 et 90'
+
+Il y a malheureusement pas mal de [[id:fb87c94f-612a-40cc-9636-2464bb762f4d][Dialectes de SQL]].
+
+La [[id:985de3f3-3ae5-49bc-8497-4782ace5e177][Syntaxe de SQL]] est composé de *verbes* et se termine par `;`
+
+On fait la distinction entre:
+
+- /data manipulation language/ (DML) : un ensemble de fonction pour requêter des données
+
+- /data definition language/: un ensemble de fonction pour créer et modifier la base de données et sa structured
+
+- /data control language/ : gestion des droits
+
+J'utilise principalement [[id:e31eb3eb-411b-4095-8b18-e35a52d62d58][SQLite]] et [[id:1d9417f1-f239-4855-b3ea-3e3d2ef2e6d5][PostgreSQL]].
+
+
+** ressources
+
+- https://www.sqltutorial.org/
+- Become a SELECT star, Julia Evans [[https://wizardzines.com/][ici]]

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       7ddfa996-4511-4b3d-a101-0646030a1320
+:END:
+#+title: Overfitting
+
+Rajouter des paramètres augmente presque toujours la prédiction (/fit/). Le modèle "colle" aux données mais il apprend de /features/ ne se généralisant pas ou peu.
+
+Un modèle qui souffre d'overfitting va très bien coller à l'échantillon et sera mauvais avec le reste.
+
+On peut l'opposer à l'[[id:883768da-2493-46ec-8018-8950ff263839][Underfitting]] dans le fait que le modèle peut changer drastiquement si on retire un points de l'échantillon (vu que dans les cas extrême il ne fait que retranscrire les données d'une autre manière).

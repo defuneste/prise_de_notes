@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       e31eb3eb-411b-4095-8b18-e35a52d62d58
+:END:
+#+title: SQLite
+
+SQLite est une version légère et très utilisée.
+
+La version courante est `sqlite3` et s'instale: `sudo apt-get install sqlite3`
+
+Les fonctions d'aide commence en general par un `.`
+
+ex: `.exit` pour quitter

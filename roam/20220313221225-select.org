@@ -1,0 +1,22 @@
+#+title: SELECT
+
+** Le B.A BA de SELECT
+
+Select est sans doute l'un des verbes le plus utilisé.
+
+#+name: select_basic
+#+begin_src sql
+  SELECT colonne_1 FROM ma_table
+#+end_src
+
+La base de données va prendre FROM en premier puis SELECT et ~;~ permet de séparer avec un autre statements.
+
+On peut utiliser ~*~ pour sélectionner toutes les colonnes mais cela peut être gourmand. Le plus souvent il faut spécifier chaque colonne séparer par ~,~.
+
+
+#+name: select_basic
+#+begin_src sql
+SELECT
+    first_name,
+    last_name,
+    salary,

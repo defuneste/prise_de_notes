@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       883768da-2493-46ec-8018-8950ff263839
+:END:
+#+title: Underfitting
+
+
+C'est un cas de modélisation où le modèle n'apprends pas assez des données. Il ne colle pas plus à l'échantillon qu'en dehors de celui ci.
+
+On peut aussi le constater par le fait que contrairement à l[[id:7ddfa996-4511-4b3d-a101-0646030a1320]['Overfitting]] il est assez peu sensible à la non prise en compte de données dans l'échantillon.

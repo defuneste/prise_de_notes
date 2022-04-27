@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       a8fca553-728a-474e-92d1-481831b2de4a
+:END:
+#+title: Bayesian Inference
