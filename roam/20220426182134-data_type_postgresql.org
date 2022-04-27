@@ -47,6 +47,11 @@ FROM rental;
 
 Cette requête va retourner la date de retour 3jours plus tard.
 
+Les [[id:5622cd55-8baa-4095-9962-fbd311bc7a4f][Opérateurs]] se comportent de façon particulière sur le formats date et time: ajouter un entier sur une date ajoute des jours et ajouter une date à une date donne un interval.
+
+Si on veut calculer une durée il faut utiliser la fonction [[https://www.postgresql.org/docs/current/functions-datetime.html][AGE]] qui prend deux arguments TIMESTAMP.
+
+
 ** Arrays
 
 Cela semble une spécificité de PostgreSQL qui permet de stocker des tableaux multidimensionnels dans une colonnes. Dans R ce serait des listes.

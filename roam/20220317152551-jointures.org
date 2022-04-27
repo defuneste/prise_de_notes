@@ -53,3 +53,5 @@ FULL (OUTER) JOIN : Une combinaison entre un LEFT JOIN et UN RIGHT JOIN, on va s
 CROSS JOIN : Produit cartésien entre deux tables ou plus
 
 une table A avec une colonne n contenant 1 , 2 , 3 ~CROSS JOIN~ une table B avec une colonne c   contenant X, Y, Z donne : une nouvelle table avec deux colonnes n et c. La première contient 1, 1, 1, 2, 2, 2, 3, 3, 3 et la seconde contient X, Y, Z, X, Y, Z, X, Y, Z.
+
+Il existe aussi les[[id:2b55d59d-be0f-41dd-a0ed-8792576de027][ jointures spatiales.]]

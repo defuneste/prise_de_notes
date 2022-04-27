@@ -2,7 +2,7 @@
 
 ** Le B.A BA de SELECT
 
-Select est sans doute l'un des verbes le plus utilisé.
+Select est sans doute l'un des verbes le plus utilisé. Il sert à récupérer de l'information.
 
 #+name: select_basic
 #+begin_src sql
@@ -19,4 +19,37 @@ On peut utiliser ~*~ pour sélectionner toutes les colonnes mais cela peut être
 SELECT
     first_name,
     last_name,
-    salary,
+    salary
+FROM income
+WHERE salary < 10000;
+#+end_src
+
+
+On écrit les requêtes SQL dans un certains ordre:
+
+SELECY > FROM + JOIN > WHERE > GROUP BY > HAVING > ORDER BY > LIMIT
+
+Mais elle s'exécute dans un ordre différent:
+
+FROM + JOIN > WHERE > GROUP BY > HAVING > SELECT > ORDER BY > LIMIT
+
+Cela fait sens: on va d'abord récupérer les tableaux, puis les filtrer, produire des agrégats, filtrer sur ces agrégats, les ordonner et en limiter l'afichage.
+
+
+** FROM
+
+** JOIN et les[[id:8fe684d1-89e7-4334-b3e8-4c666bb4a659][ Jointures]]
+
+** WHERE
+
+WHERE est utilisé pour filtrer des lignes. Cf. un peu plus haut avec ~WHERE salary < 10000~.
+
+~<~ ici utilisé est un[[id:5622cd55-8baa-4095-9962-fbd311bc7a4f][ Opérateurs SQL]].
+
+** GROUP BY
+
+*** HAVING
+
+**  ORDER BY
+
+** LIMIT
