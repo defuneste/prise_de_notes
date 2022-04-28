@@ -12,3 +12,20 @@ C'est proche ce `SELECT schema_name FROM information_schema.schemata;`
 - `\timing` débute et termine un chronomètre
 
 * [[id:c75a51da-a6cc-4ec2-b7f5-2dbfb72b9982][Data types]]
+* Extension dans PostgreSQL
+
+Il existe des data types définit par des utilisateur. On peut y accéder via la table ~pg_type~.
+
+Exemple: Enumerated data types ou ENUN permet de faire des listes de valeurs qui ne changeront pas.
+
+#+begin_src sql
+CREATE TYPE dayofweek AS ENUM (
+'Monday',
+'Tuesday',
+'Wednesday',
+'Thursday',
+'Friday',
+'Saturday',
+'Sunday'
+            );
+#+end_src

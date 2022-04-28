@@ -70,3 +70,16 @@ SELECT LPAD('padded', 10, '*');
 -- ici on rajoute des * pour avoir 10 car
 -- LPAD ajoute à gauche
 #+end_src
+
+** full-text search
+
+#+begin_src sqlite
+SELECT title, description
+FROM film
+WHERE to_tsvector(title) @@ to_tsquery('elf');
+#+end_src
+
+*** Stemming
+*** Spelling mistakes
+
+*** Ranking

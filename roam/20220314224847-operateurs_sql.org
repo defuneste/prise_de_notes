@@ -77,6 +77,8 @@ Le système de la DB évalue OR après AND et sans les parenthèses on aura tous
 
 LIKE accepte deux *wildcards* ~%~ qui indique 0, un ou plusieurs caractère et ~_~ qui en représente un seul.
 
+LIKE respecte les minuscules/majuscules.
+
 *** ALL
 
 ALL compare une valeur à un ensemble de valeurs, en général cette ensemble est produit par une sous requête.
