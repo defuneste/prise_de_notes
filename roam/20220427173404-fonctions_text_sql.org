@@ -1,0 +1,72 @@
+:PROPERTIES:
+:ID:       5e71f432-f392-4a83-8636-eacf55ceee43
+:END:
+#+title: fonctions_text_sql
+Il existe des fonctions pour :
+
+- reformater des chaines de caractères
+
+- "parser" ces dernières
+
+- déterminer leur longueur (~CHAR_LENGTH~ ou ~LENGTH~) et la place de caractère spécifique (~POSITION~)
+
+- les couper ou fusionner
+
+
+** Concatenation
+
+#+begin_src sql
+SELECT
+        prénom,
+        nom,
+        prénom || ' ' ||nom as nom_complet
+FROM customer;
+
+-- il est aussi possible d'utiliser CONCAT
+
+SELECT
+            CONCAT(prénom, ' ', nom ) as nom_complet
+FROM customer;
+#+end_src
+
+
+Rq: on peut utiliser des nom de colonnes mais aussi des constantes.
+
+Il existe aussi les fonctions classiques UPPER et LOWER. INITCAP mets juste le premier caractère en majuscules.
+
+** Parsing
+
+LEFT(data, 50) -> extrait les 50 premier caractères. Il existe aussi RIGHT.
+
+SUBSTRING(data, 10, 50) -> on commence à 10 et on prends les 50 premiers.
+
+#+begin_src sql
+-- avant @
+SELECT
+        SUBSTRING(email from 0 for position('@' IN email) )
+FROM customer;
+-- après @
+SELECT
+            substring(email from POSITION('@' in email) + 1 FOR CHAR_LENGTH(email))
+FROM customer;
+#+end_src
+
+** Trimming
+
+TRIM([LEADING | TRAILING | BOTH] [characters] FROM string)
+
+BOTH is the default
+
+si characters n'est pas indiqué le defaut est WS.
+
+LTRIM et RTRIM sont les versions left et right.
+
+** PADDING
+
+Si on veut une chaine de caractères avec une longueur fixe est qu'elle est moindre on peut rajouter des caractéres d'un coté.
+
+#+begin_src sql
+SELECT LPAD('padded', 10, '*');
+-- ici on rajoute des * pour avoir 10 car
+-- LPAD ajoute à gauche
+#+end_src

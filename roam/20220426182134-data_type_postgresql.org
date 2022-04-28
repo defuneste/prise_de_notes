@@ -23,6 +23,8 @@ AND table_name = 'le_nom_de_la_table';
 
 - TEXT : non limité en nombre de caractères
 
+  Il existe des [[id:5e71f432-f392-4a83-8636-eacf55ceee43][fonctions spécifiques]] pour manipuler ce type de données.
+
 ** Données numériques
 
 - INT
@@ -49,7 +51,32 @@ Cette requête va retourner la date de retour 3jours plus tard.
 
 Les [[id:5622cd55-8baa-4095-9962-fbd311bc7a4f][Opérateurs]] se comportent de façon particulière sur le formats date et time: ajouter un entier sur une date ajoute des jours et ajouter une date à une date donne un interval.
 
-Si on veut calculer une durée il faut utiliser la fonction [[https://www.postgresql.org/docs/current/functions-datetime.html][AGE]] qui prend deux arguments TIMESTAMP.
+On peut aussi utiliser la fonction [[https://www.postgresql.org/docs/current/functions-datetime.html][AGE]] qui prend deux arguments TIMESTAMP.
+
+~NOW()~ retourne maintenant comme CURRENT_TIMESTAMP(). CURRENT_DATE et CURRENT_TIME existe également.
+
+Dans postgreSQL il est possible de changer le type (casting type) :
+
+#+begin_src sql
+SELECT NOW()::timestamp;
+        -- ou encore ds SQL std
+SELECT CAST(NOW() as timestamp);
+#+end_src
+
+*** Fonctions d'extraction "temporelle"
+
+Elles prennent en géneral une syntaxe assez proche:
+
+#+begin_src sql
+SELECT EXTRACT(quarter FROM timestamp '2022-04-27 16:46:00') as quarter;
+
+SELECT DATE_PART('quarter', timestamp '2022-04-27 16:46:00' ) as quarter;
+
+SELECT DATE_TRUNC('year', timestamp '2022-04-27 16:55:00');
+
+#+end_src
+
+DATE_TRUNC commence par indiqué la précision : ~date_trunc(field, source [, time_zone ])~ avec un field pouvant aller de la `microseconds` à `millénium`.
 
 
 ** Arrays

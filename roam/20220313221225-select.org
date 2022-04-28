@@ -52,4 +52,6 @@ WHERE est utilisé pour filtrer des lignes. Cf. un peu plus haut avec ~WHERE sal
 
 **  ORDER BY
 
+On peut faire un GROUP BY sur un index des colonnes (commençant par 1) à la place d'indiqué le nom de la colonne.
+
 ** LIMIT
