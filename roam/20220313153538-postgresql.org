@@ -14,6 +14,19 @@ C'est proche ce `SELECT schema_name FROM information_schema.schemata;`
 * [[id:c75a51da-a6cc-4ec2-b7f5-2dbfb72b9982][Data types]]
 * Extension dans PostgreSQL
 
+* Extensions
+
+La liste des extensions disponibles est accessible via la table ~pg_available_extensions.~ Celle qui sont installées peuvent être consultées via ~pg_extension~.
+
+#+begin_src sql
+-- charger une extensions
+CREATE EXTENSION IF NOT EXISTS fuzzystrmatch;
+-- ici une extension pour la gestion de texte
+-- on verifie
+SELECT extname FROM pg_extension;
+#+end_src
+
+** Data types définis par l'utilisateur
 Il existe des data types définit par des utilisateur. On peut y accéder via la table ~pg_type~.
 
 Exemple: Enumerated data types ou ENUN permet de faire des listes de valeurs qui ne changeront pas.
@@ -27,5 +40,11 @@ CREATE TYPE dayofweek AS ENUM (
 'Friday',
 'Saturday',
 'Sunday'
-            );
+);
 #+end_src
+
+Dans INFORMATIONS_SCHEMA.COLUMNS il est aussi possible de regarder si la colonne data_type contient "USER-DEFINED".
+
+** Fonction créer par l'utilisateur
+
+Il faut utiliser CREATE FUNCTION et specifier le langage utilisé.

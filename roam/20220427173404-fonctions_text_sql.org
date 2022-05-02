@@ -79,6 +79,8 @@ FROM film
 WHERE to_tsvector(title) @@ to_tsquery('elf');
 #+end_src
 
+tsvector est une liste des mots (+ exactement des lexemes).
+
 *** Stemming
 *** Spelling mistakes
 

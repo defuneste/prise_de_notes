@@ -27,3 +27,4 @@ J'utilise principalement [[id:e31eb3eb-411b-4095-8b18-e35a52d62d58][SQLite]] et 
 
 - https://www.sqltutorial.org/
 - Become a SELECT star, Julia Evans [[https://wizardzines.com/][ici]]
+- Utilisation de DataCamp
