@@ -35,6 +35,14 @@ FROM + JOIN > WHERE > GROUP BY > HAVING > SELECT > ORDER BY > LIMIT
 
 Cela fait sens: on va d'abord récupérer les tableaux, puis les filtrer, produire des agrégats, filtrer sur ces agrégats, les ordonner et en limiter l'afichage.
 
+*** COUNT
+
+Permet de compter le nombre de lignes
+
+~COUNT(*)~ va compter toutes les lignes
+
+~COUNT(col_names)~ va compter toutes les lignes non null
+
 
 ** FROM
 

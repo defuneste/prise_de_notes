@@ -3,6 +3,17 @@
 :END:
 #+title: Distributions
 
+* DPQR
+
+d est pour la densité
+
+p donne la probabilité cumulée
+
+q retourne le complément ($1 - p$)
+
+r pour générer des tirages aléatoires
+
+
 * Liste des distributions et exemples:
 
 ** [[id:35d45279-cd99-4d43-b43b-e8ab24eb7881][Binomiale]]

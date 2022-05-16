@@ -48,3 +48,15 @@ Dans INFORMATIONS_SCHEMA.COLUMNS il est aussi possible de regarder si la colonne
 ** Fonction créer par l'utilisateur
 
 Il faut utiliser CREATE FUNCTION et specifier le langage utilisé.
+
+*  Contraintes
+
+- Foreign key: doit exister dans la colonne de références (ou Null)
+
+- Primary key: doit être unique (ou NULL)
+
+- Unique: toutes les valeurs doivent être différentes ou (NULL)
+
+- Not null : obv.
+
+- Check constraints: une condition en fonction des valeurs, ex column < 0, columnA > columnB

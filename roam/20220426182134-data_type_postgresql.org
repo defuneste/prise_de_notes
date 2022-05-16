@@ -31,6 +31,30 @@ AND table_name = 'le_nom_de_la_table';
 
 - DECIMAL
 
+*** variance
+
+~var_pop()~ calcule la variance pour la population
+
+~var_samp()~ calcule la variance pour l'échantillon
+
+Il y a aussi stdev().
+
+*** TRUNC
+
+Est utilisé pour tronquer des données. C'est une fonction qui prends deux arguments, le premier est la valeur et le second est la précision. Si cette valeur est positive la valeur est tronquée dans les decimal si elle est negative on va tronquer dans les entier (ex trunc(35, -1) va donner 30).
+
+*** Generate series
+
+On peut avoir besoin de génerer des nombres (pe pour dans un group by pour "bins" des valeurs).
+
+~select generate_serie(start, end , step);~
+
+
+Dans ce cas là on peut utiliser WITH pour générer les bornes de bins.
+
+
+
+
 ** Données de date et temporelle
 
 - DATE: la date: 2022-04-26
@@ -98,3 +122,15 @@ Il est aussi possible d'utiliser ANY:
 On peut aussi utiliser @>:
 
 ~WHERE mon_array @> ARRAY['ce_que_je_cherche']~
+
+** CAST
+
+Changer le type:
+
+#+begin_src sql
+select cast (value as new_type);
+-- on peut aussi utiliser dans postgresql ::
+select value::new_type;
+#+end_src
+
+changer le type peut arrondir les valeurs.

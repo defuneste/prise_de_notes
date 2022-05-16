@@ -79,6 +79,10 @@ LIKE accepte deux *wildcards* ~%~ qui indique 0, un ou plusieurs caractère et ~
 
 LIKE respecte les minuscules/majuscules.
 
+~[aei]~ sélectionne a ou e ou i
+
+Par exemple ~where name like '[oe]%'~ veut dire les noms qui commencent par o ou e
+
 *** ALL
 
 ALL compare une valeur à un ensemble de valeurs, en général cette ensemble est produit par une sous requête.
