@@ -1,0 +1,41 @@
+:PROPERTIES:
+:ID:       9ea08f98-a26c-4163-ac56-6fcb12f81f94
+:END:
+#+title: DDL
+
+DDL pour data description languqge ou data definition
+
+** Data structures
+
+Il y a de nombreuses structure de données en SQL:
+- tables
+- indexes
+- views
+- schemas
+
+Exemple de création de table:
+
+#+begin_src sql
+ create  table nom_de_la_table (
+        id integer,
+        last_name text,
+        une_date date,
+        primary key (id)
+            )
+ -- on peut utiliser varchar si on veut fixer le nbre de char
+#+end_src
+
+Puis en général on va créer un index:
+
+#+begin_src sql
+create index idx_ma_table_une_col
+        on ma_table
+        using (une_col);
+#+end_src
+
+
+
+
+** [[id:c75a51da-a6cc-4ec2-b7f5-2dbfb72b9982][Data_type_postgresql]]
+
+On va définir différent type de données

@@ -2,6 +2,7 @@
 :ID:       5e71f432-f392-4a83-8636-eacf55ceee43
 :END:
 #+title: fonctions_text_sql
+
 Il existe des fonctions pour :
 
 - reformater des chaines de caractères
@@ -12,6 +13,13 @@ Il existe des fonctions pour :
 
 - les couper ou fusionner
 
+** Tas de fonctions utiles pour reformater du texte
+
+~upper(ma_colonne)~ tout est capitalisé
+~initcap(ma_colonne)~ juste la première colonne est en majuscule
+~lower(ma_colonne)~ mets tout en miniscule
+
+cf. plus bas ltrim pour enlever un WS en debut
 
 ** Concatenation
 
@@ -27,12 +35,14 @@ FROM customer;
 SELECT
             CONCAT(prénom, ' ', nom ) as nom_complet
 FROM customer;
+            --- concat() peut aussi ingérer un NULL et retourner un blanc alors que || renvera NULL
 #+end_src
 
 
-Rq: on peut utiliser des nom de colonnes mais aussi des constantes.
+Rq: on peut utiliser des nom de colo oTnnes mais aussi des constantes.
 
-Il existe aussi les fonctions classiques UPPER et LOWER. INITCAP mets juste le premier caractère en majuscules.
+
+~concat_ws('_ ', une, liste, de, colones)~ : ici on concatène avec With Separator
 
 ** Parsing
 
@@ -82,6 +92,7 @@ WHERE to_tsvector(title) @@ to_tsquery('elf');
 tsvector est une liste des mots (+ exactement des lexemes).
 
 *** Stemming
+
 *** Spelling mistakes
 
 *** Ranking

@@ -54,6 +54,14 @@ Dans ce cas là on peut utiliser WITH pour générer les bornes de bins.
 
 
 
+*** Percentiles
+
+#+begin_src sql
+select percentile_disc(percentile)
+        within group (order by column_name)
+        from table;
+
+#+end_src
 
 ** Données de date et temporelle
 

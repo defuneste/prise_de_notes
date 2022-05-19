@@ -1,0 +1,31 @@
+:PROPERTIES:
+:ID:       b20eee19-6447-41aa-b9b6-ebe9ed470e6b
+:END:
+#+title: DML
+
+Data manipulation language
+
+#+begin_src sql
+insert into une_table
+                (col1, col2, col3)
+values
+         (val1, val2, val3)   ;
+#+end_src
+
+
+On peut aussi utiliser update pour modifier des valeurs:
+
+#+begin_src sql
+update table
+set une_colonne = "une valeur"
+where une_colonne = qqchose;
+#+end_src
+
+
+On peut aussi utiliser delete
+
+#+begin_src sql
+delete from une_table
+where colonne = qqchose;
+-- sans where on delete tout la table
+#+end_src

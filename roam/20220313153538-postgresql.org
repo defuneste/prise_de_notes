@@ -60,3 +60,17 @@ Il faut utiliser CREATE FUNCTION et specifier le langage utilisé.
 - Not null : obv.
 
 - Check constraints: une condition en fonction des valeurs, ex column < 0, columnA > columnB
+
+* Table temporaire
+
+#+begin_src sql
+create temp table new_tablename as
+select col1, col2
+from table;
+-- autre option avec select into
+select col1, col2
+   -- on redirige
+   into temp table new_table
+   -- la table source
+   from table;
+#+end_src
