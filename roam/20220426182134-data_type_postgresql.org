@@ -53,7 +53,6 @@ On peut avoir besoin de génerer des nombres (pe pour dans un group by pour "bin
 Dans ce cas là on peut utiliser WITH pour générer les bornes de bins.
 
 
-
 *** Percentiles
 
 #+begin_src sql
@@ -105,7 +104,10 @@ SELECT EXTRACT(quarter FROM timestamp '2022-04-27 16:46:00') as quarter;
 SELECT DATE_PART('quarter', timestamp '2022-04-27 16:46:00' ) as quarter;
 
 SELECT DATE_TRUNC('year', timestamp '2022-04-27 16:55:00');
+--time fields: conseil lire la doc exemple : year, month, day ou encore dow ie day of week
 
+select toc_char(une_date_time, 'day') as day;
+-- retourne en char le jour de la semaine
 #+end_src
 
 DATE_TRUNC commence par indiqué la précision : ~date_trunc(field, source [, time_zone ])~ avec un field pouvant aller de la `microseconds` à `millénium`.

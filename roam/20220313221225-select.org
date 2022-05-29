@@ -54,6 +54,13 @@ WHERE est utilisé pour filtrer des lignes. Cf. un peu plus haut avec ~WHERE sal
 
 ~<~ ici utilisé est un[[id:5622cd55-8baa-4095-9962-fbd311bc7a4f][ Opérateurs SQL]].
 
+*** LIKE et ILIKE
+
+ILIKE n'est pas sensible aus majuscules
+
+Il y a des wildcards de possibles ~%~ et ~_~
+
+
 ** GROUP BY
 
 *** HAVING

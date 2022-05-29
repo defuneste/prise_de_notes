@@ -46,7 +46,7 @@ Rq: on peut utiliser des nom de colo oTnnes mais aussi des constantes.
 
 ** Parsing
 
-LEFT(data, 50) -> extrait les 50 premier caractères. Il existe aussi RIGHT.
+~LEFT(data, 50)~ -> extrait les 50 premier caractères. Il existe aussi RIGHT.
 
 SUBSTRING(data, 10, 50) -> on commence à 10 et on prends les 50 premiers.
 
@@ -60,6 +60,16 @@ SELECT
             substring(email from POSITION('@' in email) + 1 FOR CHAR_LENGTH(email))
 FROM customer;
 #+end_src
+
+
+** Splitting
+
+Séparer du texte par un delimiteur
+
+~select split_part(string, delimiter, part);~
+
+~part~ est ce que l'on souhaite garder
+
 
 ** Trimming
 
@@ -96,3 +106,20 @@ tsvector est une liste des mots (+ exactement des lexemes).
 *** Spelling mistakes
 
 *** Ranking
+
+* Enchainer les transformations
+
+Si il y beaucoup de nettoyage à faire, c'est utile de faire:
+
+1. une table temporaire (CREATE TEMP TABLE) avec la valeurs raw et la transformé
+
+2. puis on utilise:
+
+#+begin_src sql
+update nom_table
+    set nom_col = nouvelle_valeur
+where condition;
+#+end_src
+
+
+3. Enfin on peut rejoindre à la table d'origine.
