@@ -1,0 +1,29 @@
+:PROPERTIES:
+:ID:       d66ae146-8987-4988-944d-b4af13b5c7f7
+:END:
+#+title: variables_bash
+
+On utilise ~$~ pour déclarer une variable dans bash:
+
+#+begin_src bash
+
+bob='il est cool'
+
+echo $bob
+
+#+end_src
+
+#+RESULTS:
+: il est cool
+
+** quotes
+
+single quotes: ce qui est dedans est interprété totalement (ainsi $ est un caractère)
+
+doubles quotes ce qui est dedans est interprété à l'exception de $ et des ``
+
+`` ouvre un shell à l'intérieur d'un shell (utile pour appeller un shell dans un text comme avec date). Il est aussi possible d'utiliser ~$()~ .
+
+** argument
+
+On peux utiliser $1, $2 pour passer les arguments (ici premier et second argument).

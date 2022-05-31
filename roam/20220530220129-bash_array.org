@@ -1,0 +1,44 @@
+:PROPERTIES:
+:ID:       1eebcdd2-094a-41c1-8303-e4653f72bc89
+:END:
+#+title: bash_array
+
+
+Dans R on considérait que ce sont des vecteurs:
+
+** Ils peuvent être numérique:
+
+~un_array=(1 2 3)~ pas de virgule et attention aux espaces
+
+~array[@]~ permet de renvoyer tout les éléments
+
+~#array[@]~ renvoie la longueur de ce dernier
+
+Bash utilise un index commençant par 0.
+
+On peut /slicer/ un array de x à x+y comme ceci: ~array[@]:x:y~
+
+On peut ajouter (/append/) à un array comme ceci: ~array+=(z)~
+
+** Ils peuvent être associatif:
+
+C'est proche d'un dictionnaire avec python ou une list avec R.
+
+Il faut le déclarer: ~declare -A son_nom~
+
+#+begin_src bash
+declare -A un_nom
+
+un_nom=([prenom]="bob" [nom]="Bill")
+
+echo ${un_nom[prenom]}
+
+# ! renvoie toute les clefs
+
+echo ${!un_nom[@]}
+
+#+end_src
+
+#+RESULTS:
+| bob |        |
+| nom | prenom |

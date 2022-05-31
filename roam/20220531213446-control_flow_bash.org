@@ -1,0 +1,125 @@
+:PROPERTIES:
+:ID:       74e58887-4021-48c5-8ac2-027bba9a7d56
+:END:
+#+title: control_flow_bash
+
+
+** IF
+
+#+begin_src bash
+IF [ condition ]; then
+# un Truc
+else
+# un autre truc
+fi
+#+end_src
+
+Ne pas oublier les WS après et avant [].
+
+Pour de l'arithmétique on doit utiliser ~((x <5))~ ou sinon on peut utiliser la syntaxe avec ~[]~ mais avec des flag de type:
+
+- ~-eq~ pour égale
+- ~-ne~ pour !égale
+- ~-lt~ pour less than
+- ~-le~ pour less than or equal to
+- ~-gt~ pour greater than
+- ~-ge~ pour greater than or equal To
+
+Il existe aussi d'autre flag pratiques:
+
+- ~-e~ est ce que le file existe
+- ~-s~ est ce que le file existe et est de taille 0
+
+~&&~  -> And
+~||~ -> or
+
+** FOR
+
+#+begin_src bash
+for x in 1 2 3
+do
+    echo $x
+done
+#+end_src
+
+#+RESULTS:
+| 1 |
+| 2 |
+| 3 |
+
+On peut utiliser 'brace expansion':
+
+~{start..stop..increment}~
+
+#+begin_src bash
+for x in {1..5..2}
+do
+    echo $x
+done
+#+end_src
+
+#+RESULTS:
+| 1 |
+| 3 |
+| 5 |
+
+On peut aussi utiliser la 'three expressions':
+
+#+begin_src bash
+for ((x=2;x<=4;x+=2))
+do
+    echo $x
+done
+#+end_src
+
+#+RESULTS:
+| 2 |
+| 4 |
+
+On peut utiliser les Glob expansions (le plus utile) :
+
+#+begin_src bash
+for x in ~/Documents/livres/*
+do
+    echo $x
+done
+#je retourne pas car il y en a
+#+end_src
+
+On peut aussi utiliser un shell dans un shell pour complexifier:
+
+#+begin_src bash
+for x in $(ls ~/Documents/livres/ | grep -i 'Book')
+do
+    echo $x
+done
+#+end_src
+
+#+RESULTS:
+| 1993_Book_Probability.pdf                    |
+| 2009_Book_TheElementsOfStatisticalLearni.pdf |
+| 2014_Book_BayesianEssentialsWithR.pdf        |
+| 2016_Book_IntroductionToTimeSeriesAndFor.pdf |
+| 2017_Book_DesignAndAnalysisOfExperiments.pdf |
+| 2017_Book_LaTeXIn24Hours.pdf                 |
+| 2017_Book_LearningLandscapeEcology.pdf       |
+| 2018_Book_ResearchMethodsForTheDigitalHu.pdf |
+| deeplearningcookbook.pdf                     |
+
+** WHILE
+
+Attention de bien changer une condition dans la boucle sinon elle tourne toujours autant.
+
+#+begin_src bash
+x=1
+while [ $x -le 3 ];
+do
+    echo $x
+    ((x+=1))
+done
+#+end_src
+
+#+RESULTS:
+| 1 |
+| 2 |
+| 3 |
