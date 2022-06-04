@@ -1,0 +1,76 @@
+:PROPERTIES:
+:ID:       a1f67fe2-36ce-44aa-b027-14256be6022f
+:END:
+#+title: pandas_py
+
+Manipulation de données tabulaires.
+
+On peut créer un dictionnaire (1) puis l'importer avec pendant.
+
+Il y a un peu de taffs en préambule du coté d'org https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-python.html !
+
+#+name: pd2org
+#+begin_src python :var df="df" :exports none
+return f"return tabulate({df}, headers={df}.columns, tablefmt='orgtbl')"
+#+end_src
+
+#+RESULTS: pd2org
+: return tabulate(df, headers=df.columns, tablefmt='orgtbl')
+
+* Intro
+
+** Avec un dictionnaire
+#+header: :prologue from tabulate import tabulate
+#+header: :noweb strip-export
+#+begin_src python
+import pandas as pd
+df = pd.DataFrame({
+    "a": [1,2,3],
+    "b": [4,5,6]
+})
+df.index = ["bill", "bob", "jim"]
+
+<<pd2org("df")>>
+
+#+end_src
+
+#+RESULTS:
+: |      |   a |   b |
+: |------+-----+-----|
+: | bill |   1 |   4 |
+: | bob  |   2 |   5 |
+: | jim  |   3 |   6 |
+
+
+On passe un dictionnaire dans la fonction ~DataFrame()~.
+
+Il est aussi possible de /set/ l'indice des lignes avec la methode ~index~
+
+** via un CSV
+
+Il y a la fonction ~read_csv("path", index_col = 0)~
+
+L'argument index_col est utilisé ici pour indiquer que la première ligne contient le header.
+
+* Selecting/slicing
+
+~DF["ma_colonne"]~ va renvoyer un /pandas series/ objet.
+
+~DF[\["ma_colonne"]]~ va renvoyer un DataFrame (le \ est en trop)
+
+On Peut indiquer plusieurs nom de colonne.
+
+~DF[1:4]~ les lignes de 1 à 4 (sans prendre la première)
+
+Si on veut avoir un truc similaire à R il faut utiliser:
+
+- ~loc~ label based: les lables de chaques lignes (d'ou l'interet de la méthode index pour les nomer).
+
+  ~DF.loc["index_ligne"]~ -> renvoie une serie pandas
+  ~DF.loc[\["index_ligne"]]~ -> renvoie un DF
+
+~DF.loc[["index1_l", "index2_l"], ["col1", "col2"]]~ permet de selectionner deux lignes et deux colonnes. On peut bien panacher ~DF.loc[:,["col2", "col3"]~
+
+- ~iloc~ localisation basé sur un entier
+
+  ~DF.iloc[[1,2,3],[0,1]]~

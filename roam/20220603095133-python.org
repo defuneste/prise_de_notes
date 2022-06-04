@@ -7,25 +7,31 @@ C'est mon pot pourri pour Python
 
 * Structure de données
 
+La fonction ~type~ renvoie le type de l'objet
+
 ** List
 
 #+begin_src python
 dude = ['bill', 'bob']
 taille_m = [1.70, 1.85]
 
-return dude[0]
-
 ind_bob = dude.index('bob')
+# index est une méthode qui renvoie l'index d'un objet
 
-return dude[ind_bob]
+return taille_m[ind_bob]
 
 #+end_src
 
 #+RESULTS:
-: bill
+: 1.85
 
+Python commence à indexer à 0
+
+Une trick pas mal pour retourner la dernière valeur: ~[-1]~
 
 ** Dictionaries
+
+C'est un système de key:value mais il ne peut pas y avoir plus d'un type de clef. Cela ne fait pas sens que bill est plusieurs taille. Les keys sont "immutables" à la différence des listes mais on peut changer des valeurs.
 
 #+begin_src python
 taille = {"bill":1.70, "bob":1.85}
@@ -37,10 +43,32 @@ return taille["bill"]
 #+RESULTS:
 : 1.7
 
+La *méthode* ~keys()~ renvoie les clés ie ~taille.keys()~
+
+On peut ajouter des clefs: ~taille['jim'] = 1.54~
+
+On peut supprimer une paire avec ~del(dico["key"])~
+
+A la différence d'une liste un dico est indexé par des clefs.
+
+Il est aussi possible de faire des dictionnaires de dictionnaire:
+
+#+begin_src python
+taille = {'bill': {'taille':1.70, 'poids':75},
+          'bob': {'taille':1.85, 'poids':90 }}
+
+return taille['bill']['poids']
+#+end_src
+
+#+RESULTS:
+: 75
+
 * [[id:8c4cd16e-6661-432d-a681-7dfbd5bcc62a][NumPy]]
 
-Numpy est une librairie de Python fournissant un vecteur/matrice de n dimension et des methodes/fonctions pour les créer et les manipuler.
+Numpy est une librairie de Python fournissant un vecteur/matrice de n dimension et des méthodes/fonctions pour les créer et les manipuler.
 
 * [[id:658786e3-79f5-472e-bcb4-4ce767d830da][Matplotlib]]
 
 Une des bibliothèques de plot.
+
+* [[id:a1f67fe2-36ce-44aa-b027-14256be6022f][Pandas]]
