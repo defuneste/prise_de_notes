@@ -5,6 +5,29 @@
 
 C'est mon pot pourri pour Python
 
+* Opérateur de comparaisons
+
+Comment deux valeurs se comparent et renvoie un booleens
+
+Python permet aussi des comparaison de strings, par contre ce n'est pas possible de comparer deux objet de nature différente.
+
+~"bill" < "bob"~ renvoie TRUE
+
+*** and
+
+return True si les deux sont True sinon False
+
+
+*** or
+
+seulement False or False renvoie False les autres combinaisons renvoient True
+
+*** not
+
+retourne l'opposé
+
+Il y a des fonctions particulière pour travailler sur [[id:8c4cd16e-6661-432d-a681-7dfbd5bcc62a][numpy]]
+
 * Structure de données
 
 La fonction ~type~ renvoie le type de l'objet

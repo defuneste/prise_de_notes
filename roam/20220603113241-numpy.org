@@ -4,3 +4,12 @@
 #+title: numpy
 
 Prise de note de numpy
+
+Numpy tranforme des list en des np.narray().
+
+** Les operateurs de comparaisons
+
+les arrays de numpy doivent utiliser des fonctions particulière pour retourner une list de booléens dans le cas d'and, or ou not:
+- logical_and()
+- logical_or()
+- logical_not()
