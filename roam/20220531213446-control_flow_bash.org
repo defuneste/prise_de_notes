@@ -106,6 +106,25 @@ done
 | 2018_Book_ResearchMethodsForTheDigitalHu.pdf |
 | deeplearningcookbook.pdf                     |
 
+** CASE
+
+Utile pour eviter les if else if etc
+
+#+begin_src bash
+
+case 'STRINGVAR' in
+    pattern1)
+    command1;;
+    pattern2)
+    command2;;
+    *)
+    default command;;
+    esac
+
+#+end_src
+
+esac est case à l'envers.
+
 ** WHILE
 
 Attention de bien changer une condition dans la boucle sinon elle tourne toujours autant.

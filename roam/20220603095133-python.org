@@ -1,0 +1,46 @@
+:PROPERTIES:
+:ID:       dcc375e2-2f99-4940-a6b2-3cca1e5e2f30
+:END:
+#+title: python
+
+C'est mon pot pourri pour Python
+
+* Structure de données
+
+** List
+
+#+begin_src python
+dude = ['bill', 'bob']
+taille_m = [1.70, 1.85]
+
+return dude[0]
+
+ind_bob = dude.index('bob')
+
+return dude[ind_bob]
+
+#+end_src
+
+#+RESULTS:
+: bill
+
+
+** Dictionaries
+
+#+begin_src python
+taille = {"bill":1.70, "bob":1.85}
+
+return taille["bill"]
+
+#+end_src
+
+#+RESULTS:
+: 1.7
+
+* [[id:8c4cd16e-6661-432d-a681-7dfbd5bcc62a][NumPy]]
+
+Numpy est une librairie de Python fournissant un vecteur/matrice de n dimension et des methodes/fonctions pour les créer et les manipuler.
+
+* [[id:658786e3-79f5-472e-bcb4-4ce767d830da][Matplotlib]]
+
+Une des bibliothèques de plot.

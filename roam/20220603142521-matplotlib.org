@@ -1,0 +1,54 @@
+:PROPERTIES:
+:ID:       658786e3-79f5-472e-bcb4-4ce767d830da
+:END:
+#+title: matplotlib
+
+Matplotlib est une des bibliothèques de visualisation des données.
+
+** un Premier exemple
+
+#+begin_src python
+import matplotlib.pyplot as plt
+year = [1950, 1970, 1990, 2010]
+pop = [2.519, 3.692, 5.263, 6.972]
+plt.plot(year, pop)
+# plt.scatter(year, pop) # fait la meme mais ne relie pas la ligne
+plt.show() # on fait un objet et on ajoute des trucs, puis on plot
+#+end_src
+
+#+RESULTS:
+
+Ajout pour modifier le plot:
+
+~plt.xscale('log')~  : mettre l'axe x en Logan
+
+~plt.clf()~ va retirer le plot en cours de construction
+
+~plt.xlabel('Year')~
+
+~plt.ylabel('Population')~
+
+~plt.title('mon titre')~
+
+Changer l'echelle et le point de départ de y:
+
+~plt.yticks([0, 2, 6, 8, 10, 12],            ['0', '2B', '4B', '6B', '8B', '10B'])~
+
+Le premier vecteur donne les ticks des axes et le second les renome
+. Ils doivent être de la même longueur.
+
+~plt.text(x, y, 'text')~ permet d'ajouter du texte
+
+~plt.grid(True)~ ajout de grid
+
+*** histogram
+
+~plt.hist(values, bins=3)~
+
+*** scatter plot
+
+~s~ est l'argument pour la taille des points
+
+~c~ est pour la couleur
+
+~alpha~ est pour la transparence

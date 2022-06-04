@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       8c4cd16e-6661-432d-a681-7dfbd5bcc62a
+:END:
+#+title: numpy
+
+Prise de note de numpy

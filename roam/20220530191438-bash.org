@@ -9,7 +9,6 @@ Pot pourri de truc que j'oublie avec bash
 
 -[[id:d66ae146-8987-4988-944d-b4af13b5c7f7][ les variables dans bash]]
 
-
 - [[id:1eebcdd2-094a-41c1-8303-e4653f72bc89][bash_array]]
 
 - [[id:74e58887-4021-48c5-8ac2-027bba9a7d56][control flow bash]]
