@@ -15,18 +15,83 @@ Python permet aussi des comparaison de strings, par contre ce n'est pas possible
 
 *** and
 
-return True si les deux sont True sinon False
+Renvoie True si les deux sont True sinon False
 
 
 *** or
 
-seulement False or False renvoie False les autres combinaisons renvoient True
+Seulement False or False renvoie False les autres combinaisons renvoient True
 
 *** not
 
-retourne l'opposé
+Retourne l'opposé
 
 Il y a des fonctions particulière pour travailler sur [[id:8c4cd16e-6661-432d-a681-7dfbd5bcc62a][numpy]]
+
+* Instructions conditionnelles
+
+** If
+
+La syntaxe de base:
+
+#+begin_src python
+
+if condition :
+    expression1
+    expression2
+# il faut noter les quatres WS avant expression
+# dans ce cas si la condition est False expresion1 et 2 ne sont pas lancé pour y remedier on peut ajouter else
+#+end_src
+
+Dans ce cas si la condition est False expresion1 et 2 ne sont pas lancées pour y remédier on peut ajouter else
+
+** Else
+
+#+begin_src python
+if condition :
+    expresionA
+else :
+    expressionB
+#+end_src
+
+
+** elif
+
+#+begin_src python
+if condition :
+    expresion
+elif condition :
+    expresion
+else :
+    expresion
+#+end_src
+
+* loops
+
+*** WHILE
+
+#+begin_src python
+while condition :
+    expression
+    # penser à updater un truc pour la condition
+#+end_src
+
+
+*** FOR
+
+#+begin_src python
+for var in seq :
+    expresion
+#+end_src
+
+Il y a une fonction ~enumerate~ qui est bien pratique.
+
+#+begin_src python
+for index, var in enumerate(seq) :
+    print("index" + str(index) + ": " + str(un_extrait_de_seq))
+#+end_src
+
+On peut aussi looper sur une chaîne de caractères.
 
 * Structure de données
 
@@ -52,7 +117,7 @@ Python commence à indexer à 0
 
 Une trick pas mal pour retourner la dernière valeur: ~[-1]~
 
-** Dictionaries
+** Dictionaires
 
 C'est un système de key:value mais il ne peut pas y avoir plus d'un type de clef. Cela ne fait pas sens que bill est plusieurs taille. Les keys sont "immutables" à la différence des listes mais on peut changer des valeurs.
 

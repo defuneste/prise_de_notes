@@ -74,3 +74,15 @@ Si on veut avoir un truc similaire à R il faut utiliser:
 - ~iloc~ localisation basé sur un entier
 
   ~DF.iloc[[1,2,3],[0,1]]~
+
+* Filtres
+
+On peut vouloir sélectionner à l'aide de filtre comme: ~colonne > un_nombre~
+
+
+comme pandas est construit sur [[numpy]] on peut utiliser les mêmes fonctions:
+
+#+begin_src python
+DF[np.logical_and(x == 'bill', y < 1.80)]
+DF[np.logical_or(x == 'bob', y == 'bill')]
+#+end_src
