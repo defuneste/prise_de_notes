@@ -168,6 +168,38 @@ return taille['bill']['poids']
 
 #+RESULTS:
 : 75
+** Tuples
+
+Comme une liste mais est /Immutable/
+
+#+begin_src python :results output
+tuple = (1, 2, 3) # à la difference de list utilise () au lieu de [ ]
+
+print(type(tuple))
+#+end_src
+
+#+RESULTS:
+: <class 'tuple'>
+
+* Fonctions
+*** un exemple simples
+
+#+begin_src python :results output
+def square(value) : # <- entête de la fonction
+    new_value = value ** 2 # corps de la fonction
+    print(new_value)
+    # return new_value si on veut sauver le res de la f()
+
+square(2)
+#+end_src
+
+#+RESULTS:
+: 4
+
+*** Docstrings
+
+Permet de documenter la fonction. C'est une petite documentation placée après l'entête et c'est du text encapsuler dans 3 "".
+
 
 * [[id:8c4cd16e-6661-432d-a681-7dfbd5bcc62a][NumPy]]
 
