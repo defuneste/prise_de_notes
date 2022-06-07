@@ -93,6 +93,24 @@ for index, var in enumerate(seq) :
 
 On peut aussi looper sur une chaîne de caractères.
 
+Ces deux cas sont simples (ce sont des vecteurs) mais cela se complique quand on passe sur des dictionnaires.
+
+On peut utiliser la methode ~items()~ pour retourner la clef et sa valeur:
+
+#+begin_src python :results output
+taille = {"bill":1.70, "bob":1.85}
+
+for clef, valeur in taille.items() :
+     print(clef + " -- " + str(valeur))
+
+#+end_src
+
+#+RESULTS:
+: bill -- 1.7
+: bob -- 1.85
+
+Il y a besoin d'une méthode en plus pour les ~nparray~ cf. [[id:8c4cd16e-6661-432d-a681-7dfbd5bcc62a][numpy]]. Il en va de même pour les Dataframe de [[pandas]].
+
 * Structure de données
 
 La fonction ~type~ renvoie le type de l'objet

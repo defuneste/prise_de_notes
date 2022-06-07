@@ -13,3 +13,22 @@ les arrays de numpy doivent utiliser des fonctions particulière pour retourner 
 - logical_and()
 - logical_or()
 - logical_not()
+
+** Loops
+
+La fonction ~nditer()~ va faire une itération sur tout les éléments de la liste.
+
+#+begin_src python :results output
+import numpy as np
+H = np.array([1.7, 1.85])
+P = np.array([75 , 90])
+dude = np.array([H, P])
+for val in np.nditer(dude) :
+    print(val)
+#+end_src
+
+#+RESULTS:
+: 1.7
+: 1.85
+: 75.0
+: 90.0
