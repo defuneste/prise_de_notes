@@ -68,6 +68,43 @@ else :
 
 * loops
 
+On peut faire des itérations sur tout les objets itérables. Tous ces objets on une méthode ~iter()~ associée et on va appliquer iter() pour créer un itérateur (nouvel object).
+
+#+begin_src python :results output
+mot = 'bou'
+it =iter(mot)
+print(next(it))
+print(next(it))
+print(next(it))
+mot2 = 'tib'
+it = iter(mot2)
+print(*it)
+# après * on a plus d'objet à itérer
+#+end_src
+
+#+RESULTS:
+: b
+: o
+: t i b
+
+Il est aussi possible d'itérer sur un dictionnaire mais il faut sortir clef valeur, cf plus bas avec items.
+
+On peut aussi faire des itération sur un fichier:
+
+#+begin_src python :results output
+file = open('data/example.file.txt')
+it = iter(file)
+print(next(it))
+print(next(it))
+#+end_src
+
+#+RESULTS:
+: le bou est rond
+:
+: rond comme un balon
+:
+
+
 *** WHILE
 
 #+begin_src python
@@ -84,7 +121,7 @@ for var in seq :
     expresion
 #+end_src
 
-Il y a une fonction ~enumerate~ qui est bien pratique.
+Il y a une fonction ~enumerate~ qui est bien pratique. Elle prend un objet iterable et retourne un objet de classe 'enumerate'. Il faut donc le convertir en une list.
 
 #+begin_src python
 for index, var in enumerate(seq) :
@@ -93,9 +130,7 @@ for index, var in enumerate(seq) :
 
 On peut aussi looper sur une chaîne de caractères.
 
-Ces deux cas sont simples (ce sont des vecteurs) mais cela se complique quand on passe sur des dictionnaires.
-
-On peut utiliser la methode ~items()~ pour retourner la clef et sa valeur:
+Ces deux cas sont simples (ce sont des vecteurs) mais cela se complique quand on passe sur des dictionnaires. On doit alors utiliser la méthode ~items()~ pour retourner la clef et sa valeur:
 
 #+begin_src python :results output
 taille = {"bill":1.70, "bob":1.85}
@@ -110,6 +145,8 @@ for clef, valeur in taille.items() :
 : bob -- 1.85
 
 Il y a besoin d'une méthode en plus pour les ~nparray~ cf. [[id:8c4cd16e-6661-432d-a681-7dfbd5bcc62a][numpy]]. Il en va de même pour les Dataframe de [[pandas]].
+
+Si on prend deux objets itérables de même taille on peut les *zipper* ensemble ce qui va retourner un objet de class zip: un itérateur de tuples. On peut ensuite utiliser list pour le convertir ou encore faire une loop for avec les deux éléments du tuple.
 
 * Structure de données
 
@@ -190,11 +227,11 @@ def square(value) : # <- entête de la fonction
     print(new_value)
     # return new_value si on veut sauver le res de la f()
 
-square(2)
+square(3)
 #+end_src
 
 #+RESULTS:
-: 4
+: 9
 
 *** Docstrings
 
@@ -231,6 +268,46 @@ print(mod2plus5(1 , 2 , 3))
 ~*args~ : all the arguments are pass into a tuple
 
 ~**kwargs~ : arguments precedés par des clefs, les arguments (key/value) sont passés à un dictionnaire
+*** Lambda fonctions
+
+Cela ressemble aux fonctions anonyme dans R
+
+Elles sont utiles dans les fonctions comme map, filter ou reduce. Map et filter applique la fonction à tous les éléments et reduce ne retourne qu'un seul éléments.
+
+Python à un objet "map" qu'il faut passer en liste ensuite.
+
+#+begin_src python :result value
+add_bangs = (lambda a: a + '!!!')
+# si il y a plusieurs arg cela donne lambda a, b: a * b
+obj = add_bangs('hello')
+print(obj)
+#+end_src
+
+#+RESULTS:
+: None
+
+
+#+begin_src python
+shout_spells = map(lambda a: a + '!!!', spells)
+shout_spells_list = list(shout_spells)
+#+end_src
+
+*** Errors et exceptions
+
+Une erreur détecter durant une exécution est appelée une **exception**
+
+On lance la fonction avec un try-except:
+
+#+begin_src python
+def sqrt(x):
+    try:
+        return x ** 0.5
+    except:
+        print('x must be int of float')
+        # on peut specifier ce que l'on veut comme type d'erreur comme par exemple except TypeError:
+#+end_src
+
+On peut aussi vouloir utiliser ~raise ValueError()~, raise va juste écrire un warning.
 
 * [[id:8c4cd16e-6661-432d-a681-7dfbd5bcc62a][NumPy]]
 

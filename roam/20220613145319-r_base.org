@@ -1,0 +1,27 @@
+:PROPERTIES:
+:ID:       d71a50b6-ea84-4177-a603-1089c082e78a
+:END:
+#+title: R_base
+
+Besoin de l'organiser un peu plus tard!
+
+
+*** by() + do.call()
+
+C'est une variante de ~tapply()~ pour les dataframes. Il va retourner une list qu'il faudra reassembler avec par exemple ~do.call(mon_resultat, "rbind")~.
+
+#+begin_src R :results output :session *R* :exports both
+string_case <- read.csv("data/string_case")
+
+temporary  <- data.frame(do.call("rbind",by(string_case,
+                              INDICES = string_case$Region,FUN=function(x) x[which.max(x$Total_sales),],
+                              simplify=FALSE)))
+temporary[,c("Region", "Representative", "Total_sales")]
+
+#+end_src
+
+#+RESULTS:
+:          Region Representative Total_sales
+: Central Central          Jimmy        7800
+: East       East         Stuart        9000
+: West       West        Aishley        3000
