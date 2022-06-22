@@ -1,0 +1,49 @@
+:PROPERTIES:
+:ID:       2e7b9f24-ae68-4e5b-bdfb-d978fcf7d301
+:END:
+#+title: list_comprehension_python
+
+** Basic
+
+#+begin_src python :results output
+nums = [12, 8, 24, 3, 16]
+news_nums = [num + 1 for num in nums]
+print(news_nums)
+#+end_src
+
+#+RESULTS:
+: [13, 9, 25, 4, 17]
+
+
+On peut les utiliser sur n'importe qu'elle objet itérable.
+
+#+begin_src python :results output
+pairs_2 = [(num1, num2) for num1 in range(0,2) for num2 in range(6,8)]
+print(pairs_2)
+#+end_src
+
+#+RESULTS:
+: [(0, 6), (0, 7), (1, 6), (1, 7)]
+
+
+** Avancée
+
+On peut utiliser des conditions sur les objets itèrable:
+
+#+begin_src python :results output
+res = [num ** 2 for num in range(10) if num % 2 == 0]
+print(res)
+#+end_src
+
+#+RESULTS:
+: [0, 4, 16, 36, 64]
+
+On peut aussi conditionner sur l'expression en sortie:
+
+#+begin_src python :results output
+res = [num ** 2 if num % 2 == 0 else 0 for num in range(10)]
+print(res)
+#+end_src
+
+#+RESULTS:
+: [0, 0, 4, 0, 16, 0, 36, 0, 64, 0]

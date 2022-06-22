@@ -172,6 +172,12 @@ Python commence à indexer à 0
 
 Une trick pas mal pour retourner la dernière valeur: ~[-1]~
 
+Faire des opérations sur des list peut être fastidieux: il est possible des [[id:2e7b9f24-ae68-4e5b-bdfb-d978fcf7d301][list comprehension]].
+
+La compréhension en liste retourne une list mais on peut aussi utiliser un *generators* qui lui retourne un *generator object.*
+
+Pour produire un générateurs on remplace les ~[]~ par ~()~ dans la compréhension en liste. Les avantages est que l'on ne créait pas l'objet en entier mais juste l'élément suivant a chaque demande. On peut en faire des fonctions [[id:d3102237-3b34-4562-83d9-279d7a79ff3b][(generateur_functions).]]
+
 ** Dictionaires
 
 C'est un système de key:value mais il ne peut pas y avoir plus d'un type de clef. Cela ne fait pas sens que bill est plusieurs taille. Les keys sont "immutables" à la différence des listes mais on peut changer des valeurs.
@@ -205,6 +211,10 @@ return taille['bill']['poids']
 
 #+RESULTS:
 : 75
+
+
+Il existe des [[id:9c5b4aa4-79e3-4a7a-ba8c-7d1580d8890a][dictionnaire en compréhension]]
+
 ** Tuples
 
 Comme une liste mais est /Immutable/

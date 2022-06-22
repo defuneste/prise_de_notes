@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       d3102237-3b34-4562-83d9-279d7a79ff3b
+:END:
+#+title: generateur_functions
+Ce sont des fonctions produisant un objet génerateur
+
+#+begin_src python
+def num_seq(n):
+    i = 0
+    while i < n:
+        yeld i
+        i += 1
+
+#+end_src
+
+Au lieu d'utiliser return c'est ~yeld~ qui est utilisé.

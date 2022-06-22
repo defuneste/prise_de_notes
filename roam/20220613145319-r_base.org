@@ -25,3 +25,36 @@ temporary[,c("Region", "Representative", "Total_sales")]
 : Central Central          Jimmy        7800
 : East       East         Stuart        9000
 : West       West        Aishley        3000
+
+
+* Formules et modèles
+
+** fonctions de base pour interagir avec des sorties de modèles
+
+#+begin_src R :results output :session *R* :exports both
+un_model <- lm(speed ~ dist, data = cars)
+un_model
+#+end_src
+
+#+RESULTS:
+:
+: Call:
+: lm(formula = speed ~ dist, data = cars)
+:
+: Coefficients:
+: (Intercept)         dist
+:      8.2839       0.1656
+
+- ~coefficients(un_model)~ : renvoie un vecteur nommé avec les coefficient
+
+- ~fitted(un_model)~ : un raccourcie pour retourner l'equivalent de ~predict(un_model, data)~. Elle renvoie la prédiction du modèle pour les données.
+
+- ~residuals(un_model)~ : response value - les valeurs prédites
+
+ Le pacquet Broom a deux fonctions ~tidy~ et ~augment~ qui permettent de transformer les sorties de modèles en objet plus facile d'accès.
+
+  * ~tidy(un_nodel)~ : renvoie les coeffs dans un tible
+
+  * ~augment(un_model)~ : renvoie un tibble avec les observations, les valeurs estimées, les residuals et d'autres colonnes.
+
+Si on a besoin de transformer une variable on peut utiliser ~I()~ une fonction que l'on nomme "as is". Comme les opérateurs ont des utilisations spécifiques avec la syntaxe formule il faut utiliser I() pour indiquer que l'on souhaite ici utiliser leur forme traditionnelle pour effectuer une transformation..

@@ -3,10 +3,29 @@
 :END:
 #+title: Rsquared
 
-R², R carré, ou *variance explained* correspond, dans un contexte de modèle linaire gaussien à une très mauvaise mesure de qualité de prédiction d'un modèle.
+** R squared
+
+R², R carré, ou *variance explained* correspond, dans un contexte de modèle linaire gaussien est une très mauvaise mesure de qualité de prédiction d'un modèle.
 
 Il peut s'écrire ainsi :
 
-$$ R^2 = 1 - \frac{var(residuals)}{var(outcome)} $$
+$R^2 = 1 - \frac{Var(residuals)}{var(outcome)}$
 
 Ce n'est pas un bon estimateur de la qualité de la prédiction car plus on rajoute de paramètres meilleur il est (même si ses variables n'ont rien à voir avec l'outcome).
+
+On peut aussi l'ecrire comme ~cor(x,y) ^ 2~ dans le cas d'un modèle y = f(x)
+
+** Autre indicateur de fit du model
+
+Un autre indicateur est le /residual standard error/ et ou RMSE.
+
+Le premier est la racine carré de la somme des résidus au carré / dégrées de liberté:
+
+\begin{gather*}
+\sqrt{\frac{\sum(residus²)}{Degrée \quad de \quad liberté}}
+\end{gather*}
+
+
+Le dégrée de liberté étant le nombre d'échantillon moins le nombre de paramètres à estimer.
+
+Le second est la racine carré de la somme des résidus au carré / nombre d'echantillon.

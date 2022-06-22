@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       9c5b4aa4-79e3-4a7a-ba8c-7d1580d8890a
+:END:
+#+title:  dictionnaire_en_compréhension
+
+
+On utilise ~{}~ de ~[]~
+
+
+#+begin_src python :results output
+pos_neg = {num: -num for num in range(9)}
+print(pos_neg)
+#+end_src
+
+#+RESULTS:
+: {0: 0, 1: -1, 2: -2, 3: -3, 4: -4, 5: -5, 6: -6, 7: -7, 8: -8}
