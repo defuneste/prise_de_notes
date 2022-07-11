@@ -1,0 +1,22 @@
+:PROPERTIES:
+:ID:       eb25bf36-4011-4493-ad1f-0854e6032030
+:END:
+#+title: matrice_de_confusion
+
+Une matrice de confusion est utile pour comprendre les erreurs de sortie des modèles utilisant des categories.
+
+
+|           | Prédiction postive | Prédiction négative |
+| Postivive | vrai positif (VP)  | faux négatif  (FN)  |
+| Négatif   | faux postifif (FP) | vrai négatif  (VN)   |
+
+
+$accuracy = \frac{VP + FP}{VP + FP + FN + VN}$
+
+La sensitivité est le nombre de vrai postifif sur le total de postifif
+
+$Sensitivy = \frac{VP}{FN + TP}$
+
+La specificité est le nombre de faux postitif sur le total de faux
+
+$specifity = \frac{FP}{VN + FP}$

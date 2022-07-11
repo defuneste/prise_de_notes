@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       f13d6bea-0056-48dd-bccd-d47bb3ab943b
+:END:
+#+title: multiple_regression
+
+** Parallels slopes

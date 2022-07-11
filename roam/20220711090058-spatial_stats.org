@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       0d60872e-bc46-4077-bbad-9117b3ba604f
+:END:
+#+title: spatial_stats
+
+Il est important de différencier l'analyse spatiale des statistiques spatiales. Ce sont des domaines pouvant se superposer partiellement mais pas complètement.
+
+* Ressources
+
+- Bayesian Modeling of Spatio-Temporal Data with R Sujit K. Sahu

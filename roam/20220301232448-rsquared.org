@@ -15,7 +15,7 @@ Ce n'est pas un bon estimateur de la qualité de la prédiction car plus on rajo
 
 On peut aussi l'ecrire comme ~cor(x,y) ^ 2~ dans le cas d'un modèle y = f(x)
 
-** Autre indicateur de fit du model
+** Autre indicateur de fit de model
 
 Un autre indicateur est le /residual standard error/ et ou RMSE.
 
@@ -29,3 +29,9 @@ Le premier est la racine carré de la somme des résidus au carré / dégrées d
 Le dégrée de liberté étant le nombre d'échantillon moins le nombre de paramètres à estimer.
 
 Le second est la racine carré de la somme des résidus au carré / nombre d'echantillon.
+
+** adjusted.r.squared
+
+$adj.r.squared=1 - (1- r²) * \frac{nobs -1}{nobs - nvar -1}$
+
+C'est une forme de pénalisation du r.squared mais présente les mêmes défauts.
