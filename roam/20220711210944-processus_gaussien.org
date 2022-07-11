@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       91727453-9b80-4edf-81e3-4bb2a3e9008f
+:END:
+#+title: processus_gaussien

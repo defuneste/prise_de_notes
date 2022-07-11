@@ -1,10 +1,89 @@
 :PROPERTIES:
 :ID:       0d60872e-bc46-4077-bbad-9117b3ba604f
 :END:
-#+title: spatial_stats
+#+title: Statistiques spatiales
+
+* Présentation:
 
 Il est important de différencier l'analyse spatiale des statistiques spatiales. Ce sont des domaines pouvant se superposer partiellement mais pas complètement.
+
+Il y a trois types de données:
+
+ - Les données référencées sur des points
+ - Les données référencées sur des surfaces
+ - Les patrons de points
+
+*L'objectif est toujours de faire une inférence sur des processus générant des données*
+
+Dans le cas de processus spatiaux temporels, le plus souvent, on choisit une des deux dimensions et on fait une agrégation sur l'autre. Cependant si on fait des agrégations annuelles on ne peut plus faire des inférences au niveau du mois.
+
+Il faut choisir une résolution où le lien entre les variables se met en place.
+
+** Conventions d'ecriture
+
+$t$ est un point observé dans le temps $T$ sur un interval $\mathbb{R}$.
+
+$s$ est un point localisé dans une région $\mathbb{D}$.
+
+On a donc une observation $y(s, t)$ de la variable $Y(s, t)$.
+
+On peut avoir des covariables de type $x(s, t)$.
+
+** Définitions
+
+#+BEGIN_QUOTE
+A stochastic process is an uncountably infinite collection of random variables in a continuous domain such as space and time or both
+#+END_QUOTE
+
+Un processus stochastique ne peut pas être stationnaire ou il n'est plus stochastique. On parle donc de différent type de stationnarité:
+
+- /mean stationarity/ : la moyenne est constante sur tout le domaine $\mathbb{D}$ dans ce cas $\mu(s) = E(Y(s))$
+
+- /covariance stationary/:  pour $s - s' = h$ :
+
+$$cov(Y(s), Y(s')) = C(h)$$
+
+$C$ est une fonction des différences $h$, $C(h)$ est la fonction de covariance du processus stochastique.
+
+
+- /variance stationary/: $\sigma^2$ est constant sur $\mathbb{D}$. Un processus stochastique avec une moyenne et une variance stationnaire est dit /weakly stationary/ ou /second order stationary/
+
+- En opposition un /strickly (strong) stationary/ correspond au cas où un shift de $h$ ne change pas la distribution de la variable aléatoire.
+
+  ${Y(s_1), Y(s_2), ...,  Y(s_n)} = {Y(s_1 + h), Y(s_2 + h), ..., Y(s_n +h)}$
+
+Deux variables n'ont pas la même distribution même si elles partagent la même moyenne et même variance, sauf si elles sont toutes les deux gaussiennes. C'est ce que l'on appelle un [[id:91727453-9b80-4edf-81e3-4bb2a3e9008f][processus gaussien]] (GP)
+
+- /intrinsic stationary/ C'est la variance de la différence qui est fixe i.e: $Y(s + h) - Y(s)$
+
+  Celle ci permet de vérifier qu'il y a pas d'effet de la location de $s$
+
+*** Variogramme et covariogramme
+
+Un variogramme est $Var(Y(s+h) - Y(s))$
+
+Si la moyenne et la variance sont stationnaire :
+
+$$E(Y(s + h)) = E(Y(s))$$
+
+$$Var(Y(s + h)) = Var(Y(s)) = C(0)$$
+
+$C(0)$ est la variance spatiale
+
+Dans le cas de fonction aléatoire d'ordre 2 (second order stationary), on peut ecrire:
+
+$$Var(Y(s + h) - Y(s)) = 2(C(0) - C(h))$$
+
+et donc le semi-variogramme:
+
+$$\gamma(h) = C(0) - c(h)$$
+
+
+
+
+
 
 * Ressources
 
 - Bayesian Modeling of Spatio-Temporal Data with R Sujit K. Sahu
+- https://keen-swartz-3146c4.netlify.App
