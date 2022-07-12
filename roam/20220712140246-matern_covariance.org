@@ -5,3 +5,26 @@
 
 
 Il nous faut définir une fonction de covariance particulière afin d'écrire la fonction de 'likelihood' nous permettant d'estimer de paramètres. C'est le rôle de la famille de fonctions de Matèrn.
+
+La covariance est simplement la variance si elle ne varie pas dans l'espace elle peut donc être noté $\sigma^{2}$.
+
+$$C(d) = \sigma^{2} p(d), \quad d > 0$$
+
+$p(d)$ est la fonction de corrélation. Quand $d = 0$ la covariance est la même que la variance et donc $C(d) = \sigma^{2}$. Le but est donc que $p(d) \rightarrow 1$ alors $d \rightarrow 0$. La fonction de corrélation doit décroître à mesure que la distance augmente.
+
+#+BEGIN_QUOTE
+Everything is related to everything else, but near things are more related than distant things (Tobler 1970)
+#+END_QUOTE
+
+Il faut cependant faire attention à ne pas obtenir de variance négative.
+
+La valeur de $d$, posons $d_{}_{0}$ qui permet de résoudre $p(d) = 0$ est appelé la porté (/range/). La fonction de corrélation est monotone et ne peut donc pas remonter une fois le 0 atteins. Dans certains cas il n'est pas possible d'atteindre le 0 on va donc par convention à 0.05 que l'on nome portée effective (/effective range/).
+
+
+Cette famille de fonction est définie ainsi:
+
+$$C() = \sigma^{2 }^{}p(d|v)$$
+
+Où:
+
+$$p(d|v) = \frac{1}{2^{v}^{-1}\Gamma(v)}(\sqrt{2v}\phi d )^{v} K_{v} (\sqrt{2v}\phi d), \quad \phi > 0, v > 0, d > 0$$
