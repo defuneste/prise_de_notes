@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       8dbcae8e-77f5-4f68-8add-d8bf09fd56c9
+:END:
+#+title: Matèrn covariance
+
+
+Il nous faut définir une fonction de covariance particulière afin d'écrire la fonction de 'likelihood' nous permettant d'estimer de paramètres. C'est le rôle de la famille de fonctions de Matèrn.

@@ -78,6 +78,13 @@ et donc le semi-variogramme:
 
 $$\gamma(h) = C(0) - c(h)$$
 
+On a cependant encore besoin d'une hypothèse de simplification: *l'isotropie* une fonction de covariance $C(H)$ est dite isotropique si elle dépend uniquement de la longueur $||h||$. Elle ne dépend donc pas ni de l'angle ni de la direction. Dans ce cas $C(d)$ est utilisé.
+
+*** [[id:8dbcae8e-77f5-4f68-8add-d8bf09fd56c9][matern covariance]]
+
+Il nous faut définir une fonction de covariance particulière afin d'écrire la fonction de 'likelihood' nous permettant d'estimer de paramètres. C'est le rôle de la famille de fonctions de Matèrn.
+
+
 
 
 
