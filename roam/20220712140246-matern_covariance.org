@@ -3,6 +3,7 @@
 :END:
 #+title: Matèrn covariance
 
+* Définitions
 
 Il nous faut définir une fonction de covariance particulière afin d'écrire la fonction de 'likelihood' nous permettant d'estimer de paramètres. C'est le rôle de la famille de fonctions de Matèrn.
 
@@ -18,13 +19,112 @@ Everything is related to everything else, but near things are more related than 
 
 Il faut cependant faire attention à ne pas obtenir de variance négative.
 
-La valeur de $d$, posons $d_{}_{0}$ qui permet de résoudre $p(d) = 0$ est appelé la porté (/range/). La fonction de corrélation est monotone et ne peut donc pas remonter une fois le 0 atteins. Dans certains cas il n'est pas possible d'atteindre le 0 on va donc par convention à 0.05 que l'on nome portée effective (/effective range/).
+La valeur de $d$, posons $d_{0}$ qui permet de résoudre $p(d) = 0$ est appelé la porté (/range/). La fonction de corrélation est monotone et ne peut donc pas remonter une fois le 0 atteins. Dans certains cas il n'est pas possible d'atteindre le 0 on va donc par convention à 0.05 que l'on nome portée effective (/effective range/).
 
 
 Cette famille de fonction est définie ainsi:
 
-$$C() = \sigma^{2 }^{}p(d|v)$$
+$$C(d|\psi) = \sigma^{2} p(d|v)$$
 
 Où:
 
-$$p(d|v) = \frac{1}{2^{v}^{-1}\Gamma(v)}(\sqrt{2v}\phi d )^{v} K_{v} (\sqrt{2v}\phi d), \quad \phi > 0, v > 0, d > 0$$
+$$p(d|v) = \frac{1}{2^{v-1}} (\sqrt{2v}\phi d )^{v} K_{v} (\sqrt{2v}\phi d), \quad \phi > 0, v > 0, d > 0$$
+
+
+Avec:
+
+$$\psi = (\sigma^{2}, v)$$
+
+Et:
+
+$$v = (\phi, \mu)$$
+
+$\Gamma(\mu)$ represente la fonction gamma et $K_{v}(.)$ correspond à la fonction modifiée de Bessel avec un degrée de \mu.
+
+Ainsi $C(d|\psi)$ ne dépend que de $\mu$ et $\phi$.
+
+$\mu$ correspond à la /smouthness/ de la covariance et $\phi$ à la décroissance lorsque de $d$ diminue.
+
+
+Si $\mu$ augmente alors plus c'est "lisse", le maximum étant le cas de type $y(s) = a + bx(s)$ qui n'ont besoin que de deux points pour être obtenu et forme une ligne droite.
+
+*** Cas particuliers
+
+- si $\mu = \frac{1}{2}$ alors $C(d|\psi) = \sigma^{2} exp(-\phi d)$ qui correspond à une fonction exponentielle de la covariance. On a donc $p(d|\phi) = exp(-\phi d)$ mais on ne peut pas atteindre 0 et il faut donc le remplacer par 0.05:
+
+  Pour une distance de 10km  $exp = (-\phi d) = 0.05$ donc $-log(0.05)/\phi = d$ soit $3/\phi$ ce qui permet d'obtenir un \phi = 0.3.
+
+- Si $\mu = \frac{3}{2}$ alors $C(d|\psi) = \sigma^{2} (1 + \phi d )exp(-\phi d)$ ce qui est un peu plus lisse
+
+- Si \mu tend vers l'infini alors la corrélation se poruisuit à de grande distance.
+
+* Exemples:
+
+#+begin_src R :results output :session *R* :exports both
+
+library(bmstdr)
+library(ggplot2)
+library(akima)
+library(tidyr)
+library(RColorBrewer)
+library(ggpubr)
+
+set.seed(44)
+n <- 500
+x1 <- matrix(runif(2 * n), ncol = 2)
+d <- as.matrix(dist(x1))
+dim(d)
+
+iidnormals <- rnorm(n)
+
+covmat <- materncov(d, phi = 2, nu = 0.5 )
+
+v <- exp(-d)
+
+L <- chol(covmat)
+dim(L)
+
+y <- L %*% iidnormals
+y <- scale(y, center = mean(y), scale=sd(y))
+summary(y)
+
+dplot <- data.frame(x=x1[,1], y=x1[,2], z=y)
+
+xo <- seq(from=0, to =1, length=400)
+yo <- seq(from=0, to =1, length=400)
+surf <- interp(dplot$x, dplot$y, dplot$z,  xo=xo, yo=yo)
+
+names(surf)
+## [1] "x" "y" "z"
+v <- list(x=surf$x, y=surf$y, z=surf$z)
+# v <- fnc.delete.map.XYZ(xyz=surf)
+
+interp1 <- data.frame(long = v$x, v$z )
+names(interp1)[1:length(v$y)+1] <- v$y
+interp1 <- gather(interp1,key = lat,value = field, -long,convert = TRUE)
+com <- rev(c("firebrick4","firebrick2","white","dodgerblue2","dodgerblue4"))#colour palette
+zr <- range(interp1$field, na.rm=T)
+
+P <- ggplot() +
+  geom_raster(data=interp1, aes(x = long, y = lat,fill = field)) +
+  scale_fill_gradientn(colours=com, na.value="gray95", limits=zr)   +
+  stat_contour(data=na.omit(interp1), aes(x = long, y = lat,z = field), colour = "black", binwidth =0.4) +
+   theme(axis.text = element_blank(), axis.ticks = element_blank(), legend.position = "none") +
+  labs(title= "Matern field with nu=0.5", x="", y="")
+P
+
+#+end_src
+
+#+RESULTS:
+#+begin_example
+[1] 500 500
+[1] 500 500
+       V1
+ Min.   :-8.877075
+ 1st Qu.:-0.303878
+ Median : 0.008138
+ Mean   : 0.000000
+ 3rd Qu.: 0.316981
+ Max.   : 5.812364
+[1] "x" "y" "z"
+#+end_example
