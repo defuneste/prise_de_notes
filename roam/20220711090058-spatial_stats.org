@@ -84,9 +84,7 @@ On a cependant encore besoin d'une hypothèse de simplification: *l'isotropie* u
 
 Il nous faut définir une fonction de covariance particulière afin d'écrire la fonction de 'likelihood' nous permettant d'estimer de paramètres. C'est le rôle de la famille de fonctions de Matèrn.
 
-
-
-
+*** [[id:91727453-9b80-4edf-81e3-4bb2a3e9008f][ Processus gaussien]]
 
 
 

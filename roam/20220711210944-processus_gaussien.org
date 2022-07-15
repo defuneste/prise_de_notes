@@ -2,3 +2,26 @@
 :ID:       91727453-9b80-4edf-81e3-4bb2a3e9008f
 :END:
 #+title: processus_gaussien
+
+C'est une famille de processus stochastiques. Ils sont pratiques car définis par une fonction de moyenne, $\mu(s)$ et une fonction de covariance valide qui doit être positive: $C(||s - s^{*}|| = Cov(Y(s), Y(s^{**})))$
+
+
+Ce sont souvent une des fonctions de la famille de [[id:8dbcae8e-77f5-4f68-8add-d8bf09fd56c9][Matèrn]] qui sont utilisées.
+
+Voila une définition plus formelle:
+
+Un processus stochastique est dit suivre un processus gaussien (GP) dans un espace $\mathbb{D}$ si:
+
+- $E(w(s)) = 0$ pour n'importe quel point $s \in \mathbb{D}$. $w(s)$ correspond à une variable aléatoire spatiale de moyenne 0.
+
+- $Cov(w(s_{i}), w(s_{j})) = C(d_{i,j}|\psi)$ pour chaque s_{i} et s_{j} dans la région $\mathbb{D}$, avec d_{i,j} est une distance valide et la fonction de covariance appartient à la famille de Matern.
+
+- Pour une collection finie de variables aléatoires *w* la distribution conjointe de *w* est ditrsibution normale multivariée de n-dimension avec une moyenne de 0 et une matrice de covariance \Sigma tel que $\Sigma_{i,j} = C(d_{i,j}) | \psi}$ pour i et j allant de 1 à n.
+
+  La fonction de densité conjointe de w est donnée:
+
+  $$f(z|\psi) = (\frac{1}{2\pi}) ^{\pi/2} |\Sigma|^{-1/2} e^{-1/2w'\Sigma^{-1}w }$$
+
+** Ressources
+
+Super post de Niamh Cahill: https://www.niamhcahill.com/post/gp_tutorial/
