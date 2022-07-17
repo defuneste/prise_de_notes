@@ -22,6 +22,239 @@ Un processus stochastique est dit suivre un processus gaussien (GP) dans un espa
 
   $$f(z|\psi) = (\frac{1}{2\pi}) ^{\pi/2} |\Sigma|^{-1/2} e^{-1/2w'\Sigma^{-1}w }$$
 
+** Reproduction du post de Niamh Cahill
+
+L'exemple est en 1D mais une distance fonctionne très bien en 2D.
+
+*** Première étape simulation des données
+
+#+begin_src R :results output :session *R* :exports bothlibrary(R2jags)
+library(runjags)
+library(tidyverse)
+library(tidybayes)
+library(fields)
+library(mvtnorm)
+library(R2jags)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+Loading required package: rjags
+Loading required package: coda
+Linked to JAGS 4.3.0
+Loaded modules: basemod,bugs
+
+Attaching package: ‘R2jags’
+
+The following object is masked from ‘package:coda’:
+
+    traceplot
+#+end_example
+
+
+#+begin_src R :results output :session *R* :exports both
+set.seed(28061989)
+year <- sample(1:200,100) %>% sort
+x <- year/100
+head(x)
+#+end_src
+
+#+RESULTS:
+: [1] 0.07 0.09 0.10 0.12 0.13 0.15
+
+
+#+begin_src R :results output :session *R* :exports both
+d <- fields::rdist(x)
+K <- exp(-d^2)
+# une fonction de correlation qui diminue expo
+plot(d[,1], K[,1],
+     type = "l",
+     xlab = "year difference (hundred years)",
+     ylab = "autocorrelation")
+#+end_src
+
+#+RESULTS:
+
+On va rajouter un paramètre \psi pour accélérer la decroissance de la correlation.
+
+#+begin_src R :results output :session *R* :export both
+phi <- 5
+K <- exp(-(phi^2)*(d^2))
+plot(d[,1], K[,1],
+     type = "l",
+     xlab = "year difference (hundred years)",
+     ylab = "autocorrelation")
+#+end_src
+
+#+RESULTS:
+
+La fonction utilisée est dite "powered exponential", il en existe d'autre. Elle correspond à celle ou \mu = 1/2 dans les fonctions de covariance de Matern.
+
+Ensuite on pose l'hypothèse que le GP suit une distribution multivarié normale de moyenne 0 et avec une matrice de covariance \Sigma = K.
+
+#+begin_src R :results output :session *R* :exports both
+set.seed(28061989)
+g <- mvtnorm::rmvnorm(5, sigma=K) # mean defaults to 0
+matplot(x, t(g),
+        type="l",
+        ylab="g")
+#+end_src
+
+#+RESULTS:
+
+On va ensuite rajouter le paramètre pour la variance.
+
+#+begin_src R :results output :session *R* :exports both
+set.seed(28061989)
+sigma_g <- 2
+g <- rmvnorm(5, sigma=(sigma_g^2)*K)
+matplot(x, t(g),
+        type="l",
+        ylab="y")
+#+end_src
+
+#+RESULTS:
+
+Cela ne fait qu'augmenter la variance.
+
+On a maintenant un processus gaussien mais on va ajouter un peu de bruit dans les données.
+
+#+begin_src R :results output :session *R* :exports both
+set.seed(28061989)
+
+sigma_y <- 0.3
+eps <- rnorm(100,0,sigma_y) # random noise
+
+g <- rmvnorm(1, sigma=(sigma_g^2)*K) # GP
+
+y <- c(g) + eps # Simulated data = GP + random noise
+#+end_src
+
+#+RESULTS:
+
+#+begin_src R :results output :session *R* :exports both
+dat = tibble(year = year,
+             x = x,
+             y = y,
+             gp = c(g))
+
+ggplot(dat, aes(x = year, y = y)) +
+  geom_point(aes(colour = "Simulated Data")) +
+  geom_line(aes(x = year, y = gp, colour = "Gaussian Process")) +
+  labs(colour = "")
+#+end_src
+
+#+RESULTS:
+
+*** Seconde étape: modélisation
+
+**** Le modele du processus
+
+Ici sans surprise c'est un GP:
+
+$$\mu_{y} = g ~ MVN(0, \Sigma)$$
+
+$$\Sigma = \sigma_{g}^{2} exp((-\psid)^{2})$$
+
+**** Modele de données
+
+On va lier les observations au processus par un modele normal (c'est un peu ce que l'on a mis dans la simulation)
+
+$$ y \sim Norm(\mu_{y}, \sigma_{y}) $$
+
+**** Priors
+
+Il faut ensuite des priors pour les paramètres \psi, \sigma_{g} et \sigma_{y}
+
+#+begin_src R :results output :session *R* :exports both
+gp_model <- '
+model{
+
+  gp ~ dmnorm(mu,Sigma.inv)
+  Sigma.inv <- inverse(Sigma)
+
+  for(i in 1:n_obs)
+  {
+    mu[i] <- 0
+    Sigma[i,i] <- sigma_g^2 + 0.00001
+    for(j in (i+1):n_obs) {
+    Sigma[i,j] <- sigma_g^2*exp(-(phi^2)*(d[i,j]^2))
+    Sigma[j,i] <- Sigma[i,j]
+    }
+
+    y[i]~dnorm(gp[i],sigma_y^-2)
+  }
+
+  sigma_g ~ dt(0,10^-2,1)T(0,)
+  phi ~ dt(0,4^-2,1)T(0,)
+  sigma_y ~ dt(0,10^-2,1)T(0,)
+}
+
+'
+
+### get data and estimation years
+x <- dat %>% pull(x)
+y <- dat %>% pull(y)
+n_obs <- length(x)
+dist <- rdist(x)
+
+
+###The required data
+jags_data <- list(y = y,
+                  n_obs=n_obs,
+                  d = d)
+#+end_src
+
+#+RESULTS:
+
+#+begin_src R :results output :session *R* :exports both
+##parameters to save
+jags_pars <- c("sigma_g",
+               "phi",
+               "sigma_y")
+##run the model
+mod <- jags(data = jags_data,
+            parameters.to.save=jags_pars,
+            model.file = textConnection(gp_model),
+            n.iter = 5000,
+            n.burnin = 1000,
+            n.thin = 4)
+
+##create an object containing the posterior samples
+m <- mod$BUGSoutput$sims.matrix
+#+end_src
+
+#+RESULTS:
+#+begin_example
+module glm loaded
+Compiling model graph
+   Resolving undeclared variables
+   Allocating nodes
+Graph information:
+   Observed stochastic nodes: 100
+   Unobserved stochastic nodes: 4
+   Total graph size: 10990
+
+Initializing model
+
+  |                                                          |                                                  |   0%  |                                                          |+++++                                             |  10%  |                                                          |++++++++++                                        |  20%  |                                                          |+++++++++++++++                                   |  30%  |                                                          |++++++++++++++++++++                              |  40%  |                                                          |+++++++++++++++++++++++++                         |  50%  |                                                          |++++++++++++++++++++++++++++++                    |  60%  |                                                          |+++++++++++++++++++++++++++++++++++               |  70%  |                                                          |++++++++++++++++++++++++++++++++++++++++          |  80%  |                                                          |+++++++++++++++++++++++++++++++++++++++++++++     |  90%  |                                                          |++++++++++++++++++++++++++++++++++++++++++++++++++| 100%
+  |                                                          |                                                  |   0%  |                                                          |*                                                 |   2%  |                                                          |**                                                |   5%  |                                                          |****                                              |   8%  |                                                          |*****                                             |  10%  |                                                          |******                                            |  12%  |                                                          |********                                          |  15%  |                                                          |*********                                         |  18%  |                                                          |**********                                        |  20%  |                                                          |***********                                       |  22%  |                                                          |************                                      |  25%  |                                                          |**************                                    |  28%  |                                                          |***************                                   |  30%  |                                                          |****************                                  |  32%  |                                                          |******************                                |  35%  |                                                          |*******************                               |  38%  |                                                          |********************                              |  40%  |                                                          |*********************                             |  42%  |                                                          |**********************                            |  45%  |                                                          |************************                          |  48%  |                                                          |*************************                         |  50%  |                                                          |**************************                        |  52%  |                                                          |****************************                      |  55%  |                                                          |*****************************                     |  58%  |                                                          |******************************                    |  60%  |                                                          |*******************************                   |  62%  |                                                          |********************************                  |  65%  |                                                          |**********************************                |  68%  |                                                          |***********************************               |  70%  |                                                          |************************************              |  72%  |                                                          |**************************************            |  75%  |                                                          |***************************************           |  78%  |                                                          |****************************************          |  80%  |                                                          |*****************************************         |  82%  |                                                          |******************************************        |  85%  |                                                          |********************************************      |  88%  |                                                          |*********************************************     |  90%  |                                                          |**********************************************    |  92%  |                                                          |************************************************  |  95%  |                                                          |************************************************* |  98%  |                                                          |**************************************************| 100%
+#+end_example
+
+#+begin_src R :results output :session *R* :exports both
+par_dat <- m %>% spread_draws(sigma_g,phi, sigma_y)
+
+  ggplot(par_dat, aes(x = sigma_g)) +
+  stat_halfeye() +
+  geom_vline(data = tibble(sigma_g), aes(xintercept = sigma_g, colour = "True value"))+
+  labs(colour = "")
+#+end_src
+
+#+RESULTS:
+
+Voila ce que le modele predis pour \sigma _{g} on peut obtenir \phi et sigma_y de la même méthode.
+
+
 ** Ressources
 
 Super post de Niamh Cahill: https://www.niamhcahill.com/post/gp_tutorial/
