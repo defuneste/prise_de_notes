@@ -128,3 +128,46 @@ P
  Max.   : 5.812364
 [1] "x" "y" "z"
 #+end_example
+
+* Exo chap2
+
+** Exo 1
+
+Graph des différentes valeures de \phi et \mu pour les fonctions de corrélations de Matèrn.
+
+
+#+begin_src R :results output :session *R* :exports both
+library(ggplot2)
+
+    d <- seq(from = 0.001, to = 3, length = 100)
+
+mat1_exp <- maternfun(d, phi = 1, nu = 0.5)
+mat1_15 <- maternfun(d, phi = 1, nu = 1.5)
+mat1_25 <- maternfun(d, phi = 1, nu = 2.5)
+mat1_35 <- maternfun(d, phi = 1, nu = 3.5)
+
+k <- length(d)
+unew <- data.frame(distance=rep(d, 4),
+                   Matern=c(rep("Exponential", k), rep("nu = 1.5", k),  rep("nu = 2.5", k), rep("nu = 3.5", k)),
+                   corr = c(mat1_exp, mat1_15, mat1_25, mat1_35))
+unew$Matern <- factor(unew$Matern, levels=c("Exponential", "nu = 1.5", "nu = 2.5", "nu = 3.5"))
+unew$variog <- 1-unew$corr
+
+p0 <- ggplot() +
+  geom_line(data=unew, aes(x=distance, y=corr, group=Matern, color=Matern, linetype=Matern), size=1.2) +
+  labs(title= "Matern correlation function", x="Distance", y="Correlation")
+
+p0
+#+end_src
+
+#+RESULTS:
+
+#+begin_src R :results output :session *R* :exports both
+p1 <- ggplot() +
+  geom_line(data=unew, aes(x=distance, y=variog, group=Matern, color=Matern, linetype=Matern), size=1.2) +
+  labs(title= "Matern Variogram", x="Distance", y="Variogram")
+
+p1
+#+end_src
+
+#+RESULTS:

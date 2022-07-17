@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       0b693fe0-6377-4f29-87a2-74fe4d0024a4
+:END:
+#+title: Geary'C
+
+C'est une mesure de l'autocorrélation des données.
+
+
+$$ C = \frac{n - 1}{2\sum_{i \neq j} w_{ij}} \frac{ \sum^{n}_{i = 1} \sum^{n}_{j = 1} (Y_{i} - Y_{j})^{2} }{\sum^{n}_{i = 1} (Y_{i} - \bar{Y})^{2}} $$
+
+$C$ est le ratio entre deux sommes ponderées et ne peut jamais être negatif. Si E(C) = 1 alors il n'y a pas d'association spatiale. Des petites valeurs de c indique une corrélation spatiale.

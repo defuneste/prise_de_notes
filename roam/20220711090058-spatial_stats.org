@@ -87,6 +87,17 @@ Il nous faut définir une fonction de covariance particulière afin d'écrire la
 *** [[id:91727453-9b80-4edf-81e3-4bb2a3e9008f][ Processus gaussien]]
 
 
+*** Mesure d'association pour des données surfaciques
+
+On utilise toujours le concept de voisin ou de proximité rensseigné dans une matrice d'adjacence. Cette matrice de proximité, *W* contient les poids utilisés pour représenter la force des association spatiales entre les différentes entités surfaciques.
+
+Par habitude les cas $W_{ii}$ prennent la valeur de 0 puis les valeurs de types $w_{ij}$ (ici i est différent de j) prennent 1 si les deux entités partage une frontière commune ou 0 si ce n'est pas le cas. Des encodages plus compliqués existent incluant par exemples les voisins de n+1.
+
+Pour la frontière on peut considérer une définition de type "queen" qui autorise aussi une proximité de partage avec juste un point ou de type "rook" ou la frontière doit au moins être une ligne.
+
+Il y a deux mesure d'autocorrelation spatiale très utilisées pour les données surfaciques : I de [[id:f82b6415-8b10-4f49-9012-6fa57b9242fb][Moran]]  et le[[id:0b693fe0-6377-4f29-87a2-74fe4d0024a4][ C de Geary]].
+
+
 
 * Ressources
 
