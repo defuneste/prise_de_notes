@@ -1,0 +1,208 @@
+:PROPERTIES:
+:ID:       eda71eee-f399-43cf-a52b-898d8d32e366
+:END:
+#+title: Rstan
+
+
+Rstan est un package de R. Il utilise R et comme moteur stan.
+
+
+Il y a deux étapes pour faire une analyse avec rstan :
+
+- Définir la structure du modèle Bayesien et le transcrire dans la notation de Rstan
+
+- Simuler la distribution à posteriori
+
+* Un exemple simple pris chez Bayes Rules:
+
+Je reprend ici l'exemple avec le cas du modèle Beta-Binomial du livre /Bayes Rules/:
+
+$$ Y|\pi \sim Bin(10, \pi)$$
+
+$$ \pi \sim Beta(2,2)$$
+
+
+** Première étape: définition du modèle
+
+Le modèle est divisé en trois composants:
+
+- =data= Ici le nombre de succès sur 10 trials, il faut préciser que l'on souhaite un entier et que le résultats peu aller de 0 à 10
+
+- =paramêtres= le modèle dépend de $\pi$ qui correspond à =pi= pour rstan il faut également specifier que pi est un réel allant de 0 à 1
+
+- =modèle= ici rien de compliqué si ce n'est une notation spécifique à stan
+
+  #+begin_src R :results output :session *R* :exports both
+# STEP 1: DEFINE the model
+bb_model <- "
+  data {
+    int<lower = 0, upper = 10> Y;
+  }
+  parameters {
+    real<lower = 0, upper = 1> pi;
+  }
+  model {
+    Y ~ binomial(10, pi);
+    pi ~ beta(2, 2);
+  }
+"
+  #+end_src
+
+  #+RESULTS:
+
+** Seconde étape simulation de la distribution à posteriori
+
+#+begin_src R :results output :session *R* :exports both
+library(rstan)
+#+end_src
+
+#+RESULTS:
+: Loading required package: StanHeaders
+: Loading required package: ggplot2
+: rstan (Version 2.21.5, GitRev: 2e1f913d3ca3)
+: For execution on a local, multicore CPU with excess RAM we recommend calling
+: options(mc.cores = parallel::detectCores()).
+: To avoid recompilation of unchanged Stan programs, we recommend calling
+: rstan_options(auto_write = TRUE)
+
+
+La fonction =stan= prends deux arguments obligatoires: le modèle (en chaîne de caractère) et les données.
+
+
+#+begin_src R :results output :session *R* :exports both
+# STEP 2: SIMULATE the posterior
+bb_sim <- stan(model_code = bb_model, data = list(Y = 9),
+               chains = 4, iter = 5000*2, seed = 84735)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+SAMPLING FOR MODEL '7b64678a3565f32e51f77686e11b9c04' NOW (CHAIN 1).
+Chain 1:
+Chain 1: Gradient evaluation took 7e-06 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.07 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1:
+Chain 1:
+Chain 1: Iteration:    1 / 10000 [  0%]  (Warmup)
+Chain 1: Iteration: 1000 / 10000 [ 10%]  (Warmup)
+Chain 1: Iteration: 2000 / 10000 [ 20%]  (Warmup)
+Chain 1: Iteration: 3000 / 10000 [ 30%]  (Warmup)
+Chain 1: Iteration: 4000 / 10000 [ 40%]  (Warmup)
+Chain 1: Iteration: 5000 / 10000 [ 50%]  (Warmup)
+Chain 1: Iteration: 5001 / 10000 [ 50%]  (Sampling)
+Chain 1: Iteration: 6000 / 10000 [ 60%]  (Sampling)
+Chain 1: Iteration: 7000 / 10000 [ 70%]  (Sampling)
+Chain 1: Iteration: 8000 / 10000 [ 80%]  (Sampling)
+Chain 1: Iteration: 9000 / 10000 [ 90%]  (Sampling)
+Chain 1: Iteration: 10000 / 10000 [100%]  (Sampling)
+Chain 1:
+Chain 1:  Elapsed Time: 0.031878 seconds (Warm-up)
+Chain 1:                0.032054 seconds (Sampling)
+Chain 1:                0.063932 seconds (Total)
+Chain 1:
+
+SAMPLING FOR MODEL '7b64678a3565f32e51f77686e11b9c04' NOW (CHAIN 2).
+Chain 2:
+Chain 2: Gradient evaluation took 6e-06 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.06 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2:
+Chain 2:
+Chain 2: Iteration:    1 / 10000 [  0%]  (Warmup)
+Chain 2: Iteration: 1000 / 10000 [ 10%]  (Warmup)
+Chain 2: Iteration: 2000 / 10000 [ 20%]  (Warmup)
+Chain 2: Iteration: 3000 / 10000 [ 30%]  (Warmup)
+Chain 2: Iteration: 4000 / 10000 [ 40%]  (Warmup)
+Chain 2: Iteration: 5000 / 10000 [ 50%]  (Warmup)
+Chain 2: Iteration: 5001 / 10000 [ 50%]  (Sampling)
+Chain 2: Iteration: 6000 / 10000 [ 60%]  (Sampling)
+Chain 2: Iteration: 7000 / 10000 [ 70%]  (Sampling)
+Chain 2: Iteration: 8000 / 10000 [ 80%]  (Sampling)
+Chain 2: Iteration: 9000 / 10000 [ 90%]  (Sampling)
+Chain 2: Iteration: 10000 / 10000 [100%]  (Sampling)
+Chain 2:
+Chain 2:  Elapsed Time: 0.033257 seconds (Warm-up)
+Chain 2:                0.039524 seconds (Sampling)
+Chain 2:                0.072781 seconds (Total)
+Chain 2:
+
+SAMPLING FOR MODEL '7b64678a3565f32e51f77686e11b9c04' NOW (CHAIN 3).
+Chain 3:
+Chain 3: Gradient evaluation took 9e-06 seconds
+Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.09 seconds.
+Chain 3: Adjust your expectations accordingly!
+Chain 3:
+Chain 3:
+Chain 3: Iteration:    1 / 10000 [  0%]  (Warmup)
+Chain 3: Iteration: 1000 / 10000 [ 10%]  (Warmup)
+Chain 3: Iteration: 2000 / 10000 [ 20%]  (Warmup)
+Chain 3: Iteration: 3000 / 10000 [ 30%]  (Warmup)
+Chain 3: Iteration: 4000 / 10000 [ 40%]  (Warmup)
+Chain 3: Iteration: 5000 / 10000 [ 50%]  (Warmup)
+Chain 3: Iteration: 5001 / 10000 [ 50%]  (Sampling)
+Chain 3: Iteration: 6000 / 10000 [ 60%]  (Sampling)
+Chain 3: Iteration: 7000 / 10000 [ 70%]  (Sampling)
+Chain 3: Iteration: 8000 / 10000 [ 80%]  (Sampling)
+Chain 3: Iteration: 9000 / 10000 [ 90%]  (Sampling)
+Chain 3: Iteration: 10000 / 10000 [100%]  (Sampling)
+Chain 3:
+Chain 3:  Elapsed Time: 0.032387 seconds (Warm-up)
+Chain 3:                0.032047 seconds (Sampling)
+Chain 3:                0.064434 seconds (Total)
+Chain 3:
+
+SAMPLING FOR MODEL '7b64678a3565f32e51f77686e11b9c04' NOW (CHAIN 4).
+Chain 4:
+Chain 4: Gradient evaluation took 7e-06 seconds
+Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.07 seconds.
+Chain 4: Adjust your expectations accordingly!
+Chain 4:
+Chain 4:
+Chain 4: Iteration:    1 / 10000 [  0%]  (Warmup)
+Chain 4: Iteration: 1000 / 10000 [ 10%]  (Warmup)
+Chain 4: Iteration: 2000 / 10000 [ 20%]  (Warmup)
+Chain 4: Iteration: 3000 / 10000 [ 30%]  (Warmup)
+Chain 4: Iteration: 4000 / 10000 [ 40%]  (Warmup)
+Chain 4: Iteration: 5000 / 10000 [ 50%]  (Warmup)
+Chain 4: Iteration: 5001 / 10000 [ 50%]  (Sampling)
+Chain 4: Iteration: 6000 / 10000 [ 60%]  (Sampling)
+Chain 4: Iteration: 7000 / 10000 [ 70%]  (Sampling)
+Chain 4: Iteration: 8000 / 10000 [ 80%]  (Sampling)
+Chain 4: Iteration: 9000 / 10000 [ 90%]  (Sampling)
+Chain 4: Iteration: 10000 / 10000 [100%]  (Sampling)
+Chain 4:
+Chain 4:  Elapsed Time: 0.032474 seconds (Warm-up)
+Chain 4:                0.033422 seconds (Sampling)
+Chain 4:                0.065896 seconds (Total)
+Chain 4:
+#+end_example
+
+
+Les autres arguments sont le nombre de =chaines=, le nombre d'itérations  (=iter=) par chaînes et ici on aussi spécifier le =seed= pour avoir un résultats similaire. La première moitié des itérations est brûlée (/burn-in/).
+
+
+ L'objet =bb_sim= es un objet =stanfit= il contient pas mal d'info dont 5000 * 4 estimation de pi.
+
+#+begin_src R :results output :session *R* :exports both
+as.array(bb_sim, pars = "pi") |> head(4)
+#+end_src
+
+#+RESULTS:
+: , , parameters = pi
+:
+:           chains
+: iterations   chain:1   chain:2   chain:3   chain:4
+:       [1,] 0.8997589 0.6970501 0.9406993 0.5681996
+:       [2,] 0.8945139 0.6970501 0.8081320 0.6364434
+:       [3,] 0.9483672 0.7290896 0.7951897 0.8752688
+:       [4,] 0.7434866 0.8904345 0.7951897 0.7790250
+
+#+begin_src R :results output graphics file :file (org-babel-temp-file "figure" ".png") :exports both :width 600 :height 400 :session *R*
+library(bayesplot)
+mcmc_trace(bb_sim, pars = "pi", size = 0.1)
+#+end_src
+
+#+RESULTS:
+[[file:/tmp/babel-PPmhCh/figurear7X3c.png]]

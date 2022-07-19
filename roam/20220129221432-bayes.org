@@ -8,3 +8,10 @@ Je souhaite centraliser un peu ce que j'apprends sur Bayes et les statistiques.
 Une grosse partie de mes notes vont reprendre le livre et le cours de Richard McElreath:[[id:e3687fc7-3b71-43e7-96e0-8c47d7064a64][Statistical Rethinking]]
 
 Le reste va se composer de ressources à explorer:[[id:48a28e13-eb27-4663-927c-26c91b7ce942][ressources bayes]]
+
+
+Un des outils pour effectuer des stats bayesiennes est les [[id:8b4772e2-ba85-40bd-9cc7-750cb95cb385][MCMC]] ou Markov Chain Monte Carlo. Il existe plusieurs outils pour les produire :
+
+-[[id:eda71eee-f399-43cf-a52b-898d8d32e366][ rstan]]
+
+- [[id:dbeb19b6-0184-42d9-a96b-b3718f3b6d32][jags]]

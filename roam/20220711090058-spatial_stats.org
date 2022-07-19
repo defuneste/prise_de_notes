@@ -98,6 +98,13 @@ Pour la frontière on peut considérer une définition de type "queen" qui autor
 Il y a deux mesure d'autocorrelation spatiale très utilisées pour les données surfaciques : I de [[id:f82b6415-8b10-4f49-9012-6fa57b9242fb][Moran]]  et le[[id:0b693fe0-6377-4f29-87a2-74fe4d0024a4][ C de Geary]].
 
 
+*** Lisseurs spatiaux (spatial smoother)
+
+- Inverse distance weighting (IDW): pour des points
+
+- Conditional AutoRegressin (CAR): pour des surfaces
+
+
 
 * Ressources
 

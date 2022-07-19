@@ -5,3 +5,8 @@
 
 
 [[id:c4e4345b-9fc6-4b24-99b4-f174844fa6dc][Distributions]]
+
+
+Ressources:
+
+-  [[https://www.bayesrulesbook.com/][Bayes Rules]]
