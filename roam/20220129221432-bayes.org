@@ -12,6 +12,6 @@ Le reste va se composer de ressources à explorer:[[id:48a28e13-eb27-4663-927c-2
 
 Un des outils pour effectuer des stats bayesiennes est les [[id:8b4772e2-ba85-40bd-9cc7-750cb95cb385][MCMC]] ou Markov Chain Monte Carlo. Il existe plusieurs outils pour les produire :
 
--[[id:eda71eee-f399-43cf-a52b-898d8d32e366][ rstan]]
+-[[id:eda71eee-f399-43cf-a52b-898d8d32e366][ rstan]]: utilise principalement un /Hamiltonian Monte Carlo/
 
-- [[id:dbeb19b6-0184-42d9-a96b-b3718f3b6d32][jags]]
+- [[id:dbeb19b6-0184-42d9-a96b-b3718f3b6d32][jags]]: utilise principalement une algorithme de sampling de Gibbs (jags = just an other Gibbs sampler).

@@ -2,3 +2,37 @@
 :ID:       8b4772e2-ba85-40bd-9cc7-750cb95cb385
 :END:
 #+title: MCMC
+
+
+Les Markov Chain Monte Carlo sont des outils de simulations permettant de faire une approximation qui va converger vers une distribution à posteriori.
+
+* Vérifier le résultât de la simulations
+
+Il n'y a pas de moyens parfait de s'assurer qu'il n'y a pas de problème avec les chaînes produites. Il faut utiliser conjointement plusieurs technique et s'entraîner!
+
+** Analyser les chaines
+
+- Il est possible de regarder les traces plots des chaines : elles doivent converger, être plus ou moins stationnaires. On doit aussi comparer les chaines.
+
+  Le package {bayesplot} contient une fonction qui permet de représenter les différentes valeurs des chaines : =mcm_dens_overlay=
+
+** Calculer la taille effective de l'échantillon
+
+Les chaînes de Markov produisent des résultât dépendant (x est produit à partir de x - 1). On peut calculer un ratio:
+
+$$\frac{Neff}{N}$$
+
+N est la taille de l'échantillon et Neff est la taille de l'échantillon de valeur indépendante.  Le doigt mouillé indique que c'est louche quand ce ration tombe en dessous de 0.1.
+
+=neftt_ratio= de Bayesplot permet de la calculer.
+
+On peut aussi mesurer l'autocorrélation à différents lags.
+
+Il y a aussi une fonction : =mcmc_acf=
+on peut éclaircir la chaîne mais on perds du nombre, c'est donc à estimer.
+
+Il est aussi possible de calculer le R-hat qui correspond à la variabilité de toute les chaînes combinées à la variabilité interne de chaque chaînes.
+
+$$ R-hat = sqrt{\frac{Var_{combined}}{Var_{within}}}$$
+
+Elle doit être autour de 1 au delà de 1.05 il faut regarder.

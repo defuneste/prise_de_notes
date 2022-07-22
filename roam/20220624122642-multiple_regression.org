@@ -4,3 +4,17 @@
 #+title: multiple_regression
 
 ** Parallels slopes
+
+** Un modèle avec plusieurs variables explicatives
+
+Elles peuvent être :
+
+- sans interaction ~response ~ expl1 + expl2~
+
+- Avec un interaction implicite (ici c'est plus la façon dont R le code) : ~response ~ expl1 * expl2~
+
+- Avec interaction mais explicite : ~response ~ expl1 + expl2 + expl1:expl2~
+
+Les deux derniers sont identiques.
+
+Une ruse classique est d'ajouter ~+ 0~ à la fin du mauvaise pour retirer /l'intercept/ global et en avoir un par categories.
