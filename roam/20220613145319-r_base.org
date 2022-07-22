@@ -51,15 +51,15 @@ un_model
 
 - ~residuals(un_model)~ : response value - les valeurs prédites
 
-- ~hatvalues(un_model)~ : retourne un indicateur sur le /Leverage/ ou "how extreme" une valeur explicative est, plus une valeure est éloignée des autres plus elle à du leverage.
+- ~hatvalues(un_model)~ : retourne un indicateur sur le /Leverage/ ou "how extreme" une valeur explicative est, plus une valeur est éloignée des autres plus elle à du leverage.
 
 - ~cooks.distance(un_model)~ : mesure l'influence d'un point dans le modèle (c'est obtenue avec /leave-one-out/)
 
- Le pacquet Broom a deux fonctions ~tidy~ et ~augment~ qui permettent de transformer les sorties de modèles en objet plus facile d'accès.
+ Le paquet /Broom/ a deux fonctions ~tidy~ et ~augment~ qui permettent de transformer les sorties de modèles en objet plus facile d'accès.
 
   * ~tidy(un_nodel)~ : renvoie les coeffs dans un tible
 
-  * ~augment(un_model)~ : renvoie un tibble avec les observations, les valeurs estimées, les residuals et d'autres colonnes.
+  * ~augment(un_model)~ : renvoie un tibble avec les observations, les valeurs estimées, les résides et d'autres colonnes.
 
 Si on a besoin de transformer une variable on peut utiliser ~I()~ une fonction que l'on nomme "as is". Comme les opérateurs ont des utilisations spécifiques avec la syntaxe formule il faut utiliser I() pour indiquer que l'on souhaite ici utiliser leur forme traditionnelle pour effectuer une transformation.
 
@@ -69,7 +69,7 @@ Predict prend un modèle et des données pour retourner les valeurs que se modè
 
 Predict est une fonction générique et il est important de regarder la fonction spécifique à la classe. Ie ~predict.glm~ est diffèrent de ~predict.lm~
 
-Pour mettre en place des simulations et des prédictions ~expand.grid()~ en créant un df pour chaque combinaisons.
+Pour mettre en place des simulations et des prédictions ~expand.grid()~ permet de créer un df pour chaque combinaisons.
 
 *** [[id:eb25bf36-4011-4493-ad1f-0854e6032030][matrice de confusion]]
 

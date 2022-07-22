@@ -17,4 +17,4 @@ Elles peuvent être :
 
 Les deux derniers sont identiques.
 
-Une ruse classique est d'ajouter ~+ 0~ à la fin du mauvaise pour retirer /l'intercept/ global et en avoir un par categories.
+Une ruse classique est d'ajouter ~+ 0~ à la fin du mauvaise pour retirer /l'intercept/ global et en avoir un par catégories.
