@@ -26,6 +26,43 @@ temporary[,c("Region", "Representative", "Total_sales")]
 : East       East         Stuart        9000
 : West       West        Aishley        3000
 
+*** optim()
+
+Optim est utiliser pour obtenir la dérivée d'une fonction. Elle prend trois arguments  ~par~ les valeurs des paramètres à optimiser, ~fn~ la fonction à optimiser et passer en ~...  ~data~
+
+Sources des exemples:  https://magesblog.com/post/2013-03-12-how-to-use-optim-in-r/
+
+#+begin_src R :results output :session *R* :exports both
+# simple data
+dat=data.frame(x=c(1,2,3,4,5,6),
+               y=c(1,3,5,6,8,12))
+# la fonction à optimiser
+min.RSS <- function(data, par) {
+              with(data, sum((par[1] + par[2] * x - y)^2))
+}
+optim(par = c(0, 1), fn = min.RSS, data = dat)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+$par
+[1] -1.266846  2.028620
+
+$value
+[1] 2.819048
+
+$counts
+function gradient
+      89       NA
+
+$convergence
+[1] 0
+
+$message
+NULL
+#+end_example
+
+~$par~ nous donne l'intercept et la pente.
 
 * Formules et modèles
 

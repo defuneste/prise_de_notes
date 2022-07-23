@@ -3,7 +3,9 @@
 :END:
 #+title: multiple_regression
 
-** Parallels slopes
+** Logistic regression
+
+ici on utilise ~glm(data, formula, family = binomial)~
 
 ** Un modèle avec plusieurs variables explicatives
 
