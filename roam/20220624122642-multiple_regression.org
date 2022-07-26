@@ -7,6 +7,28 @@
 
 ici on utilise ~glm(data, formula, family = binomial)~
 
+Plus d'informations sur la fonction utilisée dans la regression logistique ici : [[id:c425b8d1-c598-4b2e-949a-d5b8541c4e10][logistic distribution]]
+
+Dans le cas de régression logistique elle est difficile la méthode de somme des écarts est mauvaise on utilise plutôt une méthode dite de /likelihood/. A la différence de la somme des carrées des écarts le but est de maximiser la likelihood.
+
+On calcul le likelihood :
+
+#+begin_src r
+sum(y_pred * y_actual + (1 - y_pred) * (1 - y_actual)
+# si y_actual = 1
+y_pred * 1 + (1 - y_pred) * (1 - 1) = y_pred
+# si y_actual = 0
+y_pred * 0 + (1- y_pred) * (1 - 0) = 1 - y_pred
+#+end_src
+
+Comme les valeurs peuvent être très proche de 0 ou de 1 on les passe au log :
+
+#+begin_src r
+log_likehoods = log(y_pred) * y_actual + log(1 - y_pred) * (1 - y_actual)
+##enfin comme optim() cherche à minimiser:
+-sum(log_likehoods)
+#+end_src
+
 ** Un modèle avec plusieurs variables explicatives
 
 Elles peuvent être :

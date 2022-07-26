@@ -3,12 +3,15 @@
 :END:
 #+title: logistic_distribution
 
+Elle dépend de deux paramètres, la localisation (/location/) ou $\mu$ ($\mu$ indique l'emplacement ou la disribution change de "forme") et son échelle (/scale/) $s$ qui doit être > 0. Cette dernière joue plus sur l'etalement.
 
 La distribution logistique suit la fonction de distribution cumulée (/cumulative distribution function/ ou CDF).
 
-$$cdf = frac{1}{1 + exp(-x)}$$
+$$cdf = frac{1}{s(1 + exp(-x - \mu)^{s}} $$
 
 La fonction inverse de la CDF est nommée la fonction logit (/logit_function/)
 
 
-$$logit \quad function = log(\frac{p}{1-p})$$
+$$logit \quad function = \mu + s log(\frac{p}{1-p})$$
+
+Dans le cas ou $\mu = 0$ et $s = 1$, la cdf et la fonction de quantile se simplifie.
