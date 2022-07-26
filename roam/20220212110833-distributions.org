@@ -34,10 +34,16 @@ plot(x, y , type = "l", main = "Distributiuon cumulée gaussienne")
 
 * Liste des distributions et exemples:
 
-** [[id:35d45279-cd99-4d43-b43b-e8ab24eb7881][Binomiale]]
-** [[id:bd6e667f-4bf2-4369-99d4-0b6ec818b949][Normale]]
-** [[id:8f5db22d-9667-475b-9d20-a1f6387e6558][Poisson]]
-** [[id:c425b8d1-c598-4b2e-949a-d5b8541c4e10][Logistique]]
+** Distributions discrêtes
+
+*** [[id:35d45279-cd99-4d43-b43b-e8ab24eb7881][Binomiale]]
+*** [[id:8f5db22d-9667-475b-9d20-a1f6387e6558][Poisson]]
+
+** Distribution continues
+
+*** [[id:11072680-b99b-4fc7-8c67-fce574850445][Beta]]
+*** [[id:bd6e667f-4bf2-4369-99d4-0b6ec818b949][Normale]]
+*** [[id:c425b8d1-c598-4b2e-949a-d5b8541c4e10][Logistique]]
 
 * Famille Exponentielle
 

@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       11072680-b99b-4fc7-8c67-fce574850445
+:END:
+#+title: Beta distibution
+
+C'est une distribution *continue* définie dans un interval allant de [0, 1]. Elle est donc très utilisée pour estimer des probabilités.
+
+Elle est définie par deux paramètres $\alpha$ et $\beta$ contrôlant sa forme (/shape/). Ce sont deux réels positifs.
+
+Sa moyenne est calculé en prenant :
+
+$$E(x) = \frac{\alpha}{(\alpha + \beta)}$$
+
+Sa variance :
+
+$$Var(x) = \frac{\alpha * \beta}{(\alpha + \beta + 1)(\alpha + \beta)^{2}$$

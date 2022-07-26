@@ -9,9 +9,11 @@ La distribution logistique suit la fonction de distribution cumulée (/cumulativ
 
 $$cdf = frac{1}{s(1 + exp(-x - \mu)^{s}} $$
 
+
+
 La fonction inverse de la CDF est nommée la fonction logit (/logit_function/)
 
 
 $$logit \quad function = \mu + s log(\frac{p}{1-p})$$
 
-Dans le cas ou $\mu = 0$ et $s = 1$, la cdf et la fonction de quantile se simplifie.
+Dans le cas ou $\mu = 0$ et $s = 1$, la cdf et la fonction de quantile se simplifient.

@@ -12,7 +12,9 @@ Elle prend deux paramètres:
 
 - $p$ : probabilité de succès, entre 0 et 1
 
-On obtient l'espèrance (/expected value/) = $ n * p$
+On obtient l'espèrance (/expected value/) = $n * p$
+
+La variance : $npq$
 
 ** un exemple simple
 
