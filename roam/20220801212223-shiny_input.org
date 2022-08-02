@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       91ee5164-7abb-45f9-af93-4c5a7d4b332e
+:END:
+#+title: Shiny input
+
+Les fonctions d'inputs ont une structure commune. Elles ont pour argument ~inputID~. Ce dernier prend une chaîne de caractère ne pouvant contenir que *des lettres, des nombres et des underscores*. Ensuite cette ID doit être unique.

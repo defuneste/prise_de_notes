@@ -1,0 +1,31 @@
+:PROPERTIES:
+:ID:       0fdc1de6-7e0d-40c7-82f9-e94c0efcecf6
+:END:
+#+title: shiny
+
+* Basique shiny
+
+Pour charger shiny il faut que le package soit installé avec R.
+
+La façon la plus simple de créer un application shiny est de créer dans un projet un répertoire puis d'y créer un fichier ~app.R~ qui contient tout les composants :
+
+#+begin_src R :results output :session *R* :exports both
+library(shiny)
+# il contient un un ui
+# c'est là que sont definis les inputs
+ui <- fluidPage(
+  "Hello, world!"
+)
+# un server
+# c'est là que sont definis les outputs
+server <- function(input, output, session) {
+}
+# apelle les deux
+shinyApp(ui, server)
+#+end_src
+
+** [[id:91ee5164-7abb-45f9-af93-4c5a7d4b332e][shiny input]]
+
+* Ressources :
+
+- [[https://mastering-shiny.org/index.html][Mastering Shiny]]
