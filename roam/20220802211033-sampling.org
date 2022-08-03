@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       30532b4d-5524-413f-b36c-c9c1b67ade8f
+:END:
+#+title: sampling
+
+* Type de sampling
+
+/Cluster sampling/ : plutôt que de faire un échantillon dans tous les sous groupes on va tirer aléatoirement les sous groupes à échantillonner.
+
+
+On peut géneraliser ce type d'echantillonnage en y ajoutant plusieurs niveau (/multistage samling/).
+
+* Fonction de tirage aleatoires
+
+** Dans R
+
+- Base R : ~sample~ est plutôt conçue pour des vecteurs le premier argument est ~x~ le vecteur, puis le second est la taille de l'échantillon (~size~).
+
+- Tidyverse : ~slice_sample~ Il peut prendre un argument ~prop~ pour la proportion ou ~n~ pour le nombre. Cette fonction est conçue pour fonctionner sur des /data frame/ et Tible.
