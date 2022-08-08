@@ -10,10 +10,59 @@
 
 On peut géneraliser ce type d'echantillonnage en y ajoutant plusieurs niveau (/multistage samling/).
 
-* Fonction de tirage aleatoires
+* Fonction de tirage aléatoires
 
 ** Dans R
 
-- Base R : ~sample~ est plutôt conçue pour des vecteurs le premier argument est ~x~ le vecteur, puis le second est la taille de l'échantillon (~size~).
+- Base R : ~sample~ est plutôt conçue pour des vecteurs le premier argument est ~x~ le vecteur, puis le second est la taille de l'échantillon (~size~). Sur un tableau de donnée on peut faire un /sample/ sur l'index:
+
+  #+begin_src R :results output :session *R* :exports both
+# ici on prend fait un resample
+new_index<- sample(1:nrow(iris), size = nrow(iris), replace = TRUE)
+head(iris[new_index,])
+  #+end_src
+
+  #+RESULTS:
+  :      Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
+  : 99            5.1         2.5          3.0         1.1 versicolor
+  : 28            5.2         3.5          1.5         0.2     setosa
+  : 50            5.0         3.3          1.4         0.2     setosa
+  : 31            4.8         3.1          1.6         0.2     setosa
+  : 28.1          5.2         3.5          1.5         0.2     setosa
+  : 39            4.4         3.0          1.3         0.2     setosa
+
+
 
 - Tidyverse : ~slice_sample~ Il peut prendre un argument ~prop~ pour la proportion ou ~n~ pour le nombre. Cette fonction est conçue pour fonctionner sur des /data frame/ et Tible.
+
+  #+begin_src R :results output :session *R* :exports both
+    dplyr::slice_sample(iris, prop = 1) |> head()
+# maybe better if we ad dtibble::rowid_to_column
+  #+end_src
+
+  #+RESULTS:
+  :   Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
+  : 1          4.4         3.0          1.3         0.2     setosa
+  : 2          5.6         2.9          3.6         1.3 versicolor
+  : 3          5.4         3.9          1.3         0.4     setosa
+  : 4          5.4         3.9          1.7         0.4     setosa
+  : 5          5.4         3.4          1.7         0.2     setosa
+  : 6          7.2         3.0          5.8         1.6  virginica
+
+* Bootsrapping
+
+Permet de construire une population théorique à partir d'un échantillon.
+
+On le fait en 2 étapes:
+
+ 1. reéchantillonage (ie avec remplacement) de la même taille que l'original
+
+ 2. On prend la statistique qui nous intéresse
+
+ 3. on répète un et deux
+
+La distribution obtenue est parfois appelée la "/bootstraping distribution/". SI la statistique d'intérêt est la moyenne on va se rapprocher de celle de l échantillon (mais pas nécessairement de celle de la population, pour cela on a besoin d'un bon échantillon). Par contre si on prend l'ecart type des moyennes obtenues par les bootstraps multipliés par la racine carré du nombre d'echantillon on est assez proche de celle de la population. (à creuser)
+
+** Ressources
+
+[[https://cran.r-project.org/web/packages/boot/index.html][- Boot]] package

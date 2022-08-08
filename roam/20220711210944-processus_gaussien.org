@@ -16,7 +16,7 @@ Un processus stochastique est dit suivre un processus gaussien (GP) dans un espa
 
 - $Cov(w(s_{i}), w(s_{j})) = C(d_{i,j}|\psi)$ pour chaque s_{i} et s_{j} dans la région $\mathbb{D}$, avec d_{i,j} est une distance valide et la fonction de covariance appartient à la famille de Matern.
 
-- Pour une collection finie de variables aléatoires *w* la distribution conjointe de *w* est ditrsibution normale multivariée de n-dimension avec une moyenne de 0 et une matrice de covariance \Sigma tel que $\Sigma_{i,j} = C(d_{i,j}) | \psi}$ pour i et j allant de 1 à n.
+- Pour une collection finie de variables aléatoires *w* la distribution conjointe de *w* est distribution normale multivariée de n-dimension avec une moyenne de 0 et une matrice de covariance \Sigma tel que $\Sigma_{i,j} = C(d_{i,j}) | \psi}$ pour i et j allant de 1 à n.
 
   La fonction de densité conjointe de w est donnée:
 

@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       7e943a77-32c9-47ae-9599-19cdd67022f2
+:END:
+#+title: probability_basics
+
+
+** Central limit theorem (CLT)
+
+L'ajout de différentes variables, une fois leur somme normalisée va tendre vers une distribution[[id:bd6e667f-4bf2-4369-99d4-0b6ec818b949][ Normale]].
+
+Plus la taille de l'échantillon augmente plus on se rapproche de la distribution et plus la distribution de l'échantillon s'affine.
