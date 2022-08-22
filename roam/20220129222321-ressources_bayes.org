@@ -7,6 +7,11 @@
 [[id:c4e4345b-9fc6-4b24-99b4-f174844fa6dc][Distributions]]
 
 
-Ressources:
+** Vérification des modèles
+
+[[id:7d97db6c-c675-408d-a2f4-721575e52fb3][Posterior predictive check]]
+
+
+** Ressources:
 
 -  [[https://www.bayesrulesbook.com/][Bayes Rules]]

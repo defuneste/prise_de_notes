@@ -1,0 +1,38 @@
+:PROPERTIES:
+:ID:       62e98936-8e79-41d1-8905-8b2e1967ec97
+:END:
+#+title: Cross Validation
+
+** Principe
+
+L'idée centrale de la *cross-validation* (CV ou validation croisée) est de séparer le jeux de données en au moins deux sous entité:
+
+- Une partie pour entraîner le modèle (/train/),
+
+- une partie pour le tester et l'évaluer (/test/)
+
+La répartition entre les deux peut varier (90-10 par exemple).
+
+
+On peut ainsi observer comment le modèle se comporte sur des nouvelles données.
+
+
+** K-fold cross validation
+
+Afin d'éviter qu'un split donne un résultat particulier on va le faire plusieurs fois:
+
+1. Création de sous ensembles
+
+   On prend $k$ (entier à partir de 2) à partir de notre échantillon
+
+2. On entraîne et test le modèle.
+
+   a. on applique le train/test sur un ensemble
+
+   b. on évalue notre prédiction
+
+3. Répétition ou on va mettre de coté à chaque fois un sous ensemble différents
+
+4. On produit les estimations des CV
+
+   Les étapes 2 et 3 produisent différents modèles et mesure de la qualité de leur précisions.

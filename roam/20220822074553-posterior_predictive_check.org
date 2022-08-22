@@ -1,0 +1,32 @@
+:PROPERTIES:
+:ID:       7d97db6c-c675-408d-a2f4-721575e52fb3
+:END:
+#+title: posterior_predictive_check
+
+On va vérifier si ce que l'on simule est similaire aux données.
+
+~bayesplot::pp_check()~
+
+
+La stratégie est de :
+
+- Pour chaque jeux de paramètres simulés par la chaîne de Markov on va tirer un échantillon de taille $n$ ($n$ correspond au nombre de donnée). Cela nous donne $N$ jeux de paramètres de taille $n$.
+
+  - On prend un échantillon de $N$ pour le comparer aux données
+
+
+Il est possible de calculer des valeurs synthétiques pour estimer la qualité de la prédiction (/posterior predictive summaries/).
+
+Si $Y_1, Y_2, ..., Y_{N}$ correspond à des valeurs observés alors pour chaque $Y_{i}$ on peut obtenir à partir du modèle une moyenne $Y_{i}^{'}$ et un écart type $sd_{i}$.
+
+Cela nous permet de calculer:
+
+- Median Absolute Error (MAE) :
+
+  $$MAE = median|Y_{i} - Y_{i}^{'}|$$
+
+- la MAE mis à l'échelle (via l'ecart type), si c'est synetrique on peut regarder si on est à 1,2 ou plus sd d'une valeur mediane.
+
+  $$MAE = median\frac{|Y_{i} - Y_{i}^{'}|}{sd_{i}}$$
+
+- des intervals de prédictions du posterieurs

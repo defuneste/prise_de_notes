@@ -110,3 +110,5 @@ Il y a deux mesure d'autocorrelation spatiale très utilisées pour les données
 
 - Bayesian Modeling of Spatio-Temporal Data with R Sujit K. Sahu
 - https://keen-swartz-3146c4.netlify.App
+
+* Footnotes
