@@ -8,7 +8,7 @@
 /Cluster sampling/ : plutôt que de faire un échantillon dans tous les sous groupes on va tirer aléatoirement les sous groupes à échantillonner.
 
 
-On peut géneraliser ce type d'echantillonnage en y ajoutant plusieurs niveau (/multistage samling/).
+On peut généraliser ce type d'échantillonnage en y ajoutant plusieurs niveau (/multistage samling/).
 
 * Fonction de tirage aléatoires
 
@@ -18,18 +18,20 @@ On peut géneraliser ce type d'echantillonnage en y ajoutant plusieurs niveau (/
 
   #+begin_src R :results output :session *R* :exports both
 # ici on prend fait un resample
-new_index<- sample(1:nrow(iris), size = nrow(iris), replace = TRUE)
+new_index<- sample(1:nrow(iris) # le vecteur sur lequel on échantillonne
+                    , size = nrow(iris) # la taille d'échantillon
+                    , replace = TRUE)
 head(iris[new_index,])
   #+end_src
 
   #+RESULTS:
-  :      Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
-  : 99            5.1         2.5          3.0         1.1 versicolor
-  : 28            5.2         3.5          1.5         0.2     setosa
-  : 50            5.0         3.3          1.4         0.2     setosa
-  : 31            4.8         3.1          1.6         0.2     setosa
-  : 28.1          5.2         3.5          1.5         0.2     setosa
-  : 39            4.4         3.0          1.3         0.2     setosa
+  :       Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
+  : 149            6.2         3.4          5.4         2.3  virginica
+  : 144            6.8         3.2          5.9         2.3  virginica
+  : 62             5.9         3.0          4.2         1.5 versicolor
+  : 109            6.7         2.5          5.8         1.8  virginica
+  : 3              4.7         3.2          1.3         0.2     setosa
+  : 144.1          6.8         3.2          5.9         2.3  virginica
 
 
 
@@ -61,7 +63,7 @@ On le fait en 2 étapes:
 
  3. on répète un et deux
 
-La distribution obtenue est parfois appelée la "/bootstraping distribution/". SI la statistique d'intérêt est la moyenne on va se rapprocher de celle de l échantillon (mais pas nécessairement de celle de la population, pour cela on a besoin d'un bon échantillon). Par contre si on prend l'ecart type des moyennes obtenues par les bootstraps multipliés par la racine carré du nombre d'echantillon on est assez proche de celle de la population. (à creuser)
+La distribution obtenue est parfois appelée la "/bootstraping distribution/". Si la statistique d'intérêt est la moyenne on va se rapprocher de celle de l échantillon (mais pas nécessairement de celle de la population, pour cela on a besoin d'un bon échantillon). Par contre si on prend l'écart type des moyennes obtenues par les bootstraps multipliés par la racine carré du nombre d'échantillon on est assez proche de celle de la population. (à creuser)
 
 ** Ressources
 
