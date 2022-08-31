@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       988bd803-9c83-44aa-9af7-164eb0b3d2d7
+:END:
+#+title: p_value
+
+
+- Il nous faut commencer par obtenir un [[id:7e5d7021-8809-4236-8f38-308eb3893664][z-score]].
+- Puis on fonction du test on va regarder la position de ce z-score dans la distribution normale (via sa p/robability density function/).
+
+  Ex:  ~pnorm(z-score, lower.tail = TRUE)~

@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       7e5d7021-8809-4236-8f38-308eb3893664
+:END:
+#+title: z-score
+
+**z-score** (cote Z) ou score standard permet de calculer la position d'un point par rapport aux nombre d'ecart type (/standard deviation/ d'ou le nom). La formule est la suivante :
+
+$$ z = \frac{\mu - x}{\sigma}$$
+
+$\mu$ est la moyenne estimée
+
+$\sigma$ est l'écart type estimé (via bootstrap)
+
+$x$ est la valeur d'interet.
