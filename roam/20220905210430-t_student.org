@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       3a38c1f5-df47-48db-a6f7-cfc19e917d74
+:END:
+#+title: Student t-distribution
+
+C'est une distribution proche de la distribution[[id:bd6e667f-4bf2-4369-99d4-0b6ec818b949][ Normale]] pour les cas où l'échantillon est faible.
+
+Si l'échantillon est important et que l'on a un grand dégrée de liberté on obtient la loi [[Normale]].
+
+Le dégrée de liberté est définit comme le nombre de valeurs indépendante dans l'échantillon.
+
+R utilise ~pt(t_stats, degree_freedom)~ pour obtenir la CDF (/Cumulative Distribution function/).

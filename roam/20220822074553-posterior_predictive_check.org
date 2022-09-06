@@ -12,7 +12,7 @@ La stratégie est de :
 
 - Pour chaque jeux de paramètres simulés par la chaîne de Markov on va tirer un échantillon de taille $n$ ($n$ correspond au nombre de donnée). Cela nous donne $N$ jeux de paramètres de taille $n$.
 
-  - On prend un échantillon de $N$ pour le comparer aux données
+- On prend un échantillon de $N$ pour le comparer aux données
 
 
 Il est possible de calculer des valeurs synthétiques pour estimer la qualité de la prédiction (/posterior predictive summaries/).
@@ -25,8 +25,10 @@ Cela nous permet de calculer:
 
   $$MAE = median|Y_{i} - Y_{i}^{'}|$$
 
-- la MAE mis à l'échelle (via l'ecart type), si c'est synetrique on peut regarder si on est à 1,2 ou plus sd d'une valeur mediane.
+- la MAE mis à l'échelle (via l'écart type), si c'est symétrique on peut regarder si on est à 1,2 ou plus $\sigma$ d'une valeur médiane. C'est la même idée qu'un[[id:7e5d7021-8809-4236-8f38-308eb3893664][ z-score]].
 
   $$MAE = median\frac{|Y_{i} - Y_{i}^{'}|}{sd_{i}}$$
 
 - des intervals de prédictions du posterieurs
+
+Le problème de ses stratégie est que l'on utilise des données utilisées pour construire le modèle pour le tester. Une des solutions pour contourner ce problème est d'utiliser des techniques de [[id:62e98936-8e79-41d1-8905-8b2e1967ec97][Cross Validation]].
