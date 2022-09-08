@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       3b50a822-b8c7-46e8-b906-78cb98c55a42
+:END:
+#+title: Schéma
+
+Un schémas représente les relations entre différente table dans une base de données relationnelles.
+
+Le plus connu est le schéma en étoile qui utilise une table centrale pour référencer les autres tables.
+
+Les tables sont souvent diviser en deux types:
+
+- Celle des fait (/fact/) qui regroupe des métrique lier à un évènement spécifiques (par exemple une vente). Il y a en général beaucoup de lignes avec peu de variables.
+
+- Celle des dimensions qui regroupe une forme d'agrégats (une boutique, un canton). Il y a en général beaucoup de variables associés.

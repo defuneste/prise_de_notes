@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       e5f2e949-7906-417e-a0e0-46a48d6fbf77
+:END:
+#+title: data_engineering
+
+
+* les Missions :
+
+- regrouper et organiser la données à partir de différentes sources
+- Optimiser les base de données pour de l'analyse
+- Retirer les données corrompues
+
+Il faut développer, mettre en place, tester et maintenir différentes architecture comme des base de données.
+
+* Les outils :
+
+- Les bases de données ([[id:5fe9773a-71d0-48bc-a083-c0a8d9941fe0][databases]]), ex: PostgreSQL, MySQL
+- Travailler les données, parfois en utilisant du [[id:cfbcb4c2-c850-4676-9922-3987c92486bf][Parallel computing]] /cluster computing/  (grappe de serveur) ex: [[id:9db16f17-3d9a-4dac-9200-9be766976a25][spark]] ou hive
+- Scheduler en gérant les dépendances ex: apache Airflow ou [[id:7f85bede-36a6-4488-ae4f-8d0843db27c6][cron]]

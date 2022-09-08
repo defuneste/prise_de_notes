@@ -3,7 +3,7 @@
 :END:
 #+title: DDL
 
-DDL pour data description languqge ou data definition
+DDL pour data description language ou data definition
 
 ** Data structures
 
@@ -11,7 +11,7 @@ Il y a de nombreuses structure de données en SQL:
 - tables
 - indexes
 - views
-- schemas
+- [[id:3b50a822-b8c7-46e8-b906-78cb98c55a42][schema]]
 
 Exemple de création de table:
 
@@ -32,8 +32,6 @@ create index idx_ma_table_une_col
         on ma_table
         using (une_col);
 #+end_src
-
-
 
 
 ** [[id:c75a51da-a6cc-4ec2-b7f5-2dbfb72b9982][Data_type_postgresql]]

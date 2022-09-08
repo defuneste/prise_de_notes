@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       5fe9773a-71d0-48bc-a083-c0a8d9941fe0
+:END:
+#+title: Databases
+
+* définition
+
+C'est une collection de données organisé pour un accès rapide.
+
+Elles peuvent être:
+- Structurées (base de données relationnelles),
+- Semi-structurées (JSON),
+- Non-structurées (photos, vidéos, sous forme de fichier).
+
+
+On peut aussi les classifier entre:
+- [[id:e5b7a62d-ef4e-4a64-a206-4b6e0440388d][SQL]]
+- No-SQL : cella peut correspondre à des clef-valeur (ex OSM) ou du JSON (mongoDB)

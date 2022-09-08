@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       cfbcb4c2-c850-4676-9922-3987c92486bf
+:END:
+#+title: Parallel_computing
+
+L'idée est de diviser une tache en sous tache et d'allouer ces taches à différents ordinateurs.
+
+Le compromis est toujours de savoir si le coûts d'allocation ne dépasse pas le gain à diviser la tache.
+
+** les paquets permettant de la faire:
+
+*** Python:
+
+- Pool
+- dask
+
+*** R
+
+- parallel
