@@ -4,3 +4,5 @@
 #+title: Shiny input
 
 Les fonctions d'inputs ont une structure commune. Elles ont pour argument ~inputID~. Ce dernier prend une chaîne de caractère ne pouvant contenir que *des lettres, des nombres et des underscores*. Ensuite cette ID doit être unique.
+
+Les /input/ sont /read-only/ et doivent être lancer du navigateur. Ils ne peuvent être lu que dans un contexte /reactif/.

@@ -24,8 +24,19 @@ server <- function(input, output, session) {
 shinyApp(ui, server)
 #+end_src
 
-** [[id:91ee5164-7abb-45f9-af93-4c5a7d4b332e][shiny input]]
+** [[id:91ee5164-7abb-45f9-af93-4c5a7d4b332e][shiny input
+]]
+** Graph de dépendance
+
+Shiny est basé sur de la programmation réactive. Le code n'est pas exécute ligne après ligne mais en suivant un *graph de dépendance*.
+
+
+** Reactive expressions
+
+[[file:img/producers-consumers.png][Dessin de Mastering shiny H. Wichkam]]
+
+Il est possible d'utiliser un timer(~reactiveTimer()~) pour forcer des actualisations. On peut aussi le faire avec des boutton d'action (~actionButton()~).
 
 * Ressources :
 
-- [[https://mastering-shiny.org/index.html][Mastering Shiny]]
+- [[HTTPS://mastering-shiny.org/index.html][Mastering Shiny]]
