@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       ea521b0a-287f-439d-aef6-e27244d1cfe7
+:END:
+#+title: PySpark
+
+PySpark est une interface en [[id:dcc375e2-2f99-4940-a6b2-3cca1e5e2f30][python]] de Spark.
+
+Elle définit des ensemble d'objets et de méthodes pour travailler avec les abstractions de données de Spark.
+
+** Méthodes fréquentes
+
+- ~.printSchema()~ permet d'imprimer le schéma du tableau de données
+- ~.groupBy(`location`)~ permet de faire des groupes (ici sur le champs location)
+- ~.mean()~ est enchainé pour en faire la moyenne et ~.show()~ va chercher et montrer le résultat

@@ -17,3 +17,25 @@ Le compromis est toujours de savoir si le coûts d'allocation ne dépasse pas le
 *** R
 
 - parallel
+
+** Des frameworks
+
+*** Apache Hadoop
+
+- HDFS : c'est un système de distribution de fichiers pour de multiple machines
+
+  Il est maintenant souvent remplacer par des solutions spécifiques à chaque plate-forme
+
+- Map Reduce: On divise les opérations et on les répartie en plusieurs machines. C'était compliqué et donc une des réponses a été de développer Hive et un SQL associé.
+
+*** Apache Spark
+
+Fonctionne sur Resilient distributed datasets (RDD)
+
+On put y effectuer deux types d'opérations:
+
+    - Des transformations comme ~.map()~ ou ~.filter()~
+    - Des actins comme ~.count()~ ou ~.first()~
+
+
+On utilise Spark à travers une API comme [[id:ea521b0a-287f-439d-aef6-e27244d1cfe7][PySpark]]. Il y a aussi une abstraction pour les tableaux de données.

@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       277bc3b6-08cb-4b6d-9df1-536ea9a31fe6
+:END:
+#+title: Scheduler
+
+Ce sont des outils, souvent des framework permettant de planifier différentes taches.
+
+[[id:7f85bede-36a6-4488-ae4f-8d0843db27c6][cron]] est celui de linux mais il ne permet pas de gérer de multiple dépendances entre les jobs (il ne peut que suivre les instructions d'un .sh).
+
+Pour répondre à ce problème, notamment dans le cadre de grappe de serveurs un DAG est mis en place.
+
+Les framework courant sont Luigi ou Apache Airflow.
+
+
+** Apache Airflow
+
+La mise en place est la suivante :
+
+- création d'un DAG (avec sa fréquence de MAJ)
+- la définition de /jobs/ (des noeuds: cela peut être des opérations en python ou en Spark)
+- les liens (/dependency/) entre les jobs

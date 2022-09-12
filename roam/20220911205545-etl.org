@@ -1,0 +1,23 @@
+:PROPERTIES:
+:ID:       ca5cbfe0-ea4e-4b2c-ba18-80b9e2b59222
+:END:
+#+title: etl
+
+ETL : pour Extract Transfer Load
+
+** Extract
+
+*** Définition
+
+On extrait des données d'un stockage permanent (fichier, DB, API) pour les charger en mémoire.
+
+*** Type de fichiers
+
+- /flat files/ chaque ligne est un individus et chaque colonne une variable. Ex. tsv, csv.
+- /plain text/ : un fichier texte comme le chapitre d'un livre
+- /JSON/ JavaScript Object Notation. Ils sont dit semi structuré. Il est y a 4 types de données atonique (~number~, ~string~, ~boolean~, ~null)~ et des types de données composés (~array~, ~object~). On peut les comparer aux dictionnaires de python.
+- [[id:5fe9773a-71d0-48bc-a083-c0a8d9941fe0][Databases
+]]
+** Transform
+
+On peut faire des sélections, des traductions de termes, des validation de champs ou séparer/rejoindre des champs.
