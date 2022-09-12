@@ -21,3 +21,11 @@ On peut aussi les classifier entre:
 
 - OLTP: OnLine Transaction Processing,  focus sur les lignes
 - OLAP: Online Analytical Processing, focus sur les colonnes.
+- On peut considerer les *MPP* ou /Massively Parrallel Processing Databases/ à un cas particulier d'OLAP (colonnes orientées DB)
+  * Amazon Redshift
+  * Azure SQL Data Warehouse
+  * Google Bigquery
+
+** Parquet un format orienté autour des colonnes
+
+[[id:9ce1307c-4298-4dae-95c4-2b8670a6f72b][parquet]]

@@ -2,3 +2,16 @@
 :ID:       7f85bede-36a6-4488-ae4f-8d0843db27c6
 :END:
 #+title: cron
+
+
+Voici la syntaxe de la chaine de charactère:
+
+
+# . -----------------------minute       (0-59)
+# | .----------------------hour         (0-23)
+# | | .--------------------day of the M (1-31)
+# | | | .------------------month        (1-12)
+# | | | | .----------------day of the W (0-6)
+# * * * * *
+
+0 * * * * -> toutes les heures à la minute 0

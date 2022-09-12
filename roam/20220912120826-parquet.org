@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       9ce1307c-4298-4dae-95c4-2b8670a6f72b
+:END:
+#+title: Parquet
+
+C'est un format de stockage (/serialization/) des donnnées orientés colonne.
+
+Pandas a ~.to_parquet(path)~ pour passer un df à un parquet file.
+
+PySpark a ~.write.parquet(path)~
