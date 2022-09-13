@@ -5,7 +5,7 @@
 
 Manipulation de données tabulaires.
 
-On peut créer un dictionnaire (1) puis l'importer avec pendant.
+On peut créer un dictionnaire (1) puis l'importer avec pandas.
 
 Il y a un peu de taffs en préambule du coté d'org https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-python.html !
 
@@ -48,7 +48,7 @@ Il est aussi possible de /set/ l'indice des lignes avec la methode ~index~
 
 ** via un CSV
 
-Il y a la fonction ~read_csv("path", index_col = 0)~
+Il y a la fonction ~pd.read_csv("path", index_col = 0)~
 
 L'argument index_col est utilisé ici pour indiquer que la première ligne contient le header.
 
@@ -79,7 +79,6 @@ Si on veut avoir un truc similaire à R il faut utiliser:
 
 On peut vouloir sélectionner à l'aide de filtre comme: ~colonne > un_nombre~
 
-
 comme pandas est construit sur [[numpy]] on peut utiliser les mêmes fonctions:
 
 #+begin_src python
@@ -87,11 +86,13 @@ DF[np.logical_and(x == 'bill', y < 1.80)]
 DF[np.logical_or(x == 'bob', y == 'bill')]
 #+end_src
 
+#+RESULTS:
+
 * Itération
 
 Une boucle /for/ classique sur un objet DF va se faire juste sur le noms de colonnes.
 
-#+begin_src python :results
+#+begin_src python :results value
 import pandas as pd
 path = "https://raw.githubusercontent.com/defuneste/utile_comme_du_pq/master/iris_dataset.csv"
 iris = pd.read_csv(path, index_col = 0)
@@ -102,6 +103,8 @@ for lab, row in iris.iterrows() :
 # ici je n'ai utilisé que row
 #+end_src
 
+#+RESULTS:
+: None
 
 * Apply
 
@@ -109,3 +112,40 @@ for lab, row in iris.iterrows() :
 DF["une_nouvelle_colonne"] = DF["une_colone"].apply(len)
 # ic on applique leng sur "une colonne" et on sauve dans "une_nouvelle_colonne"
 #+end_src
+
+* I/O
+
+** Flat files
+
+~pd.read_csv()~ utilise des arguments pour limiter le nombre de colonnes:
+
+- ~usecols~ : prend une liste de nom ou numéro de colonnes
+- ~nrows~ : limite le nombre de lignes
+- ~skiprows~ : prend une liste
+- ~header~ : ~None~ pratique si on les skips
+- ~names~ : une liste des noms de colonnes
+
+#+header: :prologue from tabulate import tabulate
+#+header: :noweb strip-export
+#+begin_src python :results value
+import pandas as pd
+path = "https://raw.githubusercontent.com/defuneste/utile_comme_du_pq/master/iris_dataset.csv"
+colnames = ["target", "sepal length (cm)"]
+iris = pd.read_csv(path,
+                   usecols = colnames)
+
+iris_h = iris.head()
+
+<<pd2org("iris_h")>>
+#+end_src
+
+#+RESULTS:
+: |    |   sepal length (cm) | target      |
+: |----+---------------------+-------------|
+: |  0 |                 5.1 | Iris-setosa |
+: |  1 |                 4.9 | Iris-setosa |
+: |  2 |                 4.7 | Iris-setosa |
+: |  3 |                 4.6 | Iris-setosa |
+: |  4 |                 5   | Iris-setosa |
+
+ - ~dtype~ : prend un dictionnaire (~{"pas_un_nombre" : str}~) avec le nom des colonnes et le type de données

@@ -20,4 +20,4 @@ La mise en place est la suivante :
 - la définition de /jobs/ (des noeuds: cela peut être des opérations en python ou en Spark)
 - les liens (/dependency/) entre les jobs
 
-  Les DAG sont écrit sous forme de script python et sauver avec ~.py~ dans le repertoire ~airflow/dags/~ .
+  Les DAG sont écrit sous forme de script python et sauver avec ~.py~ dans le repertoire ~airflow/dags/~.
