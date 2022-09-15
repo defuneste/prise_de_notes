@@ -148,4 +148,17 @@ iris_h = iris.head()
 : |  3 |                 4.6 | Iris-setosa |
 : |  4 |                 5   | Iris-setosa |
 
- - ~dtype~ : prend un dictionnaire (~{"pas_un_nombre" : str}~) avec le nom des colonnes et le type de données
+ - ~dtype~ : prends un dictionnaire (~{"pas_un_nombre" : str}~) avec le nom des colonnes et le type de données
+ - ~na_values~ : prends, une valeur, une liste ou un dictionnaire. Dans le cas du dictionnaire il faut spécifier la colonne et la valeur qui devient NA.
+   La methode ~isna()~ peut être utile : ~print(iris[iris.target.isma()])~
+ - ~error_bad_lines=False~ ou ~warn_bad_lines=True~ permet de vérifier les erreurs dans un csv (trop de valeur/colonnes par ex)
+ -
+** Spreadsheets
+
+Il faut se rappeler qu'il peut y avoir de nombreuses feuilles de calculs dans une seul document (argument: ~sheet_name~ pour spécifier le numéro ou sont nom). Si ~None~ est utilisée comme valeur toutes les feuilles sont lues dans un dictionnaire.
+
+Les feuilles de calculs peuvent aussi contenir de la mise en formes.
+
+On peut avoir des feuilles de calculs avec de nombreuses petites tables ou encore avec des entêtes.
+
+La fonction principale de pandas est ~read_excel()~. On y retrouve des arguements de ~read_csv()~. En plus ~usecols~ peux prendre des strings propre aux tableurs comme "A:P".
