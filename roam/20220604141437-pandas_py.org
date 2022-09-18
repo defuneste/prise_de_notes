@@ -162,3 +162,18 @@ Les feuilles de calculs peuvent aussi contenir de la mise en formes.
 On peut avoir des feuilles de calculs avec de nombreuses petites tables ou encore avec des entêtes.
 
 La fonction principale de pandas est ~read_excel()~. On y retrouve des arguements de ~read_csv()~. En plus ~usecols~ peux prendre des strings propre aux tableurs comme "A:P".
+
+** Connection via une [[id:5fe9773a-71d0-48bc-a083-c0a8d9941fe0][Databases]]
+
+Pour [[python]] la bibliothèque est [[id:6558c7c6-3992-49d9-a270-1505651a9f65][sqlalchemy]].
+
+Pour R c'est [[id:ed90188f-ff2f-447f-a66a-545252c5c474][DBI]].
+
+La fonction ~pd.read_sql(query, engince)~ est utilisée. ~query~ correspond à la requête, du SQL encadré de "" et ~engine~ correspond à la connexions à la BD. ~query~ peut aussi être un nom de table ("ma_table").
+
+
+* Date and times
+
+Pas défaut Pandas sauve les dates en format /string/ (il y a de nombreux format pour encore ce type d' informations). Si on veut pouvoir travailler dessus il faut le "parser". Les fonctions d' import ont l' argument ~parse_dates~  et il peut une liste de colonne ou leurs nombres, une liste de listes et un dictionnaire.
+
+Cependant ce arguments ne marche que si les chaînes de caractères ne sont pas trop horribles. Sinon il faut utiliser la fonction de pandas ~to_datetime()~. Elle prend un df avec une colonne à convertir. L'argument ~format~ avec la représentation de la date.

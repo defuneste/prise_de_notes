@@ -1,0 +1,23 @@
+:PROPERTIES:
+:ID:       6558c7c6-3992-49d9-a270-1505651a9f65
+:END:
+#+title: sqlalchemy
+
+
+C'est un ensemble d'outil d'acces aux [[databases]] pour python.
+
+Le site web est ici: https://www.sqlalchemy.org/
+
+
+* Basics
+
+La première étape est de créer une connection:
+
+- ~create_engine()~ cette fonction prends un format d'url en caractère.
+- on effectue la requête
+
+  #+begin_src python
+from sqlalchemy import create_engine
+engine = create_engine("sqlite:///data.db")
+print(engine.table_names()) # retourne les noms tables sous une liste
+  #+end_src

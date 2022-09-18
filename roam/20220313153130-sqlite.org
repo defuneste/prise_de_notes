@@ -3,10 +3,13 @@
 :END:
 #+title: SQLite
 
-SQLite est une version légère et très utilisée.
+SQLite est une version légère, tous est contenu dans un fichier. Elle est très utilisée.
 
-La version courante est `sqlite3` et s'instale: `sudo apt-get install sqlite3`
+La version courante est `sqlite3` et s'installe: ~sudo apt-get install sqlite3~
 
-Les fonctions d'aide commence en general par un `.`
+Les fonctions d'aide commence en général par un ~.~
 
-ex: `.exit` pour quitter
+L'URL typique ressemble à ~sqlite:///nom_db.db~
+
+
+ex: ~.exit~ pour quitter

@@ -17,6 +17,13 @@ On peut aussi les classifier entre:
 - [[id:e5b7a62d-ef4e-4a64-a206-4b6e0440388d][SQL]]
 - No-SQL : cella peut correspondre à des clef-valeur (ex OSM) ou du JSON (mongoDB)
 
+Pour se connecter à une base de données il faut:
+
+1. créer une passerelle vers la DB
+2. faire une requete
+
+
+
 * OLTP/OLAP
 
 - OLTP: OnLine Transaction Processing,  focus sur les lignes

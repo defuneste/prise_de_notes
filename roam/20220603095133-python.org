@@ -72,7 +72,7 @@ On peut faire des itérations sur tout les objets itérables. Tous ces objets on
 
 #+begin_src python :results output
 mot = 'bou'
-it =iter(mot)
+it = iter(mot)
 print(next(it))
 print(next(it))
 print(next(it))
