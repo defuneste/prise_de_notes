@@ -5,6 +5,9 @@
 
 Ce sont des opérations, s'intégrant dans [[id:16110d04-e3c8-4cca-abb9-4f80c10d00dd][SELECT]] statement, qui visent à joindre plusieurs tables. Elles se mettent en place au même niveau que FROM et donc sont dans les première exécutées.
 
+JOIN, la version par défaut,  ne prend que les valeurs présentent dans les deux tables et les colonnes à joindre doivent être du même type de données.
+
+
 | A |
 | 1 |
 | 2 |

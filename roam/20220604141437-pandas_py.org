@@ -51,6 +51,9 @@ Il est aussi possible de /set/ l'indice des lignes avec la methode ~index~
 Il y a la fonction ~pd.read_csv("path", index_col = 0)~
 
 L'argument index_col est utilisé ici pour indiquer que la première ligne contient le header.
+** mèthodes utiles
+
+~DF.shape~ retourne les dimensions du DF: lignes * colonnes)
 
 * Selecting/slicing
 
@@ -74,6 +77,12 @@ Si on veut avoir un truc similaire à R il faut utiliser:
 - ~iloc~ localisation basé sur un entier
 
   ~DF.iloc[[1,2,3],[0,1]]~
+
+* Opérations sur plusieurs tableaux
+
+~.append()~ permet d'ajouter un df au bout d'un autre df
+
+~.merge()~ est utiliser pour faire des jointures. La syntaxe si les colonnes ont des noms différents est d'utiliser les arguments ~left_on =~ et ~right_on =~
 
 * Filtres
 
@@ -171,9 +180,27 @@ Pour R c'est [[id:ed90188f-ff2f-447f-a66a-545252c5c474][DBI]].
 
 La fonction ~pd.read_sql(query, engince)~ est utilisée. ~query~ correspond à la requête, du SQL encadré de "" et ~engine~ correspond à la connexions à la BD. ~query~ peut aussi être un nom de table ("ma_table").
 
+Attention les requêtes sont sous cette forme
+
+#+begin_src  python
+query = """
+SELECT *
+FROM bob;
+"""
+#+end_src
+
+** JSON
+
+~pd.read_sql()~ : en plus des commandes classiques il y a aussi l'argument ~orient~ qui explicite comment le nouveaux DF doit être orienté.
+
+Les options peuvent être de stocker chaque relevé dans un dictionnaire (orienté relevé) ou le plus traditionnelle: colonne orientée.
+
+Le plus souvent on recupère des JSON via une[[id:83f8779b-8d39-44cf-8a24-24100c4445ac][ API]], par exemple via une requête de type GET. Ce type de requête renvoie une réponse comprenant les données et les metadonnées. Dans le cas de ce type de requête on passe plus souvent par ~pd.DataFrame()~ pour convertir la réponse.
+
+Dans le cadre de JSON niché (ie avec des objets dans des objets) il faut charger ~pandas.io.json~ et sa fonction ~json_normalize~. cette dernière prend un dictionnaire ou une liste de dictionnaire.
 
 * Date and times
 
-Pas défaut Pandas sauve les dates en format /string/ (il y a de nombreux format pour encore ce type d' informations). Si on veut pouvoir travailler dessus il faut le "parser". Les fonctions d' import ont l' argument ~parse_dates~  et il peut une liste de colonne ou leurs nombres, une liste de listes et un dictionnaire.
+Pas défaut Pandas sauve les dates en format /string/ (il y a de nombreux format pour encore ce type d' informations). Si on veut pouvoir travailler dessus il faut le "parser". Les fonctions d'import ont l' argument ~parse_dates~  et il peut une liste de colonne ou leurs nombres, une liste de listes et un dictionnaire.
 
-Cependant ce arguments ne marche que si les chaînes de caractères ne sont pas trop horribles. Sinon il faut utiliser la fonction de pandas ~to_datetime()~. Elle prend un df avec une colonne à convertir. L'argument ~format~ avec la représentation de la date.
+Cependant cet argument ne marche que si les chaînes de caractères ne sont pas trop horribles. Sinon il faut utiliser la fonction de pandas ~to_datetime()~. Elle prend un df avec une colonne à convertir. L'argument ~format~ avec la représentation de la date.

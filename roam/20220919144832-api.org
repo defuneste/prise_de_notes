@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       83f8779b-8d39-44cf-8a24-24100c4445ac
+:END:
+#+title: API
+Application Programming Interfaces:
+
+Une application definissant les moyens de communiquer avec un autre programme.
