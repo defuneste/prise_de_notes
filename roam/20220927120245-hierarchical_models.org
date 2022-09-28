@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       4088e6ee-8336-4ba5-afe2-f732a0c1f601
+:END:
+#+title: Hierarchical models
+
+
+Il est d'abord important d'introduire les trois categories de modèles possibles:
+
+1. /Complete pooling/ : le modèle ne tient pas compte des hiérarchies il traite tous les individus statistique comme independant
+
+2. /no pooling/ : un modèle  pour chaque hierarchie (ie un pour chaque sous groupe)
+
+3. /partial pooling/ le modèle tient compte de la hiérarchie

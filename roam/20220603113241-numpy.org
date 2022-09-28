@@ -5,7 +5,7 @@
 
 Prise de note de numpy
 
-Numpy tranforme des list en des np.narray().
+Numpy tranforme des list en des np.narray(). Ils sont homogène: du meme type de donnée.
 
 ** Les operateurs de comparaisons
 

@@ -154,6 +154,8 @@ La fonction ~type~ renvoie le type de l'objet
 
 ** List
 
+On utilise soit ~list()~ ou  ~[]~ pour créer des listes.
+
 #+begin_src python
 dude = ['bill', 'bob']
 taille_m = [1.70, 1.85]
@@ -180,7 +182,8 @@ Pour produire un générateurs on remplace les ~[]~ par ~()~ dans la compréhens
 
 ** Dictionaires
 
-C'est un système de key:value mais il ne peut pas y avoir plus d'un type de clef. Cela ne fait pas sens que bill est plusieurs taille. Les keys sont "immutables" à la différence des listes mais on peut changer des valeurs.
+C'est un système de /key:value/ mais il ne peut pas y avoir plus d'un type de clef. Cela ne fait pas sens que bill est plusieurs taille. Les /keys/ sont "immutables" à la différence des listes mais on peut changer des valeurs. Pour les créer on utilise ~dict()~ ou ~{}~
+~.
 
 #+begin_src python
 taille = {"bill":1.70, "bob":1.85}
@@ -217,7 +220,7 @@ Il existe des [[id:9c5b4aa4-79e3-4a7a-ba8c-7d1580d8890a][dictionnaire en compré
 
 ** Tuples
 
-Comme une liste mais est /Immutable/
+Comme une liste mais est /Immutable/. On peut les créer avec ~()~ ou avec ~tuple()~
 
 #+begin_src python :results output
 tuple = (1, 2, 3) # à la difference de list utilise () au lieu de [ ]
@@ -229,7 +232,15 @@ print(type(tuple))
 : <class 'tuple'>
 
 * Fonctions
-*** un exemple simples
+*** Les fonctions /built-ins/
+
+~range()~ produit une séquences  de type [inclusive, exclusive]. Un objet /range/ est retourné qu'il faut convertir en liste (via ~list()~ ou ~*~).
+
+~enumerate()~ produit une liste avec un index.
+
+~map(fonctions, objet)~ applique une fonction à tous les éléments d'un objet, On peut aussi utiliser ~lambda~ pour passer une fonction anonyme.
+
+*** un exemple simple
 
 #+begin_src python :results output
 def square(value) : # <- entête de la fonction
@@ -328,3 +339,15 @@ Numpy est une librairie de Python fournissant un vecteur/matrice de n dimension 
 Une des bibliothèques de plot.
 
 * [[id:a1f67fe2-36ce-44aa-b027-14256be6022f][Pandas]]
+* Ipython
+
+** Magic commands
+
+Les commandes avec % sont dites /magic commands/ elles proposent des amélioration de la syntax de python.
+
+~%timeit~ est utilisé avant d'une commande pour en calculer le temps d'exécution.
+
+Si on veut le faire sur plusieurs ligne de code il faut utiliser ~%%~
+
+
+Le flag -o permet de sauver le resultat de timeit dans un objet.

@@ -9,6 +9,12 @@ Une grosse partie de mes notes vont reprendre le livre et le cours de Richard Mc
 
 Le reste va se composer de ressources à explorer:[[id:48a28e13-eb27-4663-927c-26c91b7ce942][ressources bayes]]
 
+** Concepts
+
+*** [[id:4088e6ee-8336-4ba5-afe2-f732a0c1f601][Hierarchical models]]
+
+
+** Outils
 
 Un des outils pour effectuer des stats bayesiennes est les [[id:8b4772e2-ba85-40bd-9cc7-750cb95cb385][MCMC]] ou Markov Chain Monte Carlo. Il existe plusieurs outils pour les produire :
 
