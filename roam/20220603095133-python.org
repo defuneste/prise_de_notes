@@ -148,6 +148,14 @@ Il y a besoin d'une méthode en plus pour les ~nparray~ cf. [[id:8c4cd16e-6661-4
 
 Si on prend deux objets itérables de même taille on peut les *zipper* ensemble ce qui va retourner un objet de class zip: un itérateur de tuples. On peut ensuite utiliser list pour le convertir ou encore faire une loop for avec les deux éléments du tuple.
 
+La fonction est ~zip().
+~
+*** itertools
+
+C'est une librairie standard qui contient de nombreux outils pour faire des opérations sur des itérareurs.
+
+
+
 * Structure de données
 
 La fonction ~type~ renvoie le type de l'objet
@@ -230,6 +238,10 @@ print(type(tuple))
 
 #+RESULTS:
 : <class 'tuple'>
+** Collections
+
+Python possède d'autres structure de données dans la librairies standard /collections/. *Counter* par exemple est un dictionnaire qui peut contenir un denombrement.
+
 
 * Fonctions
 *** Les fonctions /built-ins/
