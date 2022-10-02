@@ -1,7 +1,7 @@
 :PROPERTIES:
 :ID:       dcc375e2-2f99-4940-a6b2-3cca1e5e2f30
 :END:
-#+title: python
+#+title: Python
 
 C'est mon pot pourri pour Python
 
@@ -155,6 +155,14 @@ La fonction est ~zip().
 C'est une librairie standard qui contient de nombreux outils pour faire des opérations sur des itérareurs.
 
 
+La syntaxe est de ce type
+
+#+begin_export python
+#une intersection
+setA.insterstecion(setB)
+#+end_export
+
+
 
 * Structure de données
 
@@ -241,6 +249,13 @@ print(type(tuple))
 ** Collections
 
 Python possède d'autres structure de données dans la librairies standard /collections/. *Counter* par exemple est un dictionnaire qui peut contenir un denombrement.
+
+** Set
+
+Python a un type de données ~set~. Ces objets ont des méthodes qui en permettent des comparaisons (intersection, différence, etc). Les sets ne sont pas ordonnées mais les valeurs doivent être uniques (ce qui permet de connaître rapidement les valeurs unique d'une liste).
+
+Un set se code avec des ~{}~ mais ou via  ~set()~. A la différence d'un dictionnaire qui comprend un clef:valeur un set a se type de syntaxe ~{"bob", "bill", "jim"}~.
+
 
 
 * Fonctions
