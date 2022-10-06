@@ -5,7 +5,7 @@
 
 * Définitions
 
-Il nous faut définir une fonction de covariance particulière afin d'écrire la fonction de 'likelihood' nous permettant d'estimer de paramètres. C'est le rôle de la famille de fonctions de Matèrn.
+Il nous faut définir une fonction de [[id:5fad86fa-b6e9-4803-b4be-e9ccb6804cdc][covariance]] particulière afin d'écrire la fonction de 'likelihood' nous permettant d'estimer de paramètres. C'est le rôle de la famille de fonctions de Matèrn.
 
 La covariance est simplement la variance si elle ne varie pas dans l'espace elle peut donc être noté $\sigma^{2}$.
 

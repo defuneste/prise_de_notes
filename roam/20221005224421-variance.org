@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       fbb9e60d-517d-433a-9345-7f9be2399e08
+:END:
+#+title: Variance
+
+$$Var(X) = E(X^2) - E(X)^2$$

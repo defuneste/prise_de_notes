@@ -1,0 +1,62 @@
+:PROPERTIES:
+:ID:       5fad86fa-b6e9-4803-b4be-e9ccb6804cdc
+:END:
+#+title: Matrice de covariance
+
+La covariance traduit des écarts conjoints de deux variables par rapport à leurs moyennes (Esperance) respectives. Une forme generalisée donne une matrice de covariance.
+
+La corrélation est une forme normalisée de la covariance (ie entre -1 et 1).
+
+
+** Défintions:
+
+$$Cov(X,Y) = E(XY) - E(X)E(Y)$$
+
+Similaire à
+
+$$Cov(X,Y) = E[(X-E(X)(Y-E(Y))]$$
+
+
+#+begin_src R :results output :session *R* :exports both
+bob <- c(1,3,-1)
+bill <- c(1,0,-1)
+# the function
+cov(bob, bill)
+
+paste("la moyenne de bob est", mean(bob))
+paste("la moyenne de bill est", mean(bill))
+
+E_XY <- mean(bob * bill) ; E_XY
+E_X_E_Y <- mean(bob) * mean(bill) ; E_X_E_Y
+
+E_XY - E_X_E_Y   # 2/3
+#+end_src
+
+#+RESULTS:
+: [1] 1
+: [1] "la moyenne de bob est 1"
+: [1] "la moyenne de bill est 0"
+: [1] 0.6666667
+: [1] 0
+: [1] 0.6666667
+** Une matrice simple
+
+Si on prend bill est bob :
+
+$$\begin{bmatrix} Cov(Bill, Bill) & Cov(Bill, Bob) \\ Cov(Bob, Bill) & Cov(Bob, Bob)  \end{matrix} $$
+
+
+$Cov(Bill, Bill) = Var(Bill)$ donc on peut simplifier avec la [[id:fbb9e60d-517d-433a-9345-7f9be2399e08][variance]].
+
+#+begin_src R :results output :session *R* :exports both
+var(bill) # use n - 1 as denominator
+var(bob)
+
+# via formula
+mean(bill * bill) - (mean(bill) * mean(bill))
+#+end_src
+
+#+RESULTS:
+: [1] 1
+: [1] 4
+: [1] 0.6666667
