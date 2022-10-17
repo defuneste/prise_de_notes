@@ -16,6 +16,10 @@ On obtient l'espèrance (/expected value/) = $n * p$
 
 La variance : $npq$
 
+$$Y|\pi \sim Bin(n, \pi)$$
+
+$$f(y|\pi) = \begin{pmatrix} n \\ y \end{pmatrix}\pi^y(1-\pi) ^{1-\pi} \quad for\ quad y \in \{0, 1, .., n \}$$
+
 ** un exemple simple
 
 #+begin_src R :results output :session *R* :exports both

@@ -1,0 +1,28 @@
+:PROPERTIES:
+:ID:       bb5918b6-9bd9-4b67-b6fb-667487528313
+:END:
+#+title: Mise en page shiny
+
+
+Il est possible de faire des pages avec une "sidebar"
+
+Cf. comme ceci avec un sidebarPanel() et mainPanel().
+
+#+begin_src R
+fluidPage(
+  titlePanel(
+    # app title/description
+  ),
+  sidebarLayout(
+    sidebarPanel(
+      # inputs
+    ),
+    mainPanel(
+      # outputs
+    )
+  )
+)
+#+end_src
+
+
+Il est aussi possible d'avoir plusieurs lignes (utiliser fluidRow()) et meme multipages.
