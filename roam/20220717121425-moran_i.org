@@ -3,7 +3,7 @@
 :END:
 #+title: moran_I
 
-L'indice de Moran est uune mesure de l'autocorrélation spatiale pour des données surfaciques.
+L'indice de Moran est une mesure de l'autocorrélation spatiale pour des données surfaciques.
 
 
 $$I = \frac{n}{\sum_{i \neq j} w_{i,j}} \frac{\sum^{n}_{i = 1} \sum^{n}_{j = 1} w_{ij} (Y_{i} - \bar{Y})(Y_{j} - \bar{Y})}{\sum^{n}_{i = 1} (Y_{i} - \bar{Y})} $$

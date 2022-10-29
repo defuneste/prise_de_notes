@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       ac918c5b-eb3c-4323-a7f5-b43e0505fef3
+:END:
+#+title: fixed_effect
+
+
+C'est un effet qui est contrôlé (souvent par un expérimentateur) et qui reste plus ou moins constant entre catégorie. Ie : une variance similaire ou /homoscedasticity/.
+
+La technique d'analyse revient à isoler la variations intra en soustrayant la moyenne des intra.
+
+Pour plus : ttps://statmodeling.stat.columbia.edu/2005/01/25/why_i_dont_use/

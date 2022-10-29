@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       8c289880-6de6-4577-b303-7196614baa09
+:END:
+#+title: random_effect
+
+A la différences des /[[id:ac918c5b-eb3c-4323-a7f5-b43e0505fef3][fixed effects]]/ un effet "random" va être estimer par du /partial pooling/ (cf.[[id:4088e6ee-8336-4ba5-afe2-f732a0c1f601][ Hierarchical models]])  ou ie un compromis entre le modèle de variabilité intra groupe et celui inter groupe.
+
+On utilise l'information contenu dans la moyenne du groupe hiérarchique "supérieur" pour compenser un manque d'info dans l'inférieur.
+
+Bon thread SO: https://stats.stackexchange.com/questions/120964/fixed-effect-vs-random-effect-when-all-possibilities-are-included-in-a-mixed-eff

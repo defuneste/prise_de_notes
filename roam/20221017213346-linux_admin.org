@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       f107f428-41c6-45e5-b6d9-3e35268af5f1
+:END:
+#+title: linux_admin
+
+Commande utiles de linux
+
+#+begin_src bash
+scp mon_fichier mon_adress:/path/a/suivre
+#+end_src
