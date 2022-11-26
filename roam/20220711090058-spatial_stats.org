@@ -76,7 +76,7 @@ $$Var(Y(s + h) - Y(s)) = 2(C(0) - C(h))$$
 
 et donc le semi-variogramme:
 
-$$\gamma(h) = C(0) - c(h)$$
+$$\gamma(h) = C(0) - C(h)$$
 
 On a cependant encore besoin d'une hypothèse de simplification: *l'isotropie* une fonction de covariance $C(H)$ est dite isotropique si elle dépend uniquement de la longueur $||h||$. Elle ne dépend donc pas ni de l'angle ni de la direction. Dans ce cas $C(d)$ est utilisé.
 
