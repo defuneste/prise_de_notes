@@ -111,3 +111,13 @@ Pour mettre en place des simulations et des prédictions ~expand.grid()~ permet 
 *** [[id:eb25bf36-4011-4493-ad1f-0854e6032030][matrice de confusion]]
 
 *** [[id:f13d6bea-0056-48dd-bccd-d47bb3ab943b][multiple régressions]]
+
+* Packages et library
+
+Un package dans R peut être dans différents états:
+
+- Source
+- bundled: une forme comprossé ~.tar.gz~
+- binary: mis en place par CRAN et OS specific
+- installed: ~install.package()~
+- in-memory: ~library()~ on appelle une bibliothèque où les packages sont stockées
