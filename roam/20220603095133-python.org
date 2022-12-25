@@ -294,7 +294,7 @@ Il y a plusieurs portée dans python:
 - la portée locale: définie à l'intérieur d'une fonction
 - la porté de built-in : comme celle des packages
 
-L'ordre de la porté se fait du local > enclosed function >  global > builin. On peut changer cet ordre en utilisant, par exemple, le mot clef ~global~ devant une variable. Cela permet d'accéder et donc de modifier la vairable "globale". Il existe aussi ~nonlocal~
+L'ordre de la porté se fait du local > enclosed function >  global > builin. On peut changer cet ordre en utilisant, par exemple, le mot clef ~global~ devant une variable. Cela permet d'accéder et donc de modifier la variable "globale". Il existe aussi ~nonlocal~
 
 La portée est importante dans les fonctions imbriquées.
 
