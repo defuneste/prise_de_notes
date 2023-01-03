@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       2ad49464-14e7-4f28-ba1e-29bc49a6bb6e
+:END:
+#+title: 2023-01-03
+* Prise de notes sur comment utiliser daily via org roam

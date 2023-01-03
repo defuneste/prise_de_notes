@@ -402,7 +402,6 @@ fin video 6 sur table 2 fallacy
 ** 2022-01-26
 *** Statistical rethinking
 vidéo 7
-
 ** 2022-01-27
 *** Statistical rethinking
 
@@ -416,3 +415,71 @@ Homework semaine 3, j'aurais besoin de les refaire
 *** SO
 
 [[https://stackoverflow.com/questions/70888831/cant-read-a-list-of-shp-file-in-r/70891197#70891197][question]] il faut pas oublier que parfois on a des `.shp.xml` dans ses detections de pattern sur des shapefiles
+
+*** statistical rethinking
+
+homework + chat de fin de semaine
+
+** 2022-01-28
+** 2022-01-29
+** 022-01-30
+*** geocompr
+traduction
+** 2022-01-31
+Hector visite maitresse
+Hector visite medicale
+
+** 2022-02-01
+*** statistical rethinking
+video 9
+
+** 2022-02-02
+*** Ambassade
+denied
+*** statistical rethinking
+video 9 et 10
+
+
+** 2022-02-03
+*** Statistical rethinking
+vidéo 10
+** 2022-02-04
+*** Statistical rehinking
+homework  + chat de fin de semaine
+** 2022-29-06
+
+key points: apply business
+
+to non technical person
+
+focus sur process de reflexion
+
+1. business problem
+   recommendations, are they actionable
+2. key points on
+3. logical story
+
+
+For data scientist: return report include commentary
+
+eda: graphics with Legendre
+
+you need to fit a model
+
+Comment le modele se comporte contre le texte / business criteria
+
+
+pkoi le pb est important pour le business
+
+
+audience is non technical2
+
+commons pitfall:
+
+complete the task we ask
+
+double check the rubric
+
+next step for business
+
+Simple slides
