@@ -5,6 +5,7 @@
 
 Besoin de l'organiser un peu plus tard!
 
+* Fonctions de base R à travailler:
 
 *** by() + do.call()
 

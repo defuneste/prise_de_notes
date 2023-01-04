@@ -1,0 +1,42 @@
+* Idées Principales:
+
+- Augmenter au maximum la reproductibilité : /envt as code/
+- Ne pas de se perdre dans les technos et se concentrer dans les concepts
+
+* R
+** R general:
+*** Book club
+- R packages
+- Advanced R
+- Devops 4DS
+
+
+** R spatial
+- Geohealth
+- Geocomputation with R
+- INLA
+- Roger Bivand course
+
+** R stats
+- ISLR
+- Richard McElreath nouvelle version reprise de mes notes
+
+* SIG
+GRASS: progresser dans les modeles de données topologiques
+
+* Python
+** Kattis
+
+
+* Programmation
+
+* Emacs
+
+* Linux/CS
+** Raspberry Pi
+** Protocol
+
+* Blog - communication
+
+** Refaire BTL avec Quarto
+** Améliorer shiny apps
