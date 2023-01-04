@@ -17,4 +17,5 @@ Il faut développer, mettre en place, tester et maintenir différentes architect
 - Les bases de données ([[id:5fe9773a-71d0-48bc-a083-c0a8d9941fe0][databases]]), ex: PostgreSQL, MySQL
 - Travailler les données, parfois en utilisant du [[id:cfbcb4c2-c850-4676-9922-3987c92486bf][Parallel computing]] /cluster computing/  (grappe de serveur) ex: [[id:9db16f17-3d9a-4dac-9200-9be766976a25][spark]] ou hive
 - [[id:277bc3b6-08cb-4b6d-9df1-536ea9a31fe6][scheduler]]  en gérant les dépendances ex: apache Airflow ou [[id:7f85bede-36a6-4488-ae4f-8d0843db27c6][cron]]
--[[id:ca5cbfe0-ea4e-4b2c-ba18-80b9e2b59222][etl]]
+- [[id:ca5cbfe0-ea4e-4b2c-ba18-80b9e2b59222][etl]]
+- [[id:9dffcbce-5ef6-463a-aa4c-31be1166ecd5][unit testing]]

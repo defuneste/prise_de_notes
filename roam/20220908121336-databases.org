@@ -23,7 +23,6 @@ Pour se connecter à une base de données il faut:
 2. faire une requete
 
 
-
 * OLTP/OLAP
 
 - OLTP: OnLine Transaction Processing,  focus sur les lignes
