@@ -3,10 +3,19 @@
 :END:
 #+title: testing
 
+* Géneraliés
+
 Il y a différentes categories de tests:
 
 - /unit/
-- /regression/
+- /regression/ : test pour verifier si une MAJ ne rends pas un logiciel moins bon (regression)
 - /integration/
 - /end-to-end/
 - /smoke/
+
+* Test sous R
+
+Il y a different packages:
+
+- tinytest
+- testthat
