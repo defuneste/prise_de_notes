@@ -1,4 +1,4 @@
-* Idées Principales:
+**Idées Principales:**
 
 - Augmenter au maximum la reproductibilité : /envt as code/
 - Ne pas de se perdre dans les technos et se concentrer dans les concepts
@@ -12,31 +12,59 @@
 
 
 ** R spatial
-- Geohealth
+- Geohealth [0/5]
+  - [ ] chapitre 12 flexdashboard
+  - [ ] chapitre 13 intro to shiny
+  - [ ] chapitre 14 flex + shiny
+  - [ ] chapitre 15 shiny app for spatio temp
+  - [ ] chapitre 16 Spatial Epi
 - Geocomputation with R
 - INLA
-- Roger Bivand course
+- Roger Bivand course [0/3]
+  - [ ] video 6
+  - [ ] video 7
+  - [ ] video 8
+
 
 ** R stats
 - ISLR
 - Richard McElreath nouvelle version reprise de mes notes
 
 * SIG
-GRASS: progresser dans les modeles de données topologiques
+** GRASS: progresser dans les modeles de données topologiques
 
 * Python
 ** Kattis
 
-
 * Programmation
-
 * Emacs
-
 * Linux/CS
 ** Raspberry Pi
 ** Protocol
+** Docker
+** Protocole
 
 * Blog - communication
 
 ** Refaire BTL avec Quarto
 ** Améliorer shiny apps
+** 100 day off load
+
+Potential idea for blog post: [2/5]
+
+    - [ ] ETL vs ELT
+    - [ ] st_coordinates and interior / exterior ring
+    - [x] contributiong to OSM
+    - [ ] INLA
+    - [x] DS meme
+
+* Maths
+** College Algebra [ ]
+*** Relations et fonctions [1/7]
+- [x] Sets and Cartesian Coordinate Plans
+- [ ] Relations
+- [ ] Intro to functions
+- [ ] Function Notation
+- [ ] Function Arithmetic
+- [ ] Graphs of functions
+- [ ] transformation
