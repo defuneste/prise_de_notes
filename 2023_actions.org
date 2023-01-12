@@ -6,7 +6,18 @@
 * R
 ** R general:
 *** Book club
-- R packages
+- R packages [1/9]
+  - [X] chapitre 15
+  - [ ] chapitre 16
+  - [ ] chapitre 17
+  - [ ] chapitre 18
+  - [ ] chapitre 19
+  - [ ] chapitre 20
+  - [ ] chapitre 21
+  - [ ] chapitre 22
+  - [ ] chapitre 23
+  - [ ] chapitre 24
+
 - Advanced R
 - Devops 4DS
 
@@ -46,23 +57,28 @@
 
 * Blog - communication
 
-** Refaire BTL avec Quarto
+** Refaire BTL avec Quarto ou un mixe hugo/knitr
+- Un peu d'avancement refaire le header et footer
+- Changer les couleur du thème
+- tester en mobile
 ** Améliorer shiny apps
 ** 100 day off load
 
-Potential idea for blog post: [2/5]
+Potential idea for blog post: [3/7]
 
     - [ ] ETL vs ELT
     - [ ] st_coordinates and interior / exterior ring
     - [x] contributiong to OSM
     - [ ] INLA
     - [x] DS meme
+    - [ ] Un retour complet sur Bivand
+    - [x] Graph d'une fonction avec R
 
 * Maths
 ** College Algebra [ ]
-*** Relations et fonctions [1/7]
+*** Relations et fonctions [2/7]
 - [x] Sets and Cartesian Coordinate Plans
-- [ ] Relations
+- [X] Relations
 - [ ] Intro to functions
 - [ ] Function Notation
 - [ ] Function Arithmetic
