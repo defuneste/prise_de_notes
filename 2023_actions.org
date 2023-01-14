@@ -2,6 +2,7 @@
 
 - Augmenter au maximum la reproductibilité : /envt as code/
 - Ne pas de se perdre dans les technos et se concentrer dans les concepts
+  et les *prios*
 
 * R
 ** R general:
@@ -23,14 +24,26 @@
 
 
 ** R spatial
-- Geohealth [0/5]
-  - [ ] chapitre 12 flexdashboard
+- *Geohealth* [1/5]
+  - [x] chapitre 12 flexdashboard
   - [ ] chapitre 13 intro to shiny
   - [ ] chapitre 14 flex + shiny
   - [ ] chapitre 15 shiny app for spatio temp
   - [ ] chapitre 16 Spatial Epi
-- Geocomputation with R
+- *Geocomputation with R* translation [9/10]
+  - [x] chapitre 7 repro geo data
+  - [ ] chapitre 8 I/O
+  - [ ] chapitre 9 Makings maps
+  - [ ] chapitre 10 bridges to GIS software
+  - [ ] chapitre 11 scripts, algo and functions
+  - [ ] chapitre 12 stats learning
+  - [ ] chapitre 13 transportaion
+  - [ ] chapitre 14 geomarketing
+  - [ ] chapitre 15 ecology
+  - [ ] chapitre 16 conclusion
+
 - INLA
+
 - Roger Bivand course [0/3]
   - [ ] video 6
   - [ ] video 7
@@ -40,6 +53,7 @@
 ** R stats
 - ISLR
 - Richard McElreath nouvelle version reprise de mes notes
+
 
 * SIG
 ** GRASS: progresser dans les modeles de données topologiques
@@ -59,12 +73,12 @@
 
 ** Refaire BTL avec Quarto ou un mixe hugo/knitr
 - Un peu d'avancement refaire le header et footer
-- Changer les couleur du thème
+- Changer les couleurs du thème
 - tester en mobile
 ** Améliorer shiny apps
 ** 100 day off load
 
-Potential idea for blog post: [3/7]
+Potential idea for blog post: [3/8]
 
     - [ ] ETL vs ELT
     - [ ] st_coordinates and interior / exterior ring
@@ -73,6 +87,8 @@ Potential idea for blog post: [3/7]
     - [x] DS meme
     - [ ] Un retour complet sur Bivand
     - [x] Graph d'une fonction avec R
+    - [ ] post sur consulting and mapscapping
+
 
 * Maths
 ** College Algebra [ ]
