@@ -54,7 +54,6 @@
 - ISLR
 - Richard McElreath nouvelle version reprise de mes notes
 
-
 * SIG
 ** GRASS: progresser dans les modeles de données topologiques
 
@@ -62,6 +61,10 @@
 ** Kattis
 
 * Programmation
+** DE
+*** Fundamental of data engendering
+*** Designing Data-intensive applications
+
 * Emacs
 * Linux/CS
 ** Raspberry Pi
@@ -78,7 +81,7 @@
 ** Améliorer shiny apps
 ** 100 day off load
 
-Potential idea for blog post: [3/8]
+Potential idea for blog post: [4/8]
 
     - [ ] ETL vs ELT
     - [ ] st_coordinates and interior / exterior ring
@@ -87,15 +90,14 @@ Potential idea for blog post: [3/8]
     - [x] DS meme
     - [ ] Un retour complet sur Bivand
     - [x] Graph d'une fonction avec R
-    - [ ] post sur consulting and mapscapping
-
+    - [X] post sur consulting and mapscapping
 
 * Maths
 ** College Algebra [ ]
 *** Relations et fonctions [2/7]
 - [x] Sets and Cartesian Coordinate Plans
 - [X] Relations
-- [ ] Intro to functions
+- [X] Intro to functions
 - [ ] Function Notation
 - [ ] Function Arithmetic
 - [ ] Graphs of functions
