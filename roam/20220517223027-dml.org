@@ -13,7 +13,7 @@ values
 #+end_src
 
 
-On peut aussi utiliser update pour modifier des valeurs:
+On peut aussi utiliser ~update~ pour modifier des valeurs:
 
 #+begin_src sql
 update table
@@ -22,7 +22,7 @@ where une_colonne = qqchose;
 #+end_src
 
 
-On peut aussi utiliser delete
+On peut aussi utiliser ~delete~
 
 #+begin_src sql
 delete from une_table

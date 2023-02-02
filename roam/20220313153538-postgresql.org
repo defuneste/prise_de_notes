@@ -5,9 +5,20 @@
 
 * liste des commandes pratiques en psql:
 
+- `\l`: liste les DB
 - `\dn`: liste les schémas dans une DB
 
-C'est proche ce `SELECT schema_name FROM information_schema.schemata;`
+C'est proche de  ~SELECT schema_name FROM information_schema.schemata;~
+
+-`\dt` : liste toutes les tables dans les DB
+
+- `\dt ***.*` : liste toutes les tables d'une DB
+
+  #+begin_src sql
+select * from pg_catalog.pg_tables
+  #+end_src
+
+-\c <une_DB> : connect à une DB
 
 - `\timing` débute et termine un chronomètre
 
