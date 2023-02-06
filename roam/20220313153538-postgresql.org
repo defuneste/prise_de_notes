@@ -10,7 +10,7 @@
 
 C'est proche de  ~SELECT schema_name FROM information_schema.schemata;~
 
--`\dt` : liste toutes les tables dans les DB
+- `\dt` : liste toutes les tables dans les DB
 
 - `\dt ***.*` : liste toutes les tables d'une DB
 
@@ -21,6 +21,18 @@ select * from pg_catalog.pg_tables
 -\c <une_DB> : connect à une DB
 
 - `\timing` débute et termine un chronomètre
+
+- `\d+ my_table` info sur les columns et data type
+
+  #+begin_src sql
+SELECT
+    column_name,
+    data_type
+FROM
+    information_schema.columns
+WHERE
+    table_name = 'table_name';
+  #+end_src
 
 * [[id:c75a51da-a6cc-4ec2-b7f5-2dbfb72b9982][Data types]]
 * Extension dans PostgreSQL
