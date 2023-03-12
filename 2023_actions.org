@@ -7,29 +7,29 @@
 * R
 ** R general:
 *** Book club
-- R packages [1/9]
+- R packages [9/9]
   - [X] chapitre 15
-  - [ ] chapitre 16
-  - [ ] chapitre 17
-  - [ ] chapitre 18
-  - [ ] chapitre 19
-  - [ ] chapitre 20
-  - [ ] chapitre 21
-  - [ ] chapitre 22
-  - [ ] chapitre 23
-  - [ ] chapitre 24
+  - [x] chapitre 16
+  - [x] chapitre 17
+  - [x] chapitre 18
+  - [x] chapitre 19
+  - [x] chapitre 20
+  - [x] chapitre 21
+  - [x] chapitre 22
+  - [x] chapitre 23
+  - [x] chapitre 24
 
 - Advanced R
 - Devops 4DS
 
 
 ** R spatial
-- *Geohealth* [1/5]
+- *Geohealth* [5/5]
   - [x] chapitre 12 flexdashboard
-  - [ ] chapitre 13 intro to shiny
-  - [ ] chapitre 14 flex + shiny
-  - [ ] chapitre 15 shiny app for spatio temp
-  - [ ] chapitre 16 Spatial Epi
+  - [x] chapitre 13 intro to shiny
+  - [x] chapitre 14 flex + shiny
+  - [x] chapitre 15 shiny app for spatio temp
+  - [x] chapitre 16 Spatial Epi
 - *Geocomputation with R* translation [9/10]
   - [x] chapitre 7 repro geo data
   - [ ] chapitre 8 I/O
@@ -68,7 +68,8 @@
 * Emacs
 * Linux/CS
 ** Raspberry Pi
-** Protocol
+Airplay ok
+pi hole: besoin de set up DNS
 ** Docker
 ** Protocole
 
@@ -90,7 +91,9 @@ Potential idea for blog post: [4/8]
     - [x] DS meme
     - [ ] Un retour complet sur Bivand
     - [x] Graph d'une fonction avec R
-    - [X] post sur consulting and mapscapping
+    - [X] Post sur consulting and mapscapping
+    - [ ] find namespace
+
 
 * Maths
 ** College Algebra [ ]
