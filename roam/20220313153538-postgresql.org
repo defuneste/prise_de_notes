@@ -34,7 +34,7 @@ FROM
     information_schema.columns
 WHERE
     table_name = 'table_name';
-  #+end_src
+  #+end_srclter
 
 * [[id:c75a51da-a6cc-4ec2-b7f5-2dbfb72b9982][Data types]]
 
@@ -97,4 +97,12 @@ select col1, col2
    into temp table new_table
    -- la table source
    from table;
+#+end_src
+
+* USERS and set roles
+
+See https://www.postgresql.org/docs/current/sql-set-session-authorization.html
+
+#+begin_src sql
+SELECT SESSION_USER, CURRENT_USER;
 #+end_src
