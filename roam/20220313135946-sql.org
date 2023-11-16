@@ -3,14 +3,13 @@
 :END:
 #+title: SQL
 
-
 SQL: structured Query language. Utilisé pour gérer des /Relational Database Management system/ (RDBMS)
 
 Inventé par IBM au début des années 70, standardisation 80 et 90'
 
 Il y a malheureusement pas mal de [[id:fb87c94f-612a-40cc-9636-2464bb762f4d][Dialectes de SQL]].
 
-La [[id:985de3f3-3ae5-49bc-8497-4782ace5e177][Syntaxe de SQL]] est composé de *verbes* et se termine par `;`
+La [[id:985de3f3-3ae5-49bc-8497-4782ace5e177][Syntaxe deSQL]] est composé de *verbes* et se termine par `;`
 
 On fait la distinction entre:
 

@@ -5,24 +5,26 @@
 
 * liste des commandes pratiques en psql:
 
-- `\l`: liste les DB
-- `\dn`: liste les schémas dans une DB
+- ~\l~: liste les DB
+-  ~\dn~: liste les schémas dans une DB
 
 C'est proche de  ~SELECT schema_name FROM information_schema.schemata;~
 
-- `\dt` : liste toutes les tables dans les DB
+- ~\du~ liste les utilisateur et roles
 
-- `\dt ***.*` : liste toutes les tables d'une DB
+- ~\dt~ : liste toutes les tables dans les DB
+
+- ~\dt ***.*~ : liste toutes les tables d'une DB
 
   #+begin_src sql
 select * from pg_catalog.pg_tables
   #+end_src
 
--\c <une_DB> : connect à une DB
+- ~-\c~ <une_DB> : connect à une DB
 
-- `\timing` débute et termine un chronomètre
+- ~\timing~ débute et termine un chronomètre
 
-- `\d+ my_table` info sur les columns et data type
+- ~\d+ my_table~ info sur les columns et data type
 
   #+begin_src sql
 SELECT
@@ -35,7 +37,6 @@ WHERE
   #+end_src
 
 * [[id:c75a51da-a6cc-4ec2-b7f5-2dbfb72b9982][Data types]]
-* Extension dans PostgreSQL
 
 * Extensions
 
@@ -50,7 +51,7 @@ SELECT extname FROM pg_extension;
 #+end_src
 
 ** Data types définis par l'utilisateur
-Il existe des data types définit par des utilisateur. On peut y accéder via la table ~pg_type~.
+Il existe des data types définit par des utilisateurs. On peut y accéder via la table ~pg_type~.
 
 Exemple: Enumerated data types ou ENUN permet de faire des listes de valeurs qui ne changeront pas.
 
