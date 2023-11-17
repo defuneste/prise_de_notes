@@ -106,3 +106,15 @@ See https://www.postgresql.org/docs/current/sql-set-session-authorization.html
 #+begin_src sql
 SELECT SESSION_USER, CURRENT_USER;
 #+end_src
+
+
+* COMENT
+
+Peux etre utiliser pour commenter un object dans PG
+
+La doc est bien faite.
+
+
+#+begin_src sql
+comment on schema my_schema is 'un truc utile';
+#+end_src
