@@ -1,0 +1,14 @@
+#+title: Journal 2024
+#+author: Olivier leroy
+
+
+* <2024-01-01 Mon>
+
+Nouvelle annee, resolution tenir le journal jusqu'au bout et transformer certains partie en memo (blog post?)
+
+- ne pas distinguer le journal du taff du perso
+- pas encore certains d'utiliser org roam + un journal a voir
+
+** org mod :org:mode:
+
+    Utiliser plus souvent les tags ref: https://orgmode.org/guide/Tags.html

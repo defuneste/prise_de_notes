@@ -1,0 +1,26 @@
+#+title: 2024 Action
+
+* R spatial
+
+- *Geocomputation with R* translation [9/10]
+  - [x] chapitre 7 repro geo data
+  - [ ] chapitre 8 I/O
+  - [ ] chapitre 9 Makings maps
+  - [ ] chapitre 10 bridges to GIS software
+  - [ ] chapitre 11 scripts, algo and functions
+  - [ ] chapitre 12 stats learning
+  - [ ] chapitre 13 transportaion
+  - [ ] chapitre 14 geomarketing
+  - [ ] chapitre 15 ecology
+  - [ ] chapitre 16 conclusion
+
+* Deep R
+
+- [ ] chapitre 10 S3 classes
+- [ ] chapitre 11 Matrices and other arrays
+- [ ] chapitre 12 Data frames
+- [ ] chapitre 13 Graphics
+- [ ] chapitre 14 Interfacing compiled code
+- [ ] chapitre 15 unevaluated expressions
+- [ ] chapitre 16 Environement and evaluation
+- [ ] chapitre 17 Lazy evaluation
