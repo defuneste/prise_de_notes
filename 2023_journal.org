@@ -1,0 +1,1331 @@
+#+TITLE: 2023 Journal
+
+* Management
+- Harvest
+- Airtable
+
+* ressources:
+
+GH dashboard of org: https://github.com/orgs/ruralinnovation/dashboard
+
+* Important point to discus with every members:
+- what tools do they use?
+- what are their data need?
+- what are their workflow?
+- do they use github in public or not? (need help on that ssh, etc..)
+
+* <2023-01-23 Mon>
+
+** setting up mac that it look like I will need in no particular order
+*** R / Rstudio [6/6] -> part done<2023-01-24 Tue>
+- [x] radian
+- [x] task view Spatial
+- [x] DBI/RpostgreSQL
+- [x] tidyverse
+- [x] some of the fastverse
+- [x] Rstudio -> done<2023-01-25 Wed>
+*** Emacs/mydotfile
+*** Linux&convenience [5/6]
+- [x] homebrew
+  * followed homebrew install instruction https://brew.sh/
+  * added/created ~.zprofile~ following instruction
+- [ ] docker
+- [x] git
+  * Followed this link : https://git-scm.com/download/mac
+
+    #+begin_src bash
+    brew install git
+    git --version
+    #+end_src
+
+- [x] postgreSQL/Postgis -> done in <2023-02-02 Thu>
+- [x] ohmyzash
+  * followed instruction: https://github.com/ohmyzsh/ohmyzsh
+    #+begin_src bash
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    # added macos and chucknorris plugin
+    # docker, emacs could be added
+    # vi ~/.zshrc
+    #+end_src
+
+- [x] ssh
+  already installed see ~ssh~
+
+** Meeting with all the team
+** Meeting with Betsy
+** Meeting with October
+- linkedin/twitter and social media stuff?
+- Assisting communities not operating them
+
+*** some key facts
+- 34 communities
+- 2200000 people
+
+*** Retreat: marsh 13-14-15
+
+*** Check the ressource center
+
+*** TODO Check self eval [1/3]
+DEADLINE: <2023-01-30 Mon>
+
+- [ ] form DEI+B
+
+- [ ] for benefit go in the ressource center
+    section 3 nothing
+    section 4 for adult + kid
+    dental ignore
+    email the form
+    we divide the monthly by pay periode
+    hsa eligible
+
+- [X] Bio + headshot
+
+** Reading/watching list
+*** RWIF Story 1
+*** Ascendium report: Rural Tech Employment Landscape (TED)
+*** EDA reports on future focused rural dev.
+**** The future of work in rural America
+**** The rise of remote work in rural America
+**** The gig economy in rural America
+**** Geography of innovation
+**** Automation in rural America
+*** Watch rural edge videos on Rural Innovation Network communities
+
+** DONE Logging/stuff [6/6]
+- [x] Zoom
+    -> profil
+- [x] Slack
+   -> profil
+- [x] Asana
+    -> created a profil do not know about it too much
+- [x] CORI github
+- [x] Zendesk
+- [x] Airtable
+
+* <2023-01-24 Tue>
+
+** Logging to App 2 [4/4]
+- [x] divy
+- [x] Slack
+- [x] Zoom
+- [x] firefox: should have started with it
+
+** installing R&co
+*** R / Rstudio [5/5]
+- [x] radian : https://github.com/randy3k/radian
+
+it needed pip3 luckily shipped with Mac
+
+#+begin_src bash
+pip3 install -U radian
+# to test
+# export PATH=$PATH:/Users/blbalbalb/Library/Python/3.9/bin
+# radian
+vi ~/.zprofile
+# add export
+# unsure about this one : it map redo=  should check ohmyzsh alias
+# echo 'alias r="radian"' >> ~/.zprofile
+#+end_src
+
+- [x] task view Spatial
+#+begin_src R
+install.packages("ctv")
+ctv::install.views("Spatial")
+# trouble with terra probably because of gdal
+# and the fact that I do not have clang I added llvm with homebrew
+# but did not setup the path permantly, not better
+# then tested:  https://github.com/rspatial/terra
+# ttps://github.com/r-spatial/sf/issues/1268
+# this could help
+#+end_src
+
+- [x] DBI/RpostgreSQL
+- [x] tidyverse
+  #+begin_src R
+install.packages("tidyverse")
+# needed colorspace
+install.packages("colorspace")
+  #+end_src
+- [x] some of the fastverse -> see later if project need it
+
+** Meeting with Mark
+- Grant: broadband / impact/risk with climate change
+- Podcast: https://www.brookings.edu/series/reimagine-rural/
+** Meeting with Camden
+
+Project is called *ded* (I guess it is *TED*) (see github repo): it take data as input and produce set of graphics in ~.png~ then they are dropped in google drive for partners
+
+** Meeting with Drew
+- start with *coriverse*
+- focus on documentation
+- slowly help organize/streamline/bring idea
+
+** exploring packages in github
+- good read in the wiki of coriverse: https://github.com/ruralinnovation/coriverse/wiki
+- relying on gh token and {gh} and I will need to setup it instead of using ssh
+- should we build package site for internal package?
+
+* <2023-01-25 Wed>
+
+** setting up MAC round 3
+- [x] start with {gh}
+  following coriverse works out of the box, added comments to help newcomers
+  Still some dependencies to install and could take some time
+- [x] git config global :
+  I just setup the minimum (name + address for blame) in shell instead of R https://www.git-scm.com/book/en/v2/Customizing-Git-Git-Configuration
+** meeting with the team
+- question about data product in rmda team web page
+- round table
+** CORI/RISI meeting
+- Paul Yost : https://yostlabs.com/
+- Sizze (sizze.io)
+
+** Meeting with Camden
+- Getting that TED is DED
+- Focusing on tools for visualization/mapping
+** Meeting with Brittany
+- Works with dForm (fork abit ahedad from https://github.com/matthewjrogers/dform)
+- Does geocoding on it
+- uses the coriverse
+- metadata trouble -> maybe a way to simplify that
+** Meeting with Matt
+- Keeping the vision:
+  * transparency/accessibility
+  * entrepreneurial spirit
+  * Diversity equity and inclusion in team and for who
+
+- "Town and gown" -> https://en.wikipedia.org/wiki/Town_and_gown
+
+- [ ] +1 on the watching list : https://ruralinnovation.us/community-impact/rural-innovation-network/waterville_me/
+
+* <2023-01-26 Thu>
+
+** Update profiles -> pushing that for later!
+- [x] slack
+- [x] bio/headshot
+- [x] zoom
+** Meeting with the team
+- Quick description of the databases / their physical infrastructure
+- How the team use them / connect to them
+- Discus a bit some tech debt
+** Meeting with Dolley
+- Question on ~.gitignore~  and what kind of files/directory should be in it
+- Organize / project on git then github
+- How review / PR work in the team / depending of type of project
+- Social aspect of github
+- Devops principles
+** Meeting with May
+** Build cori utils without any error
+- PRed it: some functions/data where not into pkg yml >- added them manually not great
+** Meeting with John
+- ssh for AWS
+- a tour of infrastructure
+** random question
+- regrid data?
+
+* <2023-01-27 Fri>
+
+** setup a repo with doc with GHA at push on main ?
+** Meeting with Betsy
+- Should we spend time cleaning/archive some stuff ?
+  -> yes but low priority could be done at small meeting
+- README.md org
+
+** Check DB size
+- [x] quick tour psql
+- [x] install pgadmin
+** GHA jargon
+
+/worflow/ are triggered when an /event/ occurs.
+
+Workflown can contains /jobs/ (a job contain multiple /steps/),  can be run in sequential order or in parallel.
+
+We can use a /runner/  or a /container/
+** Investigate CORI package
+
+53/214 we have:
+- R project repos
+- API/AWS/Amplify repos -> goal is build API for CORI data
+- some boilerplate
+- CARTO stuff
+- shiny app repo to git -> deploy
+- Pipeline with different flavors (DAG, sequential scripts)
+- some utilities/infrastructure: ansible .github
+
+* <2023-01-30 Mon>
+
+** GHA jargon
+
+Understand GHA: https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions
+
+/events/ a specific activity that trigger a workflow : it can be push to specific branch, PR, cron job, using GH rest API
+
+/steps/ are sequential and depend on each other, inside of the same runner data can be share
+
+/runner/ look like a VM (ubuntu, Windows, MacOS)
+
+*** Envt variable = /context/
+
+It looks like they are named /context/: https://docs.github.com/en/actions/learn-github-actions/contexts
+
+~${{ XXX }}~ is used to store some envt varaible:
+
+examples:
+
+- ~${{ github.actor }}~ : the username of who triggered the actions
+
+- ~${{ github.event_name }}~ : type of event
+
+- ~${{ job.status }}~ : success/failure
+
+*** YAML
+
+#+begin_src yaml
+jobs:
+  name_of_job:
+    runs-on: VM_of_some-version
+
+#+end_src
+
+*** Pros/Cons using gha
++ no need to "pay"
+- dependence on GH
+- prob bad idea to save/store data
+
+** SE project
+
+- data can be download from: https://broadbandmap.fcc.gov/data-download
+- data dictionary: https://us-fcc.app.box.com/v/bdc-data-downloads-output
+
+  *** Potential Workflow:
+1. DL data for one State -> folder
+2. Unzip -> Move (maybe)
+3. A working solution a bit rude on the memory
+
+   #+begin_src r
+
+var_names <-  c(
+    "frn" = "character",
+    "provider_id" = "character",
+    "brand_name" = "factor",
+    "location_id" = "character",
+    "technology" = "character",
+    "max_advertised_download_speed" = NA,
+    "max_advertised_upload_speed" = NA,
+    "low_latency" = NA,
+    "business_residential_code" = "factor",
+    "block_geoid" = "character",
+    "h3_res8_id" = "NULL" # skip
+)
+
+
+listes_of_files <- paste0("data/", list.files("data"))
+
+my_csv <- lapply(listes_of_files , read.csv, colClasses = var_names)
+result <- do.call(rbind, my_csv)
+
+  #+end_src
+
+4. Export to DB
+5. Repeat for each states
+
+Way to improve:
+    - export to DB at each ~.csv~
+    - instead of loading everything into ~my_csv~  at each step: rbind, then clear
+    - using faster importing function (data.table/read_csv) and taking dependencies
+
+6. Setup DB for the data, normalize part of it ?
+
+** Team meeting
+
+- See Campden for SE region ETL and analysis
+- Meeting with John/Drew about "form 990"
+
+** CORI repo 2
+
+** DONE bio!
+
+** Form-990
+
+- checked volume of data
+- low number errors with a bigger number in 2010
+- test with 2019
+* <2023-01-31 Tue>
+
+** Bio + headshot
+
+** County population
+*** RFC/design doc
+context : shiny app that summarize data and produce xls and png
+digest by a shiny app
+
+call the database
+
+county level
+
+new release
+
+population is at county level and release
+
+rii_diagnostic.county_diagnostic_variables
+
+
+** SE is for RWJF
+*** Design doc
+
+- seeform 477
+- raw
+
+- bloc
+  - total of location
+  - total of business
+*** Better do use SQL
+
+** Meeting with the team
+
+* <2023-02-01 Wed>
+
+
+** meeting with team
+
+** meeting with Matt Rodgers
+- dependencies on sch_layer & sch_source
+- can spend an hour to see if stuff can be deleted
+- we can go and document pkg
+
+** Pulling FCC data
+- putting ~.zip~ into s3
+
+** FCC data
+*** S3 -> RDS
+
+*** min two options
+- aggregate before importing
+- aggregate after
+
+*** Testing psql
+ - ~.pgpass~ ?
+ - [x] do some dummy files
+ - [x] create DB first instead
+
+*** Aggregate data at various level:
+    - understand what we aggregate
+      - do we populate with abs/0 value ?
+    - level are:
+        - census block
+        - county
+        - nb ?
+** Meeting with John
+- store unuse DB into s3
+#+begin_src R
+# Date: 2023-02-01
+# Author: Olivier Leroy
+# Goal: produce a csv with all the schema/tables inside of data
+
+# inside pgadmin and in data
+# SELECT * FROM information_schema.tables;
+# then export
+# TODO can be done with R
+
+
+db <- read.csv("data/data-1675279610721.csv")
+
+db_cori <- db[!db$table_schema %in% c("pg_catalog", "information_schema") ,]
+
+# does our tables are linked to other or not
+# select * bring a lot of non intersting columns with same/uniques values
+# we do not want them
+
+filter_column <- vector(mode = "logical", length(db_cori))
+
+for(i in 1:length(names(db_cori))){
+  filter_column[i] <- ifelse(
+    length(
+      unique(db_cori[,i])
+      ) > 1, TRUE, FALSE
+    )
+}
+
+db_cori_simple <- db_cori[, filter_column]
+
+write.csv(db_cori_simple, "db_cori.csv")
+# TODO later remove row index
+
+# Removed in gsheet the first public schema used by PsotgreSQL extension
+# then I did not need the last two columns
+
+#+end_src
+* <2023-02-02 Thu>
+** Install PostgreSQL/Postgis
+
+- I used the EDB solution, it also offer PostGIS (but not hstore)
+  https://www.enterprisedb.com/docs/supported-open-source/postgresql/installer/02_installing_postgresql_with_the_graphical_installation_wizard/macos/
+- On Mac + oh my zsh you need to add an export in ~/.zprofile~
+
+  #+begin_src bash
+export PATH="/Library/PostgreSQL/15/bin/:PATH"
+  #+end_src
+
+** FCC data
+
+- unzip in pipleine or before ?
+- use s3 -> rds option? need PostgreSQL extension
+- Currently using ~cut~ to ro select columns (Con: Cut will not know if ~,~ is in some text data ...)
+- [X] On Mac I will go ~.pgpass~ for the test
+
+#+begin_src bash
+echo "host:5432:db:postgres:my_pwd" > ~/.pgpass
+sudo chmod 0600 ~/.pgpass
+# modifying owner could be needed for olivierleroy
+# I created a user olivierleroy in postgres
+#sudo chown olivierleroy ~/.pgpass
+#also exporting PGPASSFILE could be needed
+#+end_src
+
+- [X] setup schema staging on MacOS
+  #+begin_src sql
+create database data;
+-- in data
+create schema staging;
+-- \dt
+  #+end_src
+- [X] setup DB+tables / technology
+    - setup a v0
+
+- verify unique value for some technology in Ohio
+
+** Team meeting
+* <2023-02-03 Fri>
+
+** API with John
+- AWS
+- We will need a way to push/move DB from the EDA DB to Apia
+
+** Testing aggregate for FCC
+- not really aggregate, just some count and max see it with drew
+- changed cut for csvcut because
+- still unsure if I should add brand_name or join it latter
+
+** Add documentation
+* <2023-02-06 Mon>
+** Team meeting
+** Save time to AWS RDS -> RDS
+*** Learn more about AWS
+** FCC
+- [x] structure table for Drew
+- [x] I need boolean with cdt and max with cdt
+Lot of ~funct(case when bob then else end)~
+
+** NRI
+- a bit of doc done: lot of columns (376 ...)
+* <2023-02-07 Tue>
+
+** team meeting
+GH ?
+Added in wiki:
+    - name format for s3
+    - basic git workflow
+** Meeting with Myles about their need in the broadbnad team
+
+** FCC
+- see previous day
+- move from s3 to rds
+** PUMA ?
+- [x] create repo
+- [x] save docs
+- Goal is to find a way to qualify PUMA R/NR so we can use PUMS
+
+* <2023-02-08 Wed>
+
+** Team meeting
+** Org meeting
+- cool presentation on how works finance in non profit and the fund raisiing
+
+** FCC
+- [x] terminate the ~sql~ that convert raw into structured
+- [X]move S3 to RDS --> need aws cli
+- [x]test import raw into rds
+- [ ] test building from raw into rds
+
+
+** PUMA
+- read a bit about it, clean a bit readme
+** Connect humanity
+data pipelines for 2/3 weeks
+* <2023-02-09 Thu>
+** FCC
+- cf. day before, will probably need to twink ~.sh~  a bit also
+- I try to move s3 -> rds but failed : used sftp instead
+- Same with git repo: need to setup ssh from Server (?) to able to git clone repo, did not have time: sftp my way
+- [ ] clean a bit behind
+
+* <2023-02-10 Fri>
+
+** PUMA/PUMS
+
+    - outcomes needed is PUMS and PUMA rural or not is just a path to it, check the number of PUMS that change according to it
+    - read article
+** Team meeting
+** Meeting with Besty
+** SE region meeting
+* <2023-02-13 Mon>
+** PUMA
+- [x] get PUMS
+- [x] Count pums / PUMA
+- [x] see how rural/not rural affect number of PUMS
+
+** RWJF meeting
+* <2023-02-14 Tue>
+** PUMA:
+
+- [ ] readme at R doc level with workflow
+- [ ] split EDA with function to load and eda
+- [ ] adding variables to see if we can get closer to rural def
+
+
+** Meeting with Drew FCC
+* <2023-02-15 Wed>
+** PUMA
+
+- A lot of variable were not possible to create with current data sets
+- Need to do a list of what was done and not successful
+- Ipums was useful
+
+** Cori meeting
+
+- plannng for retreat
+- see a bit of SE project
+
+** Meeting with John and Betsy about
+
+- BCAT project
+  - manually DL files
+  - R script that send them to carto that need to be split / improve
+* <2023-02-16 Thu>
+
+** FCC
+
+- cleaned the repo
+- documented the workflow, sources and difficulty
+- Build a not usefull model for rural not rural
+  -> I think we are running in circle with ratio pop and part of pop that are metro make better sense
+
+
+** Geocoding
+
+- Tested DEGAUSS for good quality address
+- see if nominatim can works
+
+** meeting with Betsy
+
+- Progress on FCC
+- Progress on PUMA
+- Progress on DB
+
+** Meeting with merging futire
+- "Serverless" infra that create codes to setup container for API codes
+
+* <2023-02-17 Fri>
+
+** Team meeting
+
+** Drew FCC
+
+    - we add counts for services in FCC data (DONE)
+
+** PUMA
+    - cleaned a bit repo
+    - Wrote better graph for visualization
+    - submit ticket for Mark
+
+** meeting with Myles
+
+- clarification on CRS
+- use of toolbox
+
+* <2023-02-20 Mon>
+
+** FCC
+- Confirm geometry -> 2020 but need to check number of block and ID
+- Compare coverage on block between old source and new one
+- Calculate percentage of one tech and compare to the aggregate -> not the sane corrected it
+
+* <2023-02-21 Tue>
+** FCC
+    - Could not reverse it
+** geocoding
+
+- write quick script that use nominatim
+- need to have a "private" instance of it if we want to speed up the process
+** meeting with john
+
+see 904 repo
+** meeting with betsy and john
+
+a lot to do in our severs
+* <2023-02-22 Wed>
+
+** tested a lot of way of installing nominatim and osm DB
+    - I went with admin style
+    - Lowered the spec to match my vps:
+        #+begin_src shell
+ -e THREADS=4 \
+  -e POSTGRES_SHARED_BUFFERS=1GB \
+  -e PDegausOSTGRES_MAINTENANCE_WORK_MEM=1GB \
+  -e POSTGRES_AUTOVACUUM_WORK_MEM=2GB \
+  -e POSTGRES_WORK_MEM=50MB \
+  -e POSTGRES_EFFECTIVE_CACHE_SIZE=1GB \
+        #+end_src
+
+    - Used Degauss to geocode a part of addresses (usefull tools!)
+* <2023-02-23 Thu>
+
+** geocoding
+
+- optimize a bit script for getting lat/lon from nominatim
+- lot of trouble with getting url request from nominatim
+
+  I went with crul package a wrapper of cULR
+
+* <2023-02-24 Fri>
+
+**  Geocoding
+
+- Using crul to get request result
+- Nominatim send 200 with an empty list when he found no result
+- Had trouble parsing it
+
+
+** FCC
+
+- Meeting with John and Drew, we need to exclude download and upload with 0 speed, confirmation of not using satellite (question remain if we need to use it for satellite)
+- [ ] need to do an other DB called clean DB removing
+- [ ] structuring this DB with new version of table
+
+* <2023-02-27 Mon>
+
+** PUMA
+
+- more graphs
+
+
+** Resume
+
+ - two one pages
+
+* <2023-02-28 Tue>
+
+** PUMA
+
+- graph + meeting
+
+** FCC
+
+- cf last friday
+
+** I am bored loousing my time to get correct definition of rural
+
+*** Census definition
+
+- 62.2 M in 2019 (ACS 2019 5 year estimates)
+
+- Build from blocks: basic unit
+
+  Criteria to be urban: 500 people / square mile AND more than 2500 people
+
+ - not urban = rural
+
+
+*** Office of Management and budget
+
+- 45.4 M in 2019 Core Based Statistical Area
+
+- Use county
+
+- Metropolitan area: a central city with pop >= 50 000 and include neighboring counties that have strong social and economic link
+
+  -> metropolitan statistical areas  (MSA)
+
+- What is not MSA is "non metro" ie could include small town (2500 - 49 999) defined as rural by Census
+
+* <2023-03-01 Wed>
+
+** meeting with the team
+
+** FCC
+ Divide the data in two sat / non sat
+
+** Added test to corybea
+
+* <2023-03-02 Thu>
+
+** PUMA
+
+Reproduce result for Mark
+
+** FCC
+* <2023-03-03 Fri>
+
+- Helped John on RDOF
+- Started target
+- find error in FCC ..
+- started some key fact for FCC
+
+* <2023-03-06 Mon>
+
+** PUMA
+
+- build target pipeline
+
+**  FCC update non sat / sat
+
+* <2023-03-07 Tue>
+
+** FCC
+
+- build at location after connect humanity meeting
+
+** Connect humanity
+
+- we probably will need household / footprint ?
+
+* <2023-03-08 Wed>
+
+** FCC
+
+- clean sat and non sat / Build at location with only satellite info
+
+  ~bool_and()~ is very nice
+
+** AWS RDS
+
+ - trouble with space in RDS: https://aws.amazon.com/premiumsupport/knowledge-center/diskfull-error-rds-postgresql/
+
+
+
+ GROS TROU entre avril et novembre
+
+
+* <2023-11-15 Wed>
+
+- travail sur life expectancy pour rwjf story 4, utilisation de targets, l'esperance de vie est differente en fonction des categories d'age
+
+- travail avec John sur la migration de la DB:
+    * correction de cori.db pour inclure plusieurs schema, pourrait nous poser pb
+    * meme pb avec les droits, ils sont donnees a un objet a un moment, il faut modifier les parametre des defauts
+    * utilisation d'ansible
+
+** FCC/BB
+    - export de `shp` et `gpkg` pour Myles et Anna (Valencia County NM)
+    - Pb sauver sur s3 avec la connection internet
+
+** Org meeting
+
+*  <2023-11-16 Thu>
+
+    - Travailler sur taux de mortalite par races et par county, utiliser "age standardize"
+
+* <2023-11-17 Fri>
+
+** DB stuff
+- changer MDA pour cibler la nouvelle base de donnees
+- ajuster leur pwd
+- La version de PG Admin peut influencer la facon dont le pwd et username est enregistre
+- amelioration de la doc pour se connecter
+
+
+** RWJF
+
+- ajout des tables pour rwjf
+
+
+* <2023-11-20 Mon>
+
+** amelioration de serving pour fcc
+
+    tetsing .:tablename , ie -v assignment
+
+    Un example:
+
+ #+begin_src bash
+psql \
+    $DBREF \
+    -f 03_01_move_out_of_stage.sql \
+    -v tablename=$TABLE >> ./$JOURNAL  2>&1
+ #+end_src
+
+Important cela fonctionne avec un systeme de key=value
+
+Avec:
+
+#+begin_src sql
+create table sch_broadband.:tablename()
+#+end_src
+
+
+Ansible: adding --check to the ansible playbook command, run it in a test way (but for some task ansible could not insure idempodancy, not being able to check change of state in a system)
+
+** Documentation et migration DB
+
+Preparation onboarding BB team
+
+Merging ancienne branche
+
+preparer ce qui reste a faire
+
+** Team question
+
+Definition et place de l'equipe au sein de l'org
+
+Testing JIRA
+
+** TED pipeleine
+
+elle beneficie d'avoir une integration avec target car il y a pas mal de reddit
+
+* <2023-11-21 Tue>
+
+tidyverse "pipeline" : dure a debugger penser a casser en sous etapes
+
+Le defaut du TED est qu'il y a pas / peu de map de son fonctionnement.
+
+Targets permet d'exporter en pleins de formats comme mermaid.
+
+
+* <2023-11-22 Wed>
+
+** FCC
+verification du bon nombre de fichier
+petite modification du fichier
+
+- [ ] je devrais nettoyer un peu fccpipeline.sh
+- [ ] ajouter une var pour la release ex june23
+    -> pas certains que cela soit la bonne option
+
+** TED
+
+Debut pipeline fcc
+
+* <2023-11-27 Mon>
+
+** FCC
+
+    debut d'utilisation pour garder une trace du QA/QC
+
+** BEAD tools
+
+longue discusion sur ce qu'il est rapide de faire ou pas
+
+** MVT / PMtiles
+
+tmap a un viewer MilesMcBain a un article dessus:  https://www.milesmcbain.com/posts/vector-tiles/
+
+** General R
+
+basename/dirname are great functions!
+
+
+* <2023-11-28 Tue>
+
+** General R
+    isTRUE() is safer fo condition
+
+** FCC
+
+- changement de certains params
+- tjrs pas claire comment traduire unserved area
+
+* <2023-11-29 Wed>
+
+
+** TED
+    maj de scripts pour goaddy, je devrais passer 5 mins sur le pkoi du cbind dans un aggregate
+
+** FCC
+
+    envoie de shp et gpkg
+
+** BB team et DB
+
+toujours aussi dur de mettre en place une connection pour d'autres personnes
+
+** R & co
+
+pour installer des libs au niveau "system" sur une ubuntu, on peut passer par le shell et sudo:
+
+#+begin_src bash
+sudo su - -c "R -e \"remotes::install_github('ruralinnovation/coriverse',
+                      auth_token = my_tok)\""
+#+end_src
+
+
+* <2023-11-30 Thu>
+
+** cori.utils
+
+update doc for some data
+j'utilise peux mais RData a just besoin de `load()``
+
+** TED
+
+    qwi: serieusement slow, je devrais passer plus de temps avec `fread`
+
+debut CPC: la structure resemble a un package
+
+** R stuff
+
+#+begin_src bash
+sudo su - -c "R -e \"update.packages('vctrs', repos = 'https://cloud.r
+    -project.org')\""
+#+end_src
+
+R utilise .R/Makevars pour stocker des info sur comment construire des pacquet
+
+* <2023-12-01 Fri>
+
+
+*** by block:
+- list of providers
+- count of distinct provdiers
+- list of distinct technologies
+- does block has: not 50 (fiber) upl >= 1k
+- does block has: 50 (fiber) upl >= 1k
+- all_fiber_flag make sense: it is cnt_total_locations = cnt_fiber
+- does block has > 25/3 (cnt_25_3 > 0)
+- does block has > 100/20
+- does block has either 40 or 50
+- max up
+- max down
+- max_ad_down_gig_other,
+- max_ad_up_gig_other
+- max_ad_down_gig_fiber
+- max_ad_up_gig_fiber
+- max up/down 40, 50 ,10, 70/71
+- cnt_gig_other_flag
+- cnt_gig_fiber_flag
+- cnt_fiber_cable_access_flag
+- cnt_bb_access_flag_100_100
+  Should we ad this one:
+- cnt of 40
+- cnt of 10
+- cnt of either 70 or 71
+- min up/down 24, 50, 10 70/71 (8 columns)
+** infra bike
+
+Surpris par le monde: autour de 100 personne
+
+** TED
+
+travail sur les pipelines, une sur CPC
+
+Essaie de prog assertive pour tester si les nouvelles versions de fichiers contiennent bien ce qui est attendu
+
+** R stuff
+
+R.utils::gunzip() a pour default remove = TRUE et ne retourne que son side effect
+
+* <2023-12-04 Mon>
+
+** TED
+
+update qwi
+
+** AWS
+
+Tried to set up aws
+    - 1. you need an AWS account -> root user
+    - 2. you need to setup IAM users
+
+
+** ARC stuf
+
+adider a delimite ce projet un peu a l'arrache
+
+https://docs.google.com/spreadsheets/d/1RHngHKydTMzop3jw9tkOUrRB0g87hPiZhDfm_7TtNHA/edit#gid=776081950
+
+
+https://docs.google.com/spreadsheets/d/1RHngHKydTMzop3jw9tkOUrRB0g87hPiZhDfm_7TtNHA/edit#gid=1801159857
+
+
+H3: lire la doc verifier l implemtation avec R
+
+
+** BEAD
+
+https://docs.google.com/spreadsheets/d/1YCHWWjz135rJiTDqItnJTnESI4Xkq3JngBQ4fgh7PeM/edit#gid=0
+
+ idem scoping de projet
+
+* <2023-12-05 Tue>
+
+sick kid
+
+* <2023-12-06 Wed>
+
+ACS pipleine -> lot of dep
+
+** FCC
+
+ADD some sanity check in FCC data
+
+on le passe en "prod"
+
+* <2023-12-07 Thu>
+
+** FCC
+
+- small update pour les droits de la table
+
+- test pour retirer 0/0 upload download
+
+
+** BEAD
+
+challenges data -> collected by states and not anymore by FCC
+
+eligibility is going to change according to states depending of *volume 1* (here states can challenges FCC)
+
+*volume 2* ? -> maybe underseved/unserved area here
+
+https://internetforall.gov/bead-initial-proposal-progress-dashboard
+
+Locations (no satellites data: NOFO):
+unserved 25/3
+underseved 100/20
+
+check served undersed with DSL and wireless
+
+if technology is X -> underserved
+
+information is provided as document and myabe some files (.shp)
+
+if layer from states diff than the FCC -> states win
+
+source our logic (DANGER) doc and pages
+
+https://broadbandusa.ntia.doc.gov/public-notice-posting-state-and-territory-bead-and-digital-equity-plansproposals
+
+census block vs bsl fabrics
+
+write what kind of data we can use and what we can't
+
+* <2023-12-08 Fri>
+
+** postgresql stuff:
+
+~is dictinct from~ est NULL proof
+
+** TED ACS
+
+New acs
+
+** FCC
+
+Adding a filter for 0/0 up/down
+
+* <2023-12-11 Mon>
+
+
+** TED/infra
+
+toujours un pb avec execute on DB: je devrais passer plus de temps sur le modele transactionnel
+
+** FCC
+
+ [ ] finir une presenatation sur FCC 0/0 et voir ce qu'est la suite
+
+** GHA
+
+suivre le workflow pour publier avec ghafir
+
+** text analyis
+
+envoie d'un email aux auteurs du livre mapping text analysis
+
+* <2023-12-12 Tue>
+
+** TED/infra
+
+write_to_rii_diagnostic utilise pas mal de tidyverse stuff qui est "deprecated" (pour de bonne raison: select/pivot avec un vecteur de nom -> dure a gerer dans un workflow tidy)
+
+travail sur la doc: tout dans un schema mermaid!
+
+** TTD
+
+bon lien: https://tidyfirst.substack.com/p/canon-tdd
+
+** BEAD
+
+Nous faut  un lieu pour echanger sur les ISP
+Base de depart pour le travail sur les 0/0
+
+* <2023-12-13 Wed>
+
+** TED
+
+-> update DB pour la pluspart des cas
+pas de complications
+
+** BEAD
+
+ISP EDA, quarto joy of quarto preview / gp workflow
+
+** R stuff
+
+diff between tapply / by and aggregate
+
+-> https://stackoverflow.com/questions/3505701/grouping-functions-tapply-by-aggregate-and-the-apply-family
+
+* <2023-12-14 Thu>
+
+** gha from eddelbuettel:
+
+-> https://github.com/eddelbuettel/spotifytop50us/blob/master/.github/workflows/update.yaml
+
+** BEAD cleaning
+
+pas mal de nettoyage autour des isp, discuter du workflow autour de quarto avec john: j aime bien le serveur local et celui en ligne.
+
+* <2023-12-15 Fri>
+
+** FCC/BEAD
+
+    un packet d'index pour june 23
+
+** BEAD:
+
+    * Un depot GH
+    * spdep pour les polygones: devrait marcher
+
+** R stuff
+
+- quarto can export to confluence!
+
+
+* <2023-12-18 Mon>
+
+high turnover / fiscall cliff / rin network retention
+
+on est en realignment
+
+** BEAD Ilecs
+
+solution pour le cleaning des geometries: je passe par geos qui est moins scrupuleux.
+
+finalement on veut pe du json pour stocker Ilecs, je ne sais pas comment cela gere les valeurs manquantes.
+
+postgresql a un type natif (jsonb)
+
+
+* <2023-12-19 Tue>
+
+** BEAD ilecs
+
+[X] document challenges from the data sets
+
+[X] store cleaned version to s3 buckets
+
+[ ] write tidy data with block and all ilec data
+
+[ ] write bullet point explaininmg wy this is not a correct way to provide data
+
+
+Create jira ticket with clean ISP:
+
+- document and git it
+
+*** ETL geoid_bl
+
+- add flag with water
+
+* <2023-12-20 Wed>
+
+** BEAD
+
+    pas mal de comprehension
+
+    org meeting
+
+    J'ai pas mal galerer comme d'hab sur une jointure et aussi sur n mauvais check des donnees en entre
+
+    pas mal de documentation ecrite aussi
+
+** R stuff
+
+Penser a regarder ~unique()~ et ~duplicated()~
+
+* <2023-12-21 Thu>
+
+** BEAD
+
+    ETL ISP attention a la jointure avec l'id
+
+    23407264
+
+*** ilecs
+
+je vais pe devoir parrallelizer
+
+** R stuff
+
+~toString()~ est une fonction utile pour passer des requetes dans une db type gpkg/sqlite
+
+mcapply est plutot pas mal
+
+change data to data_raw
+
+* <2023-12-27 Wed>
+
+** ilecs
+
+toujours testing les check pour accomoder le workflow
+
+
+** isp
+
+juste relancer pour voir si tout marche en une sequence
+- [ ] genere des duplicats ?
+
+- [ ] documente kk nombres utiles (dimensions)
+
+
+** targets
+
+https://raps-with-r.dev/targets.html#introduction
+
+> The first is that scripts can, and will, be executed out of order
+
+> Another issue is that pipelines written as scripts are usually quite difficult to read and understand
+
+utiliser ~tar_option_set~ pour charger les packages est necessaire pour faciliter la parralelisation au niveau de la chaine de traitement et assure
+
+https://books.ropensci.org/targets/cloud-storage.html#aws-setup for aws s3
+
+* <2023-12-28 Thu>
+
+** TED
+
+il faut nettoyer le repo  acs, ajouter math and compo Sc
+
+** tiles
+
+explo de mvtiew et rdeck, besoin d un compte mapbox
+
+#+begin_src R
+library(mvtview)
+library(rdeck)
+
+serve_mvt("~/data_swamp/tiles/br/tr/tr_100_20_dec2022v3_z11z9", port = 8765, .serve_mode = "disk")
+
+rdeck() |>
+      add_mvt_layer(
+        data = tile_json("http://0.0.0.0:8765/tr_100_20_dec2022v3_z11z9.json"),
+        get_fill_color = scale_color_linear(
+          cnt_100_20
+        ),
+        opacity = 0.6
+      )
+#+end_src
+
+
+postgresql: a une fonction pour aggreger en un ~jsonb jsonb_object_agg ( key "any", value "any" )~ → jsonb
