@@ -12,3 +12,37 @@ Nouvelle annee, resolution tenir le journal jusqu'au bout et transformer certain
 ** org mod :org:mode:
 
     Utiliser plus souvent les tags ref: https://orgmode.org/guide/Tags.html
+
+** building repro analytical pipeline :rstats:
+
+*** chapitre 4:
+
+Pedagogique, sans doute tres utile pour un etudiant et/ou un jeune DA
+
+Chose nouvelle apprise: ~git stash~
+
+Permet de revenir as ~HEAD~
+
+#+begin_src bash
+mkdir temp/
+cd temp
+git init
+echo "bob" > unfichier.txt
+git add .
+git commit -m "init"
+rm unfichier.txt
+git add .
+git stash
+cd ..
+rm -rf temp
+#+end_src
+
+#+RESULTS:
+| Reinitialized | existing | Git       | repository | in    | /Users/olivierleroy/Documents/oli/prise_de_notes/temp/.git/ |     |    |         |         |      |
+| On            | branch   | master    |            |       |                                                           |     |    |         |         |      |
+| nothing       | to       | commit,   | working    | tree  | clean                                                     |     |    |         |         |      |
+| Saved         | working  | directory | and        | index | state                                                     | WIP | on | master: | 5c5c45b | init |
+
+*trunk base development* :  https://trunkbaseddevelopment.com/
+
+On vera sans doute plus tard mais en gros on dev sur dev et fork des releases qui elles sont stables.
