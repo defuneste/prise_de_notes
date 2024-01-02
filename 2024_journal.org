@@ -46,3 +46,30 @@ rm -rf temp
 *trunk base development* :  https://trunkbaseddevelopment.com/
 
 On vera sans doute plus tard mais en gros on dev sur dev et fork des releases qui elles sont stables.
+
+
+* <2024-01-02 Tue>
+
+** chapitre 5 reproducible pip R :rstats:
+
+trunk based dev: en gros des commits tres frequents, faciliter par de la double revision. L'objectif est de diviser le development en petite taches permettant de petite commit, dev sur une autre branche et merger rapidement.
+
+Dans le cas de taches importantes il est recommande d'utiliser une technique appelle "branch bt abstraction" qui consiste a utiliser des placeholders qui seront ameliore petit a petit. (https://martinfowler.com/bliki/BranchByAbstraction.html)
+
+Le tronc est sense etre toujours "production rdy"
+
+l'obligation de sousmettre une PR pourmodifier le tronc renforce cette pratique
+
+*** BEAD :mbtiles:PG:
+
+pas d option de filter sur un array dans mbtiles
+
+bcp de wrangling pour former un jeux de donnees test, pas mal de changement de specs,
+
+les fonctions d'aggregation de PG peuvent prendre un order by et un distinct:
+
+~json_agg('isp_id' || ' ' || isp_id order by isp_id) as isp_num~
+
+** TED
+
+vue metadata avec Dolley

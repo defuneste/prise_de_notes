@@ -1328,4 +1328,4 @@ rdeck() |>
 #+end_src
 
 
-postgresql: a une fonction pour aggreger en un ~jsonb jsonb_object_agg ( key "any", value "any" )~ → jsonb
+postgresql: a une fonction pour aggreger en un ~jsonb_object_agg ( key "any", value "any" )~ → jsonb
