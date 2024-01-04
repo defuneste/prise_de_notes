@@ -73,3 +73,33 @@ les fonctions d'aggregation de PG peuvent prendre un order by et un distinct:
 ** TED
 
 vue metadata avec Dolley
+
+* <2024-01-03 Wed>
+
+** bead :PG:
+
+~ctid~ est une colonne utile pour avoir un id pour des jointures, elle reference la place en memoire de l info
+
+https://www.postgresql.org/docs/current/ddl-system-columns.html
+
+*** RDOF
+
+targets a un format url pour suivre l update d'un fichier en ligne cf ~format = "url"~
+
+https://www.fcc.gov/document/fcc-proposes-over-8m-fines-against-22-rdof-applicants-defaults
+
+** general
+
+penser a organiser un meeting ou on fixe les donnees, leur types, leur noms
+
+* <2024-01-04 Thu>
+
+** bead
+
+0 for null in isp_id for every count
+
+pas mal de test avec le types pour les mbtiles fixe la structure de donnees
+
+*** pg stuff :PG:
+
+replace() a un equivalent  REGEXP_replace(isp_idv2, '{|}', '', 'g')  avec un argument pour faire une regex global
