@@ -103,3 +103,64 @@ pas mal de test avec le types pour les mbtiles fixe la structure de donnees
 *** pg stuff :PG:
 
 replace() a un equivalent  REGEXP_replace(isp_idv2, '{|}', '', 'g')  avec un argument pour faire une regex global
+
+todo demain clean le mess d acs pipeline
+
+
+** jour poses
+
+01/01/2024
+05/27/2024
+06/14/2024
+06/19/2024
+09/01/2024
+11/28/2024
+11/29/2024
+12/25/2024
+
+** chapitre 6 Functional programming
+
+Utilisation de fonction d'ordre superieur
+
+on a un premier passage qui indique ce qu'est l'etat a travers un exemple de ce qui est en memoire. L'etat ne devrait pas changer le resultats d'une fonction.
+
+Certains fonctions peuvent incrementer ou changer un etat dans le programe. c'est le cas par exemple d'une boucle. Je suis pas fan de l'argument de deinir la list dans comme argument.
+
+Si une fonction est pure elle doit ne prendre en compte que des arguments dans ses arguments et pas dans d'autre environement.
+
+#+begin_src R
+y <- 10
+bad <- function(x) {
+       x + y
+}
+# un mauvais example
+#+end_src
+
+
+Dans R les fonction peuvent aussi etre des arguments
+
+#+begin_src R
+g <- function(number, f, ...) {
+  f(number, ...)
+    }
+#+end_src
+
+ici l'ellipsis permet de passer des argument pris en compte par f, l'exmple typique est ~na.rm = TRUE~.
+
+Programmer avec cela en tete indique qu'il est sage de mettre des gardes fou a ses functions, l'exemple utilise est ~sqrt(-5)~ qui ne produit que un warnings et ne retourne pas un nombre mais NaN.
+
+ Un autre exmemple que l'auteur utilise est un wrapper generique autour de ~trycatch()~ qui permet de faire une fonction qui retourne un warnings en erreur.
+
+ Cela permet aussi d'introduire les function factories: ie des fonctions qui vont retourner des fonctions.
+
+ Les arguments par defaut sont rapdiement introduits.
+
+ Assertive/safe programming est aussi introduit. Ce n'est pas toujours limpide pour moi jusqu'ou tester.
+
+ l'aurteur deconseil aussi d'utiliser des fonctions recursives. Aucune idee de pkoi mon intuition est que R est pas fait pour garder en memoire (ici dans l env de la fonction) le resultat de la fonction precedente.
+
+ L'auteur se reclame aussi de la penser unix pour demander une decomposition en petite fonction. Je suis pas expert.
+
+ IL y a un gros passage sur l'interet des listes. Cela lui permet d'introduire Reduce et Map. Il y aussi un gros passage sur les lists dans les colonnes et comment cela permet de faire des graphiques parametres.
+
+ S3, purrr et withr sont introduit succintement.
