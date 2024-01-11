@@ -47,7 +47,6 @@ rm -rf temp
 
 On vera sans doute plus tard mais en gros on dev sur dev et fork des releases qui elles sont stables.
 
-
 * <2024-01-02 Tue>
 
 ** chapitre 5 reproducible pip R :rstats:
@@ -164,3 +163,46 @@ Programmer avec cela en tete indique qu'il est sage de mettre des gardes fou a s
  IL y a un gros passage sur l'interet des listes. Cela lui permet d'introduire Reduce et Map. Il y aussi un gros passage sur les lists dans les colonnes et comment cela permet de faire des graphiques parametres.
 
  S3, purrr et withr sont introduit succintement.
+
+* <2024-01-05 Fri>
+
+jour de nettoyage, bead et TED pipeline
+
+bcp a faire sur BEAD, car c'est un mixe de sql lance via pg admin et de targets
+
+je ne suis pas claire sur ce que fait crew, est une interface derriere plusieurs moteur ou un moteur sur une interface specifique
+
+* <2024-01-07 Sun>
+
+** R stuff :rstats:
+
+~getS3method("function", "class")~ permet de lister les methodes
+
+~sf:::print.sgbp~  marche aussi
+
+* <2024-01-08 Mon>
+
+** TED
+
+pas mal de pb avec la pipeine, merged le bazard et reussi a mettre a jour, pas vraiment appris grand chose si ce n'est que data table n'est multi thread que si ~libomp~ est disponible.
+
+** BEAD
+
+pas mal d'explo avec isp la version json introduit des ~"~ ce qui change l'ordre du classement mais ne devrais pas changer le nombre ..
+
+* <2024-01-09 Tue>
+
+
+flood
+
+** bead
+
+essaie de regrouper en une seule pileine BEAD stuff
+
+** <2024-01-10 Wed>
+
+pas de meetng et discussion sur l'archivage, l'utilisation du cache
+
+nettoyage de certains repos et merge de branche
+
+un peu de test d sqlite avec gpkg
