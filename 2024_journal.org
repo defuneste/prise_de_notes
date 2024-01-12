@@ -206,3 +206,35 @@ pas de meetng et discussion sur l'archivage, l'utilisation du cache
 nettoyage de certains repos et merge de branche
 
 un peu de test d sqlite avec gpkg
+
+* <2024-01-11 Thu>
+
+mon plan isp et rdof
+
+** rdof
+
+fork it and just do one for RDOF
+
+verifications des fichier downloades
+
+*** R stuff :rstats:
+se rapeller
+
+#+begin_src R
+test <- system2("ls", "xx",
+    stdout = TRUE, stderr = TRUE)
+
+attr(test, "status")
+# va retourner 1
+#+end_src
+
+pratique pour tester des lignes de commandes
+
+Pour sauver une targets dans mermaid:
+
+#+begin_src R
+mm <- tar_mermaid()
+writeLines(mm, "tar
+    get_mermaid.js")
+
+#+end_src
