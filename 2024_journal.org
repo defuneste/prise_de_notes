@@ -238,3 +238,35 @@ writeLines(mm, "tar
     get_mermaid.js")
 
 #+end_src
+
+
+* <2024-01-12 Fri>
+
+** metadata
+
+petit bilan de metadata et test de {dm} pour representer un schema
+
+** BEAD
+
+    isp / rdof
+
+* <2024-01-15 Mon>
+
+
+** BEAD
+
+rdof premiere version pour authorized + test versus previous data
+
+* <2024-01-16 Tue>
+
+Do a bit of stuff for Camden
+
+** BEAD
+
+finalement compris ready to authorized / authorized / et default category
+
+mis en place default mais difference avec previous version
+
+** book club :rstats:
+
+~methods(class = "table")~
