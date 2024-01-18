@@ -270,3 +270,27 @@ mis en place default mais difference avec previous version
 ** book club :rstats:
 
 ~methods(class = "table")~
+
+* <2024-01-17 Wed>
+
+
+** BEAD
+
+simplification de la logique de rdof entre auth , les deux versions de default
+
+postgresql has des operations de set https://www.postgresql.org/docs/current/queries-union.html
+
+
+* <2024-01-18 Thu>
+
+** BEAD
+
+on a bouger enfin sur rdof
+
+technology flags, geoid bl x tech x new alias
+
+je me suis rapeller que j'ai le tab 10 20 du census pour la mise en relation
+
+** job
+
+https://join.tts.gsa.gov/resume/
