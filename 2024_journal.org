@@ -294,3 +294,32 @@ je me suis rapeller que j'ai le tab 10 20 du census pour la mise en relation
 ** job
 
 https://join.tts.gsa.gov/resume/
+
+* <2024-01-20 Sat>
+
+je rejoute le vendredi passe:
+
+aws fait payer ses instances T sur la base de nano puis applique un multiplicateur en fonctiom.
+Par exemple on multiplie par 32 pour passer a "large"
+
+update de mon pgpass pro
+
+Il est possible de passer des var de psql via sql et de le faire de make via shell
+
+lower + raise + j switch back to qwerty
+
+* <2024-01-22 Mon>
+
+** BEAD
+
+isp cleaning and docs
+
+advetised speed upload and download max by technology / provider
+
+has_award_geoid_bl doit etre false if null (pareil for has_technology)
+
+0 can be "not reported"
+
+combo requriement and day to day; how do we solve this issue
+
+giving agenda, project leadership, provide more feedback
