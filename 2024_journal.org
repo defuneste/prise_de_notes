@@ -323,3 +323,29 @@ has_award_geoid_bl doit etre false if null (pareil for has_technology)
 combo requriement and day to day; how do we solve this issue
 
 giving agenda, project leadership, provide more feedback
+
+
+* <2024-01-23 Tue>
+
+** BEAD
+
+pas mald e mise en place pour l'echantillon
+
+
+* <2024-01-24 Wed>
+
+copy crosswalk to bead schema
+
+dm materialise les relations one to many -> one en surlignant le nom de la colonne.
+
+
+* <2024-01-25 Thu>
+
+penser a organiser les ticket / tasks
+
+ is_ogr2ogr_here <- function() {
+    ogr_version <- system2("ogr2ogr", "--version",
+                           stdout = TRUE, stderr = TRUE)
+    if (! is.null(attr(ogr_version, "status"))) stop("Is ogr2ogr installed?")
+    return(0)
+  }
