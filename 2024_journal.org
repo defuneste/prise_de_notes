@@ -349,3 +349,43 @@ penser a organiser les ticket / tasks
     if (! is.null(attr(ogr_version, "status"))) stop("Is ogr2ogr installed?")
     return(0)
   }
+
+* <2024-01-26 Fri>
+
+on mange la pilllule et on test la methode ntia
+
+pas mal de temps sur git: il faut toujoirs penser etre sur un graph
+
+eu  un pb avec targets impossible a debugger, un reset hard sur la tete a resolu le pb
+
+* <2024-01-29 Mon>
+
+
+** bead
+
+assez chiand de refaire le calcul d egibilite mais je peux simplifier certaines requetes sql.
+
+AK legend
+
+250010102062053
+
+toujours verifier ses count(*), cela compte les lignes
+* <2024-01-30 Tue>
+
+we want :
+  - we keep cnt_100_20
+  - same for cnt_25_3
+  - cnt_100_20 cable / fiber
+  - underserved (25/3 > undersved < 100/20) cable / fiber
+  - underserved dsl
+  - undersedved fixed wireless
+
+
+
+we want:
+   - bl_100_20_area_cable_fiber
+
+     bl_area_25_3_area_cable_fiber
+      - 50/10 DSL <- does need to be counted here
+
+   - bead_category_cable_fiber
