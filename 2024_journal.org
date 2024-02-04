@@ -389,3 +389,18 @@ we want:
       - 50/10 DSL <- does need to be counted here
 
    - bead_category_cable_fiber
+
+* <2024-01-31 Wed>
+
+
+pas mal de rush pour essayer d'ajouter un filtre underserved,
+
+eda pour l'explorer, debut de rassemblement de
+
+* <2024-02-01 Thu>
+
+push to mapbox, me suis fait avoir par un shadow update de fcc
+
+* <2024-02-02 Fri>
+
+https://usbuildingdata.blob.core.windows.net/usbuildings-v2/Alabama.geojson.zip
