@@ -404,3 +404,15 @@ push to mapbox, me suis fait avoir par un shadow update de fcc
 * <2024-02-02 Fri>
 
 https://usbuildingdata.blob.core.windows.net/usbuildings-v2/Alabama.geojson.zip
+
+* <2024-02-11 Sun>
+
+un peu en retard pour la semaine.
+
+j'ai pas mal tester jq (stream et non stream) et gnu parallel.
+
+il me faut un model pour tester l'imprecision des buildings / fcc
+
+commencer les routes par miles
+
+ogr tricK : ~ogrinfo -al -so my.shp~
