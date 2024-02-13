@@ -416,3 +416,22 @@ il me faut un model pour tester l'imprecision des buildings / fcc
 commencer les routes par miles
 
 ogr tricK : ~ogrinfo -al -so my.shp~
+
+* <2024-02-12 Mon>
+
+** BEAD
+
+- rebuild with new requirements
+
+- vu avec britany comment produire les tableau pour usda
+
+- build ms for all geoid bl
+
+** nouvelle machine
+
+- [x] brew
+- [x] slack/gh/google
+- [x] iterm
+- [x] R and VScode (+ radian, httpgd, languageserver)
+- [ ] emacs + doom
+- [ ] PG + postgis
