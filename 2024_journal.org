@@ -435,3 +435,9 @@ ogr tricK : ~ogrinfo -al -so my.shp~
 - [x] R and VScode (+ radian, httpgd, languageserver)
 - [ ] emacs + doom
 - [ ] PG + postgis
+
+* <2024-02-13 Tue>
+
+commande pratique sur mac avec brew:
+
+- brew list et brew cask --cask
