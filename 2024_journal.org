@@ -433,11 +433,36 @@ ogr tricK : ~ogrinfo -al -so my.shp~
 - [x] slack/gh/google
 - [x] iterm
 - [x] R and VScode (+ radian, httpgd, languageserver)
-- [ ] emacs + doom
-- [ ] PG + postgis
+- [x] emacs + doom
+- [x] PG + postgis
 
 * <2024-02-13 Tue>
 
 commande pratique sur mac avec brew:
 
 - brew list et brew cask --cask
+
+* <2024-02-14 Wed>
+
+acs
+
+dot provides density
+
+coloring block by nb of locations underserved / unserved
+
+show only at specific scale / visual
+
+road data: scale less useful at block but better at bigger aera
+
+"premises per miles" / how you display that?
+
+- what roads
+
+- 500 feets,
+
+** other scale/spatial join:
+
+aggregate of premises count
+
+
+* <2024-02-15 Thu>
