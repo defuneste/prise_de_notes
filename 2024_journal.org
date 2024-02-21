@@ -466,3 +466,13 @@ aggregate of premises count
 
 
 * <2024-02-15 Thu>
+
+pas mal de jq / bb calcul pour leur blog
+
+* <2024-02-16 Fri>
+
+* <2024-02-20 Tue>
+
+** bead :PG:
+
+st_memunion est une version moins gourmande en memoire que st_union
