@@ -476,3 +476,19 @@ pas mal de jq / bb calcul pour leur blog
 ** bead :PG:
 
 st_memunion est une version moins gourmande en memoire que st_union
+
+* <2024-02-21 Wed>
+
+eligigibility -> bead_category
+
+#+begin_src R
+m <- mirai::mirai({
+      library(nanonext)
+      rep <- socket("rep", listen = "tcp://127.0.0.1:6556")
+      reply(context(rep), execute = Sys.getpid, send_mode = "raw")
+    })
+#+end_src
+
+https://beej.us/guide/bgnet0/html/split/networking-overview.html slowly learning
+
+* <2024-02-22 Thu>
