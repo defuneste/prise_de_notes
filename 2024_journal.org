@@ -491,4 +491,25 @@ m <- mirai::mirai({
 
 https://beej.us/guide/bgnet0/html/split/networking-overview.html slowly learning
 
+- pas mal de tiles pour BEAD
+
 * <2024-02-22 Thu>
+
+#+begin_src bash
+docker run --rm -v $PWD:/tmp ghcr.io/degauss-org/geocoder:3.3.0 my_address_file.csv
+#+end_src
+
+- bcp de debugging, bcp trop de cc dans nos pipelines
+
+* <2024-02-23 Fri>
+
+Make automatic varaible:
+
+- ~$@~ the target of current rule
+
+- ~$^~ dependecies
+
+pas mal de pb avec TED, il faut revoir ce sschema
+
+
+* <2024-02-26 Mon>
