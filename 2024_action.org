@@ -14,13 +14,13 @@
   - [ ] chapitre 15 ecology
   - [ ] chapitre 16 conclusion
 
-* Deep R
+* Deep R [5/8]
 
-- [ ] chapitre 10 S3 classes
-- [ ] chapitre 11 Matrices and other arrays
-- [ ] chapitre 12 Data frames
-- [ ] chapitre 13 Graphics
-- [ ] chapitre 14 Interfacing compiled code
+- [x] chapitre 10 S3 classes
+- [x] chapitre 11 Matrices and other arrays
+- [x] chapitre 12 Data frames
+- [x] chapitre 13 Graphics
+- [x] chapitre 14 Interfacing compiled code
 - [ ] chapitre 15 unevaluated expressions
 - [ ] chapitre 16 Environement and evaluation
 - [ ] chapitre 17 Lazy evaluation

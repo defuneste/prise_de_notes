@@ -503,7 +503,7 @@ docker run --rm -v $PWD:/tmp ghcr.io/degauss-org/geocoder:3.3.0 my_address_file.
 
 * <2024-02-23 Fri>
 
-Make automatic varaible:
+Make automatic variable:
 
 - ~$@~ the target of current rule
 
@@ -511,5 +511,34 @@ Make automatic varaible:
 
 pas mal de pb avec TED, il faut revoir ce sschema
 
-
 * <2024-02-26 Mon>
+
+** bead
+
+debut de rapatriement de rdof in the bead repo
+
+modification du script pour dl un pgkg
+
+meeting data
+
+ajout de count loc pour aggregats tr / eligibility
+
+* <2024-02-27 Tue>
+
+** bead
+
+recalcul d'un eligibility tr mais avec un dsl excluded
+
+** calix
+
+survey/outreach ntca spead capability / video services / cables
+
+community based. edging network to other community
+
+small coop/co -> telephone -> moved to broadband
+
+education to community
+
+VA services
+
+850 isp
