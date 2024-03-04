@@ -542,3 +542,25 @@ education to community
 VA services
 
 850 isp
+
+* <2024-02-28 Wed>
+
+** bead
+
+pas mal de tuiles de generees
+
+dans certains cas desactive la lecture en parallel pour tippecanoe permet de faire passer un oom
+
+ogrinfo. marche sur mbtiles et donne pas mal d'infos utiles
+
+
+* <2024-02-29 Thu>
+
+370810152013009
+
+pct served 3.8
+
+pct un and underseved 96.2 (should be 3/53)
+
+
+filtered out previous version of rdof
