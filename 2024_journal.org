@@ -562,5 +562,26 @@ pct served 3.8
 
 pct un and underseved 96.2 (should be 3/53)
 
-
 filtered out previous version of rdof
+
+* DONE <2024-03-04 Mon>
+
+pour differencier rapidement 2 sets entre deux tables: - 1 pour le premier set
+
+- 2 pour le second set
+
+- les valeurs possiblent sont donc 1 (premier set), 2 (second set) et 3 (combinaisons)
+
+* <2024-03-05 Tue>
+
+010539698011035
+
+* <2024-03-06 Wed>
+
+pas mal de tickets pour les tests
+
+ truc a voir en NC:
+
+ - great dismal swamp
+
+ - see atlas obscura
