@@ -576,8 +576,6 @@ pour differencier rapidement 2 sets entre deux tables: - 1 pour le premier set
 
 010539698011035
 
-* <2024-03-06 Wed>
-
 pas mal de tickets pour les tests
 
  truc a voir en NC:
@@ -585,3 +583,17 @@ pas mal de tickets pour les tests
  - great dismal swamp
 
  - see atlas obscura
+
+* <2024-03-07 Thu>
+
+** bead
+
+fcc funding map
+
+* <2024-03-08 Fri>
+
+pas mal de chose interesante du cote de test:
+
+- https://github.com/yihui/testit
+
+- https://github.com/brodieG/aammrtf
