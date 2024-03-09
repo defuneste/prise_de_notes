@@ -1,9 +1,15 @@
 :PROPERTIES:
 :ID:       d71a50b6-ea84-4177-a603-1089c082e78a
 :END:
-#+title: R_base
+#+title: R base
 
 Besoin de l'organiser un peu plus tard!
+
+* R expression
+
+Elles peuvent etre *simple* comme des constantes (~42L~, ~NA_real_~) et des noms (~iris~, ~sum~, ~`+`~) ou *composees* (une combinaisons de plusieurs).
+
+$$ (f, e_1, e_2, e_3 ) $$
 
 * Fonctions de base R à travailler:
 
@@ -68,6 +74,8 @@ NULL
 * Formules et modèles
 
 ** fonctions de base pour interagir avec des sorties de modèles
+
+C'est un illustration du metaprograming.
 
 #+begin_src R :results output :session *R* :exports both
 un_model <- lm(speed ~ dist, data = cars)
