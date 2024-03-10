@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       8a271019-a6c8-4f18-90b9-25c598ad3d93
+:END:
+#+title: Coordinate Reference Systems
+
+Dans https://r-spatial.org/book/02-Spaces.html
+
+citation de Lott 2015
+
+
+- un systeme de coordonnees est un ensemble de regles mathematiques specifiant comment des coordonnees sont associees a  des points.
+
+- un datum est un parametre ou un set de parametres qui defini la position d'origine, l'echelle et l'orientation d'un systeme de coordonnees.
+
+- systeme geoddesique est un systeme de coordonees qui relie un objet a un datum

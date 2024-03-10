@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       b5f5cd08-b9ab-4699-b70a-fd81bf9c9c43
+:END:
+#+title: spatial-data-science
+
+
+* Support
+
+An attribute of a geometry can be:
+
+- A *constant* value for every point of the geometry (land use)
+
+- A single value that is an aggregrate over all points of the geometry (number of birth)
+
+-  A value that is unique to only this geometry, describing its identity (name of teh county).
+
+source: https://r-spatial.org/book/02-Spaces.html
+
+Le chapitre 5 reprends un peu ce constat. Il propose que la relation attribut-geometrie est soit constant soit le resultat d'un aggregat.
+
+Un example: une route (~LINESTRING~) a un champ largeur de 10m. Est ce que cette largeur est constante (10 m tout le long de la route) ou le resultats d'un aggregat (un moyenne de 10m mais different endroits peuvent avoir differente largeur).
