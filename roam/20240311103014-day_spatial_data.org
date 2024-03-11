@@ -33,3 +33,52 @@ example de support:
 * spatial versus geospatial
 
 spatial refers to space and geo refer to the earth.
+
+* what is statistics
+
+** design based statistics
+
+random came from random sampling ($z$)
+
+the independence come from teh sampling design
+
+can only work for estimator: mean
+
+** model based statitics
+
+the random ness come from $Z$ (not z)
+
+$w(s)$ is the spatial effect
+
+design based is very good for mapping error
+
+the effect of choosing a aera is more important in design based and less in model based because the model do not have opinion on that.
+
+Edzer prefer resolutiohn to granurality.
+
+* point pattern data
+
+importance is location of point, even if point could have some marks
+
+* geostatictical data
+
+location + mesured values
+
+interest is estimating the missing value
+
+they are very similar in data file format but different meaning
+
+* aereal data
+
+properties associated with polygon
+
+les polygones voisins sont typiquement lies.
+
+
+* less attention in spatial statitics:
+
+- image data (cf remote sensing): is it aeral data / point patterm data
+
+- tracking data / trajectories
+
+  pour le jeux de donnees sur les houragans ont aurait pu regarder avec une densite par espace.
