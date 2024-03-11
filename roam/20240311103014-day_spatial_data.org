@@ -1,0 +1,35 @@
+:PROPERTIES:
+:ID:       a5c9566d-6960-4329-8775-3ba45073a15d
+:END:
+#+title:  day_spatial_data
+
+
+* learning goals
+
+- intro to spatial data
+
+
+* what is special about spacial data
+
+Time est souvent implicit: par exemple dans les metadata
+
+Attributes are properties of things.
+
+_Systeme de reference_: units pour divisier certaines mesures.
+
+_support_ : quel est le lien entre une donnee et une geometry
+
+_continuity_ : continu versus discrete
+
+
+example de support:
+ - caracteristique de la route;
+        - type de la route
+        - largeur de la route
+        - longueur de la route
+
+- land use
+
+* spatial versus geospatial
+
+spatial refers to space and geo refer to the earth.

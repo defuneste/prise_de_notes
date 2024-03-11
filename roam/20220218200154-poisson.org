@@ -17,13 +17,13 @@ Elle est décrite par un paramètre:
 ** Echantillonner dans une distribution de Poisson
 
 #+begin_src R :results output :session *R* :exports both
-nb_obs <- 5
+nb_obs <- 7
 lambda <- 10
 rpois(nb_obs, lambda)
 #+end_src
 
 #+RESULTS:
-: [1] 11 10  9  8  6
+: [1] 11 10 15  8 21 14  8
 
 ** Probabilité d'obtenir une valeur dans telle distribution
 
