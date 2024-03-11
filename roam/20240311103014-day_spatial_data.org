@@ -82,3 +82,25 @@ les polygones voisins sont typiquement lies.
 - tracking data / trajectories
 
   pour le jeux de donnees sur les houragans ont aurait pu regarder avec une densite par espace.
+
+
+* checklist if you have spatial data
+
+- do you have coordinates
+
+- are they on earth
+
+- what is the support / granularity
+
+- how are they collected
+
+  SID: student infant death
+
+  NWB: non white bearth
+
+  lda is in MASS
+
+
+stars : delta is the difeerence between each cells, offset is the coordinates.
+
+stars use list of arrays
