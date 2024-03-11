@@ -19,3 +19,8 @@ source: https://r-spatial.org/book/02-Spaces.html
 Le chapitre 5 reprends un peu ce constat. Il propose que la relation attribut-geometrie est soit constant soit le resultat d'un aggregat.
 
 Un example: une route (~LINESTRING~) a un champ largeur de 10m. Est ce que cette largeur est constante (10 m tout le long de la route) ou le resultats d'un aggregat (un moyenne de 10m mais different endroits peuvent avoir differente largeur).
+
+Il faut aussi faire le difference entre un variable _extensive_ et une variable _intensive_. Un exemple est la population qui est toujours dependante de la taille d'un polygone. Si l'on divise par la surface (ie une densite) on est dans un cas de variable intensive.
+
+
+Diviser par la population totale comme par exemple pour obtenir un taux d'incidence permet d'avoir un support qui depent plus de la pop total (le nombre de cas depend cependent tjrs de la taille du polygone).
