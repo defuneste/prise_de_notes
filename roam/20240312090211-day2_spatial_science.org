@@ -68,7 +68,7 @@ il faut faire attention un processus non homogene peut estimer un clustering alo
 
 difference between a trend a pattern residual, a kernel is always local (so scales kind of matter).
 
-Besoin de reagrder MaxEnvt
+Besoin de regarder MaxEnvt
 
 
 * Exercices
@@ -93,6 +93,7 @@ plot(pine["DBH"], pch = 1, col = 2, cex = log(pine[["DBH"]]))
 #+RESULTS:
 
 ** exercice 2
+
 #+begin_src R :session *R*
 no2 <- read.csv(system.file("external/no2.csv",
     package = "gstat"))
@@ -125,3 +126,5 @@ no2_ppp <- as.ppp(no2_sf)
 | lau_level2_name              |
 | EMEP_station                 |
 | NO2                          |
+
+** exercices 3

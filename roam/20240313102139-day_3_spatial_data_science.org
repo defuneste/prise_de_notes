@@ -1,0 +1,40 @@
+:PROPERTIES:
+:ID:       516b2352-7fc2-4ea5-bfc9-608072082132
+:END:
+#+title: title: day_3_spatial_data_science
+
+* geosstats
+
+** gstats
+
+gstats est le debut ou Edzer utilisa R. R a ete utilise pour prototyper et porter sur S+
+
+Les valeurs sont lcoalises a des points qui n'ont pas d'interet propre.
+
+La mesure est continue et ce qui nous interesse.
+
+lagged scatter plot: check ~gstat::hscat~
+
+~retain_unique~ args dans st_within_distance permet de ne garder que les pairs unique.
+
+relation entre covariance et variogram
+
+$$gamma(h) = C(0)  - C(h)$$
+
+left and right are the column in the Variogram object
+
+on va commencer par utilsier un IDW estimateur
+
+un variogram va permettre d'utiliser des poids un peut different que l'inverse de la distance
+
+BLUP: best unbiased linear predictor
+
+aka krigging
+
+at the end of day IDW is not that bad
+
+density or interpolation
+
+- density is number of point / surface
+
+- interpolation is spatial varation of some mesure
