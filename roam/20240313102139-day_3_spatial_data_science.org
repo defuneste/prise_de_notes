@@ -38,3 +38,6 @@ density or interpolation
 - density is number of point / surface
 
 - interpolation is spatial varation of some mesure
+
+
+il y a des simulations qui sont conditionnelles ou inconditionnelles par rapport au donnees.

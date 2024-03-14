@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       97ce8cc1-964c-43b5-ba99-2803aa7fd276
+:END:
+#+title:  day_4_spatial_data_science
+
+* exercices chapter 12
+
+st_redimension
+
+geom_stars create plot per dimension
+
+as.data.frame on a stars object give us the  value as columns
+
+block kriging can be done in gstats: on ve creer des gros blocks qui vont lisser la variance
+
+* Machine learning and spatial data
