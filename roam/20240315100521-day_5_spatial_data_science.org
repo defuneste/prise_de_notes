@@ -1,0 +1,45 @@
+:PROPERTIES:
+:ID:       97f789b6-55ac-4a9b-ba76-814dc211257e
+:END:
+#+title: day_5_spatial_data_science
+
+
+* Ressource constraints in DS projects
+
+
+- time
+
+- compute
+
+- money
+
+You have in memory and out of memory (psql) solution.
+
+ERA5 is a big clinate data set from 1940 to now
+
+CMIP6 climate model intercomparison: contruit de facon accesibles avec une structure specifique (netCDF and Zar).
+
+big satellite data are in US West.
+
+Europe: utilise Copernicus Data Space Ecosystem
+
+s3 can do hhtp range request, can specify section of the data the you want to read.
+
+Copernicus has Climate data store (avec une API: ecmwf)
+
+STAC: spatio temporel asset catalog, il indique quels sont les assets et ou le trouver.
+
+Il y a un site web STAC index
+
+Cloud Optimized geospatial formats guide: https://guide.cloudnativegeo.org/
+
+gdal_utils("info", Path)
+
+
+read_stars downnsample the image so it can display it.
+
+st_read can read zip file directly with vsizip
+
+fo exercice 9, it does a dry run?
+
+bcp de fonction de stars ont un argument pour faire du downsampling.

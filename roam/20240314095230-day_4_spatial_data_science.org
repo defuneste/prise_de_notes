@@ -14,3 +14,9 @@ as.data.frame on a stars object give us the  value as columns
 block kriging can be done in gstats: on ve creer des gros blocks qui vont lisser la variance
 
 * Machine learning and spatial data
+
+regression tree is always tjrs sur une variable
+
+en general la precision d'une carte est reduiet a une valeur et dans ce cas un ehantillonnage de type aleatoire par design doit donner une bonne estimation de la precision.
+
+area of applicability are in the CAST package.
