@@ -597,3 +597,11 @@ pas mal de chose interesante du cote de test:
 - https://github.com/yihui/testit
 
 - https://github.com/brodieG/aammrtf
+
+* <2024-03-15 Fri>
+
+- null or 0
+
+- rename the cnt at block levl : _uncovered
+
+- cnt_total_locations_uncovered (write the def somewhere)
