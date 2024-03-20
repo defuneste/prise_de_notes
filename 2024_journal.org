@@ -598,6 +598,16 @@ pas mal de chose interesante du cote de test:
 
 - https://github.com/brodieG/aammrtf
 
+* <2024-03-11 Mon>
+
+Passer 15 h de la semaine sur https://edzer.github.io/sswr/
+
+Le reste: un petit peu de calix
+
+toujours beaucoup de BEAD en partie sur funding broadband.
+
+je galere pas mal sur le code de Brittany et j'aurais du mieux l'auditer.
+
 * <2024-03-15 Fri>
 
 - null or 0
@@ -605,3 +615,65 @@ pas mal de chose interesante du cote de test:
 - rename the cnt at block levl : _uncovered
 
 - cnt_total_locations_uncovered (write the def somewhere)
+
+* <2024-03-18 Mon>
+
+pas mal de reunion CaLix, bead.
+
+cote R je suis pas certains d'avoir le meme  comportement entre paste et sprint f avec un quote identifier/litteral
+
+* <2024-03-19 Tue>
+
+#+begin_src R
+gimme_tidy_ilecs <- function(bl, ilecs) {
+  sf::sf_use_s2(FALSE)
+  sgbp <- sf::st_intersects(bl, ilecs)
+  # need sf loaded I never know how to load s3
+  df <- as.data.frame(sgbp)
+  df$geoid_bl <- bl[["geoid_bl"]][df$row.id]
+  df$id_ilecs <- ilecs[["id_ilecs"]][df$col.id]
+  df_slim <- df[, c("geoid_bl", "id_ilecs")]
+  return(df_slim)
+}
+
+# require bl_gpkg and ilecs
+# number of core is hard coded, should it go in some param files?
+# User should know their system and use the correct number -> readme
+US_ilecs <- function(path_gpkg, ilecs) {
+
+  list_st <- sf::st_read(path_gpkg,
+                         query = "select geoid_st
+                                  from sql_statement
+                                  group by geoid_st")
+
+  gimme_a_state <- function(a_state) {
+    state <- sf::st_read(path_gpkg,
+                         query = toString(
+                                          sprintf(
+                                  "select * from sql_statement
+                                  where geoid_st ='%s'", a_state)))
+    small_dat <- gimme_tidy_ilecs(state, ilecs)
+    print(a_state)
+    return(small_dat)
+  }
+
+  big_list <- parallel::mclapply(list_st$geoid_st, gimme_a_state, mc.cores = 4)
+
+  dat <- do.call(rbind, big_list)
+  return(dat)
+}
+
+#+end_src
+
+
+NTIA will annouce bead award in Q3
+
+** R postgres stuff
+
+https://cran.r-project.org/web/packages/DBI/vignettes/DBI-advanced.html
+
+on peut diviser un requetes de type dbGetQuery en plusieurs etape.
+
+- envoie de la requete ou du statement (dbSendQuery ou dbSendStatement): va executer la commande
+- dbFtech() va recuperer le resultat
+- dbClearResult() libere les ressources et cloture la transaction.
