@@ -21,6 +21,6 @@
 - [x] chapitre 12 Data frames
 - [x] chapitre 13 Graphics
 - [x] chapitre 14 Interfacing compiled code
-- [ ] chapitre 15 unevaluated expressions
+- [x] chapitre 15 unevaluated expressions
 - [ ] chapitre 16 Environement and evaluation
 - [ ] chapitre 17 Lazy evaluation

@@ -677,3 +677,7 @@ on peut diviser un requetes de type dbGetQuery en plusieurs etape.
 - envoie de la requete ou du statement (dbSendQuery ou dbSendStatement): va executer la commande
 - dbFtech() va recuperer le resultat
 - dbClearResult() libere les ressources et cloture la transaction.
+
+*  <2024-03-20 Wed>
+
+pas mal de reunion
