@@ -681,3 +681,15 @@ on peut diviser un requetes de type dbGetQuery en plusieurs etape.
 *  <2024-03-20 Wed>
 
 pas mal de reunion
+
+
+<2024-03-21 Thu>
+
+geoid_st
+geod_co unique on county ->
+
+rebuild bfm_award_proj_co
+
+build temp table at loca with only column that matter to us
+
+if it C for wired and wiredlfw remove it
