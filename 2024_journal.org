@@ -329,7 +329,7 @@ giving agenda, project leadership, provide more feedback
 
 ** BEAD
 
-pas mald e mise en place pour l'echantillon
+pas mal de mise en place pour l'echantillon
 
 
 * <2024-01-24 Wed>
@@ -343,18 +343,20 @@ dm materialise les relations one to many -> one en surlignant le nom de la colon
 
 penser a organiser les ticket / tasks
 
+#+begin_src R
  is_ogr2ogr_here <- function() {
     ogr_version <- system2("ogr2ogr", "--version",
                            stdout = TRUE, stderr = TRUE)
     if (! is.null(attr(ogr_version, "status"))) stop("Is ogr2ogr installed?")
     return(0)
   }
+#+end_src
 
 * <2024-01-26 Fri>
 
 on mange la pilllule et on test la methode ntia
 
-pas mal de temps sur git: il faut toujoirs penser etre sur un graph
+pas mal de temp s sur git: il faut toujoirs penser etre sur un graph
 
 eu  un pb avec targets impossible a debugger, un reset hard sur la tete a resolu le pb
 
@@ -693,3 +695,29 @@ rebuild bfm_award_proj_co
 build temp table at loca with only column that matter to us
 
 if it C for wired and wiredlfw remove it
+
+* <2024-03-25 Mon>
+
+pas mal de tickets
+
+restructuration de pas mal de truc pour BEAD
+
+* <2024-03-26 Tue>
+
+bon repo sur l'encoding dans R: https://github.com/gaborcsardi/rencfaq
+
+package pour des metrics de pkgs:
+https://docs.ropensci.org/pkgstats/index.html
+
+** some set up
+
+ -  I like htop, tree, jq, gdal (obv git)
+
+ - on vscode I like httpgd / radian
+
+* <2024-03-27 Wed>
+
+
+pas mal de maj pour BEAD
+
+tester targets sur deux ordi, c'est pas fou vu que cela fait creer des conflits dans git avec la partie meta/.
