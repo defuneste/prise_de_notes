@@ -721,3 +721,33 @@ https://docs.ropensci.org/pkgstats/index.html
 pas mal de maj pour BEAD
 
 tester targets sur deux ordi, c'est pas fou vu que cela fait creer des conflits dans git avec la partie meta/.
+
+DBI avec postgresql n aime pas les multi statement
+
+* <2024-04-01 Mon>
+
+- bead reorg
+
+- blog post
+
+- setup quarto
+
+* <2024-04-02 Tue>
+
+- nettoyer son pc c'est l'enfer
+
+- nettoyage des tables et schema pas utilise
+
+* <2024-04-03 Wed>
+
+- ne pas oublier d'ajouter psql et plus dans le PATH
+
+- creer .pgpass
+
+- renomer pas mal de script bead
+
+- aider dolley sur fcc pour calix
+
+ - meeting jira et agile
+
+*  <2024-04-04 Thu>
