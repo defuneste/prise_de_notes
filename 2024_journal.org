@@ -751,3 +751,30 @@ DBI avec postgresql n aime pas les multi statement
  - meeting jira et agile
 
 *  <2024-04-04 Thu>
+
+*  <2024-04-11 Thu>
+
+toujours des probleme pour integrer les ISP
+
+rajout de BIP et tribal pour le BEAD, calix coverage devrait etre simplifier et prise en compte des county
+
+<2024-04-18 Thu>
+
+si j'installe pas org je suis en retard dans ma prise de note.
+
+pas mal de temps de perdu sur le connecticut:
+
+le guide dev de l'api du census est tres bien, je dois aussi progresser un peu sur le l'utilisation de lapply et passer plus d'argument as une fonction.
+
+je dois penser a mettre a jour mon linkedin
+
+- j'ai travaille dans l'ecosystem aws: rds, ec2, s3
+- developpe des pipelines pour des apps, programes de recherches et analyse de donnees
+- type de donnees, US census, FCC broadband
+- fixer pas mal de choses / misc geocoding
+
+  fixer les donnees ISP
+
+  documenter les dl.
+
+  clean calix data
