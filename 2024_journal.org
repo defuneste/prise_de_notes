@@ -1,5 +1,4 @@
-#+title: Journal 2024
-#+author: Olivier leroy
+#+title: Journal 2024 #+author: Olivier leroy
 
 
 * <2024-01-01 Mon>
@@ -778,3 +777,114 @@ je dois penser a mettre a jour mon linkedin
   documenter les dl.
 
   clean calix data
+
+*  <2024-04-24 Wed>
+
+ add cnt_bl unique
+
+ add count of county
+
+ do a group by frn and brand name (get an array of provider id)
+
+ wiki -> isp
+
+ * <2024-04-25 Thu>
+
+ table(us county names)
+
+ https://proximityone.com/tracts_evolution.htm
+
+ https://www.census.gov/history/www/programs/geography/tracts_and_block_numbering_areas.html
+
+ * <2024-04-26 Fri>
+
+ - idea of blog / post / map : census county with same / different name
+
+ - evolution of census tract over time
+
+* <2024-05-02 Thu>
+
+
+new grant for NSF
+
+focus on states that do not get much research  funded
+
+You have funding to support your research infrastucture (first step) that can lead to second step
+
+Lisa works in HR on grant writing
+
+Few colleges in VT can apply for this grant
+
+Building a research ecosysten in rural ecosystem. Lead us to workforce dev. / Higher Ed  STEM. Degree -> pathway job
+
+Landmark specific for student with disability (ADHD, Neuro diversity).
+
+Training on research and writing grant for staff
+
+Keeping the student we train here / connection with employer
+
+What kind of skills they need for pathway job / "what is needed in the community"
+
+4 years grant
+
+"send our graduate"
+
+CCV: Community College of Vermont
+
+funding can only go for some specific states (ESCOR F4? states)
+
+helping us and communicate of what we are doing
+
+make connection between research and bussiness
+
+ESCOR: tip of iceberg for more grant
+
+January feb 2025 to get funding
+
+** duckdb and polar
+
+Hive style partitions -> in parquet format (parquet integrate it well but it could works with other file format, text one like csv)
+
+Grant recommand to use {rspm}
+
+if data bigger than 50gb : spark / map reduce infro more
+
+(goal is kind of avoiding spark)
+
+Also some team are polyglot
+
+big data is more a question of scaling
+
+arrow and duckdb play well together
+
+https://onlinelibrary.wiley.com/doi/10.1002/pds.5728
+
+duckdb has in memory modul diff than arrow, if you use parquet you can use either duck db / arrow or polars
+
+*** Two revolutions:
+
+- Better on disk storage : parquet metaphore is a floor cabinet
+
+- Better in memory representation
+
+  standardisation around apache arrow: format, columnar, allow zero copy
+
+  both polars and duck db are OLAP (run natively does not run on server), run on defered materialisation rather eagerly
+
+  we can be "lazy" and optimise queries before executing them
+
+  explain verb is nice
+
+  for very large data set using some sample for decile/median
+
+  with dplyr you need to convert it to an object that dplyr can read (tbl)
+
+  ~show_query~ display the query run
+
+  we need to use a ~collect~ method to run the query
+
+  Polars also build on arrow but different query engine
+
+  Both polars and duck db interface well
+
+  tidypolars seems quite nice
