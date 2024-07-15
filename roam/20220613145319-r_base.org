@@ -130,3 +130,5 @@ Un package dans R peut être dans différents états:
 - binary: mis en place par CRAN et OS specific
 - installed: ~install.package()~
 - in-memory: ~library()~ on appelle une bibliothèque où les packages sont stockées
+
+  3

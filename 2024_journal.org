@@ -875,7 +875,7 @@ duckdb has in memory modul diff than arrow, if you use parquet you can use eithe
 
   explain verb is nice
 
-  for very large data set using some sample for decile/median
+  for very large data set using some sample for decile/median (because sort is always costly)
 
   with dplyr you need to convert it to an object that dplyr can read (tbl)
 
@@ -888,3 +888,41 @@ duckdb has in memory modul diff than arrow, if you use parquet you can use eithe
   Both polars and duck db interface well
 
   tidypolars seems quite nice
+
+** Agile learning
+
+- kanbam  diff than Scrum meme si les deux vont utiliser un "board"
+
+* <2024-05-06 Mon>
+
+- calix Amanda category
+
+- S3 explorations -> tidy wiki ? blog post / targets
+
+- SDK AWS ?
+
+  - FRN / check what that mean and if we can use it -> set up a meeting with Myles
+
+* <2024-05-27 Mon>
+
+** duckDB
+
+a une implementation similaire a PF pour le catalog;
+
+        - information_schema.schemata: Database, Catalog and Schema
+        - information_schema.tables: Tables and Views
+        - information_schema.columns: Columns
+
+
+
+
+* <2024-07-15 Mon>
+
+- besoin de comprendre si moins de combo isp affect les id_isp
+
+
+- tract level of percentage of location that do not have 100/20
+- county ->
+- place - > blocl to place xwalk
+
+  demain, nettoyer isp pour reessayer en partant de raw
