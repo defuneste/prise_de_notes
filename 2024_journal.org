@@ -926,3 +926,31 @@ a une implementation similaire a PF pour le catalog;
 - place - > blocl to place xwalk
 
   demain, nettoyer isp pour reessayer en partant de raw
+
+* <2024-07-17 Wed>
+
+Il me faut donner un shell a cori.data.fcc
+
+* <2024-07-19 Fri>
+
+Nora: works on desks / conferences
+
+AK:
+        - more resilent team / deeper bench
+        - more competition
+Drew:
+        - lack of leadership
+        - AWS /mapbox
+        - monday / jira
+        - research
+
+Trish:
+        - research
+        - TTT
+        - dev our risi fed grant / can we get fed dollar to explore our missions ?
+        - Is data important geting fed funding
+* <2024-07-22 Mon>
+
+ask about vintage food
+
+to run on DB: https://www.cybertec-postgresql.com/en/get-rid-of-your-unused-indexes/
