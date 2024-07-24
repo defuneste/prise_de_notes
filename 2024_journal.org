@@ -954,3 +954,8 @@ Trish:
 ask about vintage food
 
 to run on DB: https://www.cybertec-postgresql.com/en/get-rid-of-your-unused-indexes/
+
+
+* <2024-07-24 Wed>
+
+https://www.r-bloggers.com/2017/06/how-to-add-code-coverage-codecov-to-your-r-package/
