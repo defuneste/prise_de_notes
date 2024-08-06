@@ -959,3 +959,46 @@ to run on DB: https://www.cybertec-postgresql.com/en/get-rid-of-your-unused-inde
 * <2024-07-24 Wed>
 
 https://www.r-bloggers.com/2017/06/how-to-add-code-coverage-codecov-to-your-r-package/
+
+
+* <2024-07-26 Fri>
+
+"static code analysis".
+
+
+* <2024-08-01 Thu>
+
+intersting read: https://cran.r-project.org/doc/FAQ/R-FAQ.html#How-can-I-turn-a-string-into-a-variable_003f-1 about get and assign
+
+* <2024-08-06 Tue>
+
+GH opermet de creer un template directory w/o the history of the template
+
+
+Bridge Day - https://officialbridgeday.com/ People bungee jump off of the new River Gorge Bridge. In Fayetteville, WV which is an awesome town. Also the newest National Park.
+
+Cranberry Glades Botanical area (Boardwalk, but be bear aware)
+
+Falls of Hills Creek - hike to three waterfalls, Pocahontas County
+
+Highland Scenic Highway - Pocahontas County - beautiful drive through national forest. Great in the fall, lots of hikes
+
+BearTown State Park https://wvstateparks.com/park/beartown-state-park/ Boardwalk through moss covered rock formations.
+
+SnowShoe Village- https://www.snowshoemtn.com/  great in the summer
+
+Elk Springs Resort  https://elkspringswv.com/ Fly fishing and great food.
+
+Mothman Statue in Point Pleasant - speaks for itself.
+
+Cass Scenic Railroad - train ride up the mountain from an old coal town.
+
+Hawks Nest State Park - ride tram cars into the bottom of the New River Gorge
+
+Clarksburg/Bridgeport area - excellent Italian food from about everywhere.
+
+Hillbilly Hot Dogs near Huntington - outrageous and worth a google.
+
+Trans-Allegheny Lunatic Asylum - https://trans-alleghenylunaticasylum.com/ Horrifying.
+
+Pepperoni Rolls!!
