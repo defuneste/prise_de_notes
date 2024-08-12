@@ -1002,3 +1002,45 @@ Hillbilly Hot Dogs near Huntington - outrageous and worth a google.
 Trans-Allegheny Lunatic Asylum - https://trans-alleghenylunaticasylum.com/ Horrifying.
 
 Pepperoni Rolls!!
+
+ * <2024-08-12 Mon>
+
+What do we want with DB, read, compute
+
+We will focus on DBMS and flat file
+
+set of concepts:
+
+relationship / dat integrity / data redundancy / data control
+
+use of as.tible to get a summary
+
+
+use of ~r"()"~ to allow "" in string
+
+~dbGetQuery(con, sql, params)~ is very nice params take a list
+
+for query the duckDB syntax also works: "from my_table" is a shortcut of "select * from my table"
+
+~collect()~ as an argumentg n that by default is set to ~inf~
+
+you can use head also or slice_sample if you want. sample
+
+show_query() is very nice also
+
+see with slice_sample
+
+analytic = dbplyr then in production rewrite it in sql.
+
+order of dplyr is important to generatye sql
+
+
+check duckplyr package: duckdplyr df to parquet
+
+check parquetize but mayeb not
+
+check truncate
+
+CORA plenty db to check
+
+write in DB is a pain to write abstraction from R because you have a lot of different ways than a db engine can handle it.
