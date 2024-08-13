@@ -1044,3 +1044,40 @@ check truncate
 CORA plenty db to check
 
 write in DB is a pain to write abstraction from R because you have a lot of different ways than a db engine can handle it.
+
+Comparisons are important every regression is a comparison
+
+odds are hard to interpret
+
+$$ odds = p / 1 -p $$
+
+quality of comparison depend on from who and how
+
+check marginaleffects
+
+marginals effect take a function. a model and var
+
+use a comparison as a function
+
+marginal effect also as a pot wrapper, that return a gg plot object
+
+https://marginaleffects.com/
+
+---
+
+
+provides more that just the prediction: uncertainty usefull also to inform the bound they want to operate on
+
+confidence intervals / prediction intervals
+
+first one uncertainty in fitting model
+
+second uncertainity in sample
+
+one is about the world the other one is about a specific object
+
+conformal prediction (here in a regression context)
+
+you can calibrate/adjust bounds
+
+A gentle intro do conformal prediction
