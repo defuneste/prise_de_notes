@@ -1081,3 +1081,288 @@ conformal prediction (here in a regression context)
 you can calibrate/adjust bounds
 
 A gentle intro do conformal prediction
+
+Keras 3
+
+"The Bitter Lesson"
+
+deep learning become more popular because compute become available
+
+supposed to be versatile
+
+forgiving and reliable
+
+Keras is like a marble maze, composing a pth to data to go throught
+
+keras come with plenty of layers, metrics, loss functions, optimizers, etc
+
+one example is build a classifier
+
+compile - > fit
+
+example give yuy 92,1 % accuracy
+
+keras help you test with more features
+
+progressive disclosure of complexity
+
+keras is implemented with reticulate
+
+reticulate: updated Python environement
+
+Kera 3 return of multi backend support
+
+keras not part of tensor flow now and support multiple backend
+
+and can switch between back end
+
+that is helping the deployement
+
+All function are pure, no side effect
+
+plenty of other stuffs
+
+https://keras3.posit.co/
+
+deepr learning with R
+
+"deep learning is like duck tape"
+
+---
+
+how to avoid garbage in garbage out
+
+in pharma the used to classify some images
+
+a experiment can have 40K at minumum, hence how to you do automate QC
+
+utilisation of isolationforest
+
+how many image are getting flags: depend on threshold
+
+---
+
+R
+
+Collin gillespie
+
+- csv: it just works, it just works next year
+
+  in memory only
+
+  larger file: in memory imposible
+
+  parquet store metadata
+
+  #+begin_src R
+c(4,4,4,4,4,1,2,2,2,2,2)
+  #+end_src
+
+
+parquet use some trick to repeated idea rep 4, 5 times
+
+
+Dictionary encoding
+
+rds and parquet hace different compression (gzip/snappy)
+
+snappy a bit faster on reading. buit cost a bit much on compression
+
+
+R foundation: individual membership 25E
+
+example of package:
+
+rvertnet: API for natural history
+
+datapackgeR: automated creation and update of R package
+
+---
+
+tyler morgan:
+
+use quarto render hooks ! in the quarto yaml
+
+delivery for email with quarto: pins / quarto / posit connect
+
+
+quarto as email format
+
+---
+
+genAI
+
+"guilty pleasure"
+
+being a fan is always wanting more?
+
+gpt 4.0 do text image and table
+
+available on free tier
+
+convert image is nice
+
+prompt enginiring is going hand in hand with analsys skill
+
+prompt need to be specific
+
+---
+
+open data
+
+
+set and tools of process to answer question
+
+technology trigger for data science: eniacs
+
+none of the problem have been solved and we need a set of tools to solve
+
+use resampling (bootstrap resampling)
+
+model of population -> simulated data
+
+peak DS 2009 - 2012
+
+trough of desillution: 2015 -2018
+
+data journalism is improving data litteracy
+
+the general social survey
+
+---
+
+Data engineering
+
+Reclaiming your weeck end with data contract
+
+Trust is everything
+
+How much control do you have in my outputs/inputs
+
+Reliability / consistency / autonomy
+
+solution data contract: an agreement, organization dynamics
+
+what make a good data contract:
+
+1. people:
+        * Owner
+        * Responsible
+        * Consulted
+
+2. Expectetion
+        * Schema
+        * Valid values
+        * SLA, update/frequency
+        * Interface, where is teh data stored, need on query perfomance
+        * Compliance
+        * Interoperaibility, can it be reads by machine/peole
+
+ Who builds the contracts:
+       - data consummer and producer
+
+ Technology: helpful but not everything
+
+literrate contratcs
+
+ npelikan/positconf2024-datacontracts
+
+Lead with empathy, learn their pain point, sometimes it can be you
+
+keep it simple, how much validation do I need
+
+
+** Data modeling for data engineer
+
+Turn vague terms into something operational
+
+Divide the logic
+
+customers with ltv < 30 no recent order since 30 days
+
+can we document and test this workflow for the rest of team?
+
+Customers are dimensional model of a "customer"
+Maintained by growth & pricing
+
+Columns:
+- description and constraints
+
+-> allow to write test
+
+example: write / audit / publish
+
+Develop/test and document /deploy
+
+standardization is an important part of a data engineers job
+
+what is data modeling:
+
+Joe Resis definition:
+
+> a structured representation that organizes standardizes data to enavle and guide humand and machine behavior, inform decision making and faciliate actions
+
+why it's important
+
+It helps you scale, use a DAG
+
+how to get started
+
+data modeling is a process:
+
+- start small, start documenting pain point
+- keep iterating
+- have fun, it is a process and you should have fun
+
+It is tool agnostic
+
+** targets / mirai
+
+async frameworks
+
+what is (next generation) async ?
+
+Async is a first class experience in many languages, async is not waiting when parallelism is happening
+
+parallel is parallel not async: bringing async
+
+NNG implements async in C
+
+nanonext brings nng to R
+
+-> connect thousands of parralell process
+
+A promising object -> a promise can be used in shiny
+
+new kind of promisses: event-driven: no polling & zero latency
+
+in crew they are controller and workers (process)
+
+mirai manage task and crew
+
+Create a controller (~crew_controller_local~)
+
+controller has methods example push submit and experssion
+
+Crew can pluging in AWS batch/slurm
+
+parrallel + async in shiny is very nice
+
+see targets crew vignettes
+
+
+--
+
+baby steps to production
+
+online deployments categories:
+
+- general deployement
+- interactive notebooks with sharing functionnality
+- code-first data science outputs
+
+ scalability / security
+
+ rapid prototyping
+
+ posit connect is free from gh repos
