@@ -1366,3 +1366,62 @@ online deployments categories:
  rapid prototyping
 
  posit connect is free from gh repos
+
+*  <2024-08-16 Fri>
+
+- ajouter une favicon a mon site
+
+  Paul bunyan
+
+  THREE RIVER TELCO
+
+  BLACKFOOT TELEPHONE COOPERATIVE
+
+  BULLOCH TELEPHONE COOPERATIVE
+
+* <2024-08-20 Tue>
+
+~psql -E~ to test
+
+https://github.com/ruralinnovation/calix_data_analysis_proj/blob/main/P0303/02.2_assemble_risi_vars_SERVER.R
+
+https://github.com/ruralinnovation/georgia_state_plan/blob/main/01_a_task_served_unserved_bl.R
+
+
+adding the citation
+
+* <2024-09-02 Mon>
+
+faire un boiler plate repo avec github et super simple
+a rajouter a un bragging doc
+
+* <2024-09-09 Mon>
+
+#+begin_src R
+
+get_table <- function(schema){
+  force(schema)
+  function(table_name) {
+    con <- cori.db::connect_to_db(schema)
+    on.exit(DBI::dbDisconnect(con))
+    DBI::dbReadTable(con, table_name)
+  }
+}
+
+get_proj_bead <- get_table("proj_bead")
+get_proj_bead("isp_name_v4")
+
+write_to_schema <- function(schema) {
+  force(schema)
+  function(data, table_name) {
+    con <- cori.db::connect_to_db(schema)
+    on.exit(DBI::dbDisconnect(con), add = TRUE)
+    message(schema)
+    (DBI::dbWriteTable(conn = con,
+                       name = table_name,
+                       value = data,
+                       overwrite = TRUE))
+  }
+}
+
+#+end_src
