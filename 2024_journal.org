@@ -1425,3 +1425,33 @@ write_to_schema <- function(schema) {
 }
 
 #+end_src
+
+
+* <2024-09-17 Tue>
+
+duckdb ne peut pas executer plus d'un alter statement
+
+ie alter my table add columns bob, add column bill; ne vas pas marcher.
+
+aja: 3 A:
+- authentification
+- authorization
+- access control
+
+  <2024-09-19 Thu>
+
+  parquet for relatin table?
+
+  function to wrap dbExecute et aide a utiliser le retour en fonction de ce qui est execute
+
+
+
+* <2024-09-20 Fri>
+
+https://engelsjk.com/posts/the-dark-side-of-zip-codes/
+
+** ZIP: Zone improvement plan
+        - 1 national area ex: 9 calif /orgegon / wash
+        - 2 state
+        - 3 sectional center
+        - 4 et 5 Small post office or zone
