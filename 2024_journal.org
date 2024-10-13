@@ -1455,3 +1455,10 @@ https://engelsjk.com/posts/the-dark-side-of-zip-codes/
         - 2 state
         - 3 sectional center
         - 4 et 5 Small post office or zone
+* <2024-10-11 Fri>
+
+#+begin_src scheme
+(define atom?
+        (lambda (x)
+          (and (not (pair? x)) (not (null? x)))))
+#+end_src
