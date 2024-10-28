@@ -1462,3 +1462,14 @@ https://engelsjk.com/posts/the-dark-side-of-zip-codes/
         (lambda (x)
           (and (not (pair? x)) (not (null? x)))))
 #+end_src
+
+
+* <2024-10-28 Mon>
+
+Need to check National Standard Codes maintained by USGS
+
+good list of ANSI code: https://www.census.gov/library/reference/code-lists/ansi.html
+
+Functional Status Codes (FUNCSTAT): relate to type of gov.
+
+FIPS Class Codes (CLASSFP): what are they related to FIPS
