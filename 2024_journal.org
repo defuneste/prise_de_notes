@@ -1473,3 +1473,7 @@ good list of ANSI code: https://www.census.gov/library/reference/code-lists/ansi
 Functional Status Codes (FUNCSTAT): relate to type of gov.
 
 FIPS Class Codes (CLASSFP): what are they related to FIPS
+
+More to read on US county subdiv: https://www2.census.gov/geo/pdfs/reference/GARM/Ch8GARM.pdf
+
+todo: do some summary around funding map
