@@ -1477,3 +1477,8 @@ FIPS Class Codes (CLASSFP): what are they related to FIPS
 More to read on US county subdiv: https://www2.census.gov/geo/pdfs/reference/GARM/Ch8GARM.pdf
 
 todo: do some summary around funding map
+
+Wrotes reference in linkedin
+
+
+How to Do Code Reviews Like a Human (Part Two)  https://mtlynch.io/human-code-reviews-2/#aim-to-bring-the-code-up-a-letter-grade-or-two
