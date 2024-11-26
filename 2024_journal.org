@@ -1482,3 +1482,51 @@ Wrotes reference in linkedin
 
 
 How to Do Code Reviews Like a Human (Part Two)  https://mtlynch.io/human-code-reviews-2/#aim-to-bring-the-code-up-a-letter-grade-or-two
+
+* <2024-11-19 Tue>
+
+** Containers for analytical work
+
+"docker is the xerox of containers"
+
+See the zines of Julia Evans for more low level.
+
+"A lightweight frawework for isolated but linkable compute environement"
+
+Evolution of the concept of VM.
+
+Image: everything that go into a container
+
+container: an instance of an image / a running image
+
+Dockerfile: a file with a series of commands to build an image
+
+repository: a collection of docker images to share and reuse
+
+Onion of layered reproducibility
+
+Containers are covering: packages, system dep, operating system
+
+binder is using dockerfile, codespace is similar
+
+devcontainer: a way of setting up an *interactive* codin env.
+
+R package: Containerit will use sessionINfo to generate a dockerfile
+
+liftr is similar base on Rmd/quarto
+
+CI usually specify on what image should it be run:
+
+*** container as rapid test env.
+
+Rhub has container for cran testing / rocker has also binary version with package to be faster
+
+*** Docker for deploying compute jobs
+
+check lambdr for AWS
+
+*** Docker as provider of libraries/services
+
+check Joel Nitta: Managing bioinfo blog post from 2021
+
+*** Docker as a platform for R services
