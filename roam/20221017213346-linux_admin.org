@@ -8,3 +8,47 @@ Commande utiles de linux
 #+begin_src bash
 scp mon_fichier mon_adress:/path/a/suivre
 #+end_src
+
+
+si on a pas de sudoers il faut le creer en utilisant ~su~ un fichier est mis en palce dans ~/etc/sudoers.d/~
+
+il est possible de terminer la GUI et de le relancer a partir d'un VT
+
+~sudo systemctl stop gdm~
+
+et
+
+~sudo systemctl start gdm~
+
+pour le relancer
+
+** Basic Operations
+
+~ssh user_name@remote_machin.com~
+
+shutodown est mieux que reboot (shutdown -r)
+
+On peut plannifer un shutdown et y ajouter un message
+
+*** locating applications:
+
+~which diff~ ou alaternative ~whereis diff~
+
+
+*** naviagtion dans des repertoires:
+
+~cd -~ permet de retourner au precedent, il va print le pwd aussi
+
+~tree -d~ ne montre que les directory
+
+*** hard et soft link
+
+~ln~ (-s) est utilise pour creeer des hard et soft link
+
+on pit utiliser ls avec -i (pour inode pour lister l'index de la note du fichier)
+
+
+soft link est affiche de maniere differente et a un in inode specifique
+*** pushd and popd
+
+construit une list de place ou on a bouger, ~dirs~ permet de les lister
