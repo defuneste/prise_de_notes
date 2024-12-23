@@ -52,3 +52,49 @@ soft link est affiche de maniere differente et a un in inode specifique
 *** pushd and popd
 
 construit une list de place ou on a bouger, ~dirs~ permet de les lister
+
+touch ~-t~ permet de specifier un timestamp MMDDYYYY
+
+*** locate and find
+
+locate build a db first
+
+find default pathname et le working dir
+
+le premier argument de find est le dir apres on utilise -name pour le nom:
+
+ex: ~find /usr -name gcc~
+
+-type d ou f peut etre utiliser pour directory ou file
+
+
+find peut aussi lancer dirctement des commandes sur les fichier trouver avec ~-exec~ :  ~find -name "*.swp" -exec rm{} ';'~
+
+{} est un placeholder qui va etre rempli par le resultats de find
+
+Il faut aussi termier le statement avec ; (ici single quote pour echaper ;)
+
+find peut aussi chercher par taille de fichier avec -size
+
+find a aussi -ls
+
+*** bash wildcards
+
+- ? matches any single character
+
+- * matches any string of characters
+
+- [my_set] matches any character in my_set [adf] will matches any occurence of a, d, f
+
+- [!set] matches any character not in set
+
+
+** DPKG
+
+dpkg --list : list all pkges (robably followed by grep or less)
+
+dpkg --listfiles bzip2 | less va lister les fichier d'un pkge
+
+*** apt
+
+apt a plusieurs programme comme apt-cahe et apt-get
