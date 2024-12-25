@@ -171,3 +171,32 @@ nice command permet de changer cette prio
 ~renice +5 <PID>~ va fixer la priorite
 
 gnone-system-monitor permnet de la faire a partir d'une interface graphic
+
+
+load averages: moyenne sur une periode de temps donnees pour un CPU (on peut en avoir plusieurs et c'est exprime en pourcentage sur 1) :
+
++ "actively running on CPU"
++ "runnable but waiting in queue"
++ sleeping
+
+  on peut le consulater avec ~w~, ~top~ et ~uptime~
+
+example: 1 a la seconde valeur veut dire qu'un system avec un seul CPU a ete constament utilise sur les cinq derniere minutes.
+
+** Background and foreground processes
+
+_Foreground_ jobs sont ceux qui sont lance d'un terminal, quand un foreground est lance les autre jobs doivent attendre pour avoir acces au shell.
+
+Si la tache est trop longue c'est une bonne idee de l'envoyer en background pour liberer le shell. Cette tache auara une plus faible priorite.
+
+On peut specifier qu'un job soit envoye en background on ajoutant ~&~.
+
+example: ~updatedb &~
+
+On peut utiliser ctrl+z pour mettre un job foreground -> background.
+
+~bg~ permet de lancer un processus suspendu en background et ~fg~ permet de le lancer en foreground
+
+jobs permet de montrer tout les processus en background, ajouter -l permet d'avoir plus d'info comme le PID.
+
+Ils onst connecte a une terminal et donc si on quitte un terminal on ne va plus les voir.
