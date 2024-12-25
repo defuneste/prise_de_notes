@@ -98,3 +98,76 @@ dpkg --listfiles bzip2 | less va lister les fichier d'un pkge
 *** apt
 
 apt a plusieurs programme comme apt-cahe et apt-get
+
+*** man
+
+on utilise souvcent man something | less
+
+~man -f~ permet de lister les pages (~whatis~)
+
+~man -k~ list the page that are discussing a specifi topic (~apropos~)
+
+man est divise en chapitre de 1 a 9
+
+man -a nom va donner toutes les pages avec nom
+
+
+* Process
+
+ps and top sont utilise pour gerer les process
+
+
+" A process is simply an instance of one or more related tasks (threads) executing on your computer. It is not the same as a program or a command, A single command may actually start several processes simultaneously"
+
+
+Les processesus utilisent des ressources systemes et c'est l'OS qui assure l'optimisation de leur utilisation.
+
+** types de processus
+
+Une fenetre de terninal (un type particulier de commande shell) est un processus qui tourne autant de temps que necessaire. Cela permet d'acceder a des ressources a partir d'un environnement interactif.
+
+On peut aussi lancer des programmme en "fond" ce qui signifie qu'ils sont detache du shell.
+
+
+*** Type de processus:
+
+- interactif: lancer par un utilisateur, example bash, firefox, slack
+- batch process: process lancer automatiquement, programme pour un certain moment. non connecte a un terminal. Utilise FIFO (first in first out). Example: updatedb
+- Daemons: Processus de type server qui fonctionnent tout le temps, lancer au demarage et attende d'avoir des requetes. Example httpd, sshd
+- Threads: processus leger souvent englober dans un process principal
+  example: gnone-termninal_server
+- Kernel threads: processus en dehors du control d'un utilisateur, bouger un threads d'un CPU a un autre, example Kthreados
+
+
+Le scheduler est une fonction du noyau qui bouge constament les processus entre les CPU en fonction de leur priorite, du temps necessaire et de combien ils sont deja eu.
+
+Quand un processus est "_running_" cela signifie qu'il execute des instructuions sur un CPU, attends d'avoir du temps d'execution. Ils sont organise dans une "Run queue".
+
+Le mot running peut paraite ambigu car un process peut etre en attente.
+
+Un autre etat peut etre _sleep_: en attente de quelque chose
+
+Enin un processus peut etre _zombi_ : il n'a plus de parents, pas vraiment vivant mais toujours present
+
+
+l'OS garde de trace des processus en leur donnant un ID (PID), un porcessus a aussi Parent Process ID (PPID) et un thread ID (TID)
+
+Pour terminer un processus:
+
+~kill -SIGKILL <PID>~ ou ~kill -9 <PID>~
+
+*** users and group ID
+
+plusieurs utilisateurs peuvent utiliser un meme system et ils peuvent tous utiliser de nombreux process. Le system identifie l'utilisateur qui lance le processus par son Real User ID, RUID, (un ID par utilisateur).
+
+L'utilisateur qui determine les droit d'access pour un utilisateur est Effective UID. Il peut etre dans le meme group ou pas du RUID.
+
+La priorite d'un process est specifie par sa "nice value", plus bas elle est plus ce process est important: -20 est le plus prioritaire et +19 est le moins urgent.
+
+nice command permet de changer cette prio
+
+~ps -lf~ permet de voir plus d'info
+
+~renice +5 <PID>~ va fixer la priorite
+
+gnone-system-monitor permnet de la faire a partir d'une interface graphic
