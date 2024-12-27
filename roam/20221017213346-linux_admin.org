@@ -199,4 +199,24 @@ On peut utiliser ctrl+z pour mettre un job foreground -> background.
 
 jobs permet de montrer tout les processus en background, ajouter -l permet d'avoir plus d'info comme le PID.
 
-Ils onst connecte a une terminal et donc si on quitte un terminal on ne va plus les voir.
+Ils sont connecte a une terminal et donc si on quitte un terminal on ne va plus les voir.
+
+** ps
+
+ps est pour process status
+
+ps -u est pour un user specifique
+
+ps -ef montre tout les processs avec pleins de details
+
+-f done le parent process
+
+pstree premet de voir les relations entre les processus
+
+** top
+
+Memory usage is divided in two categories RAM (physical mem.) and Swap space. The first one is on line 4
+
+VIRT is for virtual (no def.), RES is for physical (I guess RAM) and SHR for shared (?)
+
+top a une serie de raccourcie pour interargir avec  les processus
