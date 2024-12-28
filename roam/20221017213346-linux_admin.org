@@ -220,3 +220,23 @@ Memory usage is divided in two categories RAM (physical mem.) and Swap space. Th
 VIRT is for virtual (no def.), RES is for physical (I guess RAM) and SHR for shared (?)
 
 top a une serie de raccourcie pour interargir avec  les processus
+
+h -> give the keys available
+
+
+** starting process in the future (scheduler)
+
+~at~ est une option
+
+*** cron
+
+son config file est a ~/etc/crontab~ (cron table)
+
+chaque ligne represent un job  est est compose de cron expression
+/
+crontab -e va ouvri un editor pour editer un job ou en creer de nouveau
+
+anacron a ete mis en place pour gerer quand la machine a ete
+eteinte
+
+sleep peut etre utilise pour suspendre un execution pour une certaine periode de temps
