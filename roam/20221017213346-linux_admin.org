@@ -328,3 +328,34 @@ cp ne marche qu'en local
 - zip
 
   + tar (tape archive)
+
+* Text editors
+
+
+Basic editing:
+
+echo line one > myfile
+
+echo line two >> myfile
+
+cat << EOF  > myfile
+> one
+> two
+> EOF
+
+
+** nano and gedit
+
+considere comem basic
+
+** vi
+
+cf. vimtutor
+
+pour rechercher un patron  comme file /file (chercher en avant) et ?file cherche en arriere
+
+puis n pour next and N pour previous next
+
+** emacs
+
+pour lancer emacs en mode "vanilla" (sans la config)
