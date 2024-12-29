@@ -300,3 +300,31 @@ Les media ecjectable sont soit dans /media et maintenant dans /run/media
 *** /usr
 
 il contient des programs et des scripts non essentiels
+
+
+*** diff
+
+diff compare fichiers et repertoires
+
+*** file
+
+file permet de connaitre la natuire d'un fichier
+
+** backihng up data
+
+rsync est recommande (option -r pour recursive)
+
+il a l'option -dry-run pour eviter des pbs
+
+ bon example: ~rsync --progress -avrxH  --delete sourcedir destdir~
+
+cp ne marche qu'en local
+
+*** compressing data
+
+- gzip
+- bzip2 (smaller mais plus long a produir)
+- xz (pareil echange taille de compression contre temps long)
+- zip
+
+  + tar (tape archive)
