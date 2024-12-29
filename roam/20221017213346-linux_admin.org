@@ -232,7 +232,7 @@ h -> give the keys available
 
 son config file est a ~/etc/crontab~ (cron table)
 
-chaque ligne represent un job  est est compose de cron expression
+chaque ligne represent un job  et est compose de cron expression
 /
 crontab -e va ouvri un editor pour editer un job ou en creer de nouveau
 
@@ -240,3 +240,63 @@ anacron a ete mis en place pour gerer quand la machine a ete
 eteinte
 
 sleep peut etre utilise pour suspendre un execution pour une certaine periode de temps
+
+** file systems
+
+un file systemes doit etre monter (mount)
+
+/dev/sda:
+
+        - /dev/sda1/
+        - dev/sda5/home
+        - /dev/sda6/var
+pour monter on utilise ~mount~
+
+example: ~sudo mount /dev/sda5 /home~
+
+puis on unmount
+
+sudo umount /home
+
+pour que cela soit permanent il faut editer /etc/fstab (filesystem table)
+ cf man fstab
+
+ *** NFS pour Network File System
+
+ un utilisateur va se connecter sur un disque distant qui lui lance un daemons lui autorisant a se connecter (/etc/exports)
+
+ le client a un sudo mount servername:/un_truc mnt/nfs/projects
+
+ /bin contient les binary classic
+
+ /sbin ceux utiliser pour le system
+
+ il peut y en avoir aussi /usr/bin et /usr/sbin
+
+ /proc est un pseudo file ssytem et permet de consulter des info sur le noyau
+
+ /dev contient des info sur les devices
+
+ /var contient des fichiers qui peuvent changer en taille
+
+/var/log a les log
+
+/var/lib contient les packqges et les fichiers de DB
+
+/var/spool contient les "print queues"
+
+/var/tmp les fichier temporaires
+
+/ect contient les configs nortmalement 0 binary mais peut contenir des scripts
+
+/boot contient de quoi booter les systemn
+
+/lin et /lib64 contient des liobrary necessaire pour les applications dans bon et /sbin
+
+elles sont dynamically loaded (ou encore shared object)
+
+Les media ecjectable sont soit dans /media et maintenant dans /run/media
+
+*** /usr
+
+il contient des programs et des scripts non essentiels
