@@ -162,6 +162,8 @@ plusieurs utilisateurs peuvent utiliser un meme system et ils peuvent tous utili
 
 L'utilisateur qui determine les droit d'access pour un utilisateur est Effective UID. Il peut etre dans le meme group ou pas du RUID.
 
+en genral l'uid des utilisateurs commence a partir de 1000
+
 La priorite d'un process est specifie par sa "nice value", plus bas elle est plus ce process est important: -20 est le plus prioritaire et +19 est le moins urgent.
 
 nice command permet de changer cette prio
@@ -359,3 +361,39 @@ puis n pour next and N pour previous next
 ** emacs
 
 pour lancer emacs en mode "vanilla" (sans la config)
+
+* user environnement
+
+
+whoami qui suis je?
+
+who qui est logge
+
+** ordre des fichiers de demarage:
+
+ login shell yes -> .bash_profile -> .bash_login -> .profile
+ no -> .bashrc
+
+ les alias sont souvent placer dans .bashrc
+
+ On peut aussi les trouver dans ~/etc/group~
+
+ On peut ajouter et supprimer des utilisateurs avec ~useradd~ or ~userdel~
+
+C'est pas mal de regarder leur option car certains parametres peuvent etre specifier A l'invocation de la commmande.
+
+En general on peut les retrouver dans ~/etc/default/useradd~
+
+sudo passwd mon_user doit ensuite etre utilise
+
+on peut creer un nouveau group avec ~groupadd~ (et ~groupdel~) puis on utilise ~usermod~ pour ajouter un utilisateur a un group
+
+ ~id~ donne pas mal d'info de l'utilisateur en cours
+
+ su: switch/subsitute user
+
+ les config de sudo sont dans /etc/sudoers ou /etc/sudoers.d
+
+** Environnement Variables
+
+quantities that have specific values. Elles peuvent etre consultees avec ~set~, ~env~ et ~export~.
