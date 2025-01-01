@@ -397,3 +397,33 @@ on peut creer un nouveau group avec ~groupadd~ (et ~groupdel~) puis on utilise ~
 ** Environnement Variables
 
 quantities that have specific values. Elles peuvent etre consultees avec ~set~, ~env~ et ~export~.
+
+des env var creer dans un shell reste confine dans ce dernier, si on veut qu'un child process y ai acces on doit les exporter.
+
+Pour history il y a plusieurs env var:
+
+- HISTFILE (ou il est)
+- HISTFILESIZE (nb de ligne max)
+- HISTSIZE (max number of command in history file)
+- HISTCONTROL (used on mac?)
+- HISTIGNORE commands qui peuvent etre ignore
+
+  !NUM execut command history number
+
+  CTRL + L clean screen
+
+  CTRL + S / CTRL + Q : unclear on mac
+
+  CTRL + D: exist shell
+
+  CTRL + Z: met le process en cours en bg
+
+  CTRL + C: kills the current process
+
+  CTRL + A : go to the begining of line
+
+  CTRL + W: delete the world before cursor
+
+  CTRL + U: delete from the begining of cursor
+
+  CTRL + E: end of line
