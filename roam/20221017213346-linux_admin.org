@@ -427,3 +427,55 @@ Pour history il y a plusieurs env var:
   CTRL + U: delete from the begining of cursor
 
   CTRL + E: end of line
+
+
+** File Ownership
+
+chaque fichier est associe avec un owner  et un groupe ainsi que des permissions
+
+~chown~ pour specifier le owner
+
+~chgrp~ pour le group
+
+et ~chmod~ pour les permissions
+
+
+Les fichiers peuvent etre r (read), write (w) et execute (x) et ceux pour les users/owner / group / other
+
+example: ~-rw-rw-r--~
+
+chmod a pas mal de facon de changer les permissions
+
+~chmod uo+x,g-w some_file~  donn execute a uther et other et retire write a group
+
+4 pour lecture, 2 pour ecriture et 1 pour execute
+
+ainsi 755 done tout pour l'users et lecture/execution pour le reste
+
+** Manipulating text
+
+cat peut etre utilise en mode interactif
+
+ou encore avec EOF
+
+comme cat > ny_file << EOF
+
+pour testes des fichiers compresse il est possible d'utiliser zcat, zless zgrep and zdiff
+
+*** sed
+
+permet de modifier le contenu d'un fichier ou d'un flux
+
+data from imput -> working stream -> output stream
+
+sed -e my_command my_file permet d'editer le fichier dans un terminal
+
+sed -f scriptfile my_file mets les command dans un fiochier script
+
+echo " I hate you" | sed s/hate/love/
+
+sed s/pattern/replace_string/ file remplace la premiere occurrence de chaque ligne
+
+sed s/pattern/replace_string/g file remplace toutes les occurence de chaque ligne
+
+sed -i s/pattern/replace_string/g file remplace dans le meme fichier
