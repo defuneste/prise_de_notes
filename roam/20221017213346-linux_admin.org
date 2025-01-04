@@ -479,3 +479,13 @@ sed s/pattern/replace_string/ file remplace la premiere occurrence de chaque lig
 sed s/pattern/replace_string/g file remplace toutes les occurence de chaque ligne
 
 sed -i s/pattern/replace_string/g file remplace dans le meme fichier
+
+*** awk
+
+comme pour sed on peut specifier des commandes dans le CLI
+
+awk lit ligne par ligne
+
+-F permet d specifier le deliminateur des champs
+
+awk -F: '{ print $1 }' my_file va imprimer le premier champs separe par :
