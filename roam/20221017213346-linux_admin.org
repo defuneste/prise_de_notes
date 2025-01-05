@@ -488,4 +488,45 @@ awk lit ligne par ligne
 
 -F permet d specifier le deliminateur des champs
 
-awk -F: '{ print $1 }' my_file va imprimer le premier champs separe par :
+~awk -F: '{ print $1 }' my_file~ va imprimer le premier champs separe par :
+*** sort
+
+sort un fichier en fonction, par defaut du premier char de chaque ligne (on peut aussi utiliser -k pour specifier un champs)
+*** uniq
+
+remove unique and consecutive lines
+
+pas mal d'utiliser sort avant ou d'ajoyter -u a sort
+
+*** Regex
+
+| patterns  | usage                          |
+| ----      | ----                           |
+| .         | match single char              |
+| a [bar] z | match a or z                   |
+| \$        | match EOL                      |
+| \^        | match begining of Line         |
+| \*        | match preceding item 0 or more |
+
+*** tee
+
+envoie le stdout en stdout et aussi dans un fichier
+
+ls -l | tee my_file
+*** wc: world count
+
+wc -l nombre de lignes
+
+wc -c nombre de bytes
+
+wc -w nombre de mots
+
+* networks
+
+A network is a group of computers and computing devices connected together through communication channels, such as cables or wireless media.
+
+A network:
+
+- allow connected devices to communicates with each other
+- multiple users share devices over the networks
+- share and manage information such as DB and FS accross computers
