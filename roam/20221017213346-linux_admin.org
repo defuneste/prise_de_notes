@@ -530,3 +530,145 @@ A network:
 - allow connected devices to communicates with each other
 - multiple users share devices over the networks
 - share and manage information such as DB and FS accross computers
+
+  * IP addresses: internet protocoles
+
+  Les memebres d'un reseau doivent avaoir une adresse uniques pour orienter des packets d'info.
+
+  Ces packets contiennent des donnees avec une entete (header)
+
+  IPv4 utilise 32 bits donc 4.3 billions of IPseand
+
+  IPv6 utilise 128 bits, donc bcp plus
+
+  Network Address Translation (NAT) est aussi utilise pour partqger une IPv4 dans un reseau local
+
+  en IPv4 les adresses sont divisees en 5 classes A, B, C , D et E
+
+  A, B, C ont deux parties:
+
+  - network adresses (NetID)
+
+  -  Host adresses (host Id)
+
+    | class   | octet 1 | octet 2 | octet 3 | octet 4 |
+    | class A | net ID  | host ID | host ID | host ID |
+    | class B | net ID  | net ID  | host ID | host ID |
+    | class C | net ID  | net ID  | net ID  | host ID |
+
+class A marche pour peu de reseau avec beacoups d'adresses, class B plus de reseaux moins de machines et ainsi de suites
+
+une adresse peut etre assigne de facon statique ou dynamique (DHCP, dynamic host configuration protocol)
+
+une adresse IP c'est naz de s'en rapeller alors on utilise un hostname
+
+hostname est la commande associe
+
+localhost est reserve a 127.0.0.1
+
+les configs de reseaux sont dans /etc/resolv.conf
+
+/etc/hosts
+
+host google.com
+
+pour debian la config reseau est dans /etc/network
+
+un reseau interface des connections entre uin ordinateur et le reste via un carte reseau. La derniere est abstraite via un logiciel.
+
+ip et ifconfig sont utilises pour en retirer des infos
+
+ping est utile pour version si une machine est connectee
+
+route et traceroute sont utilise pour suivre les connection entre les nodes du reseau
+
+** SSH: secure shell
+
+c'est un protocol crypte pout transmettre des infos
+
+ssh -l un_user un_system / ssh user@system
+
+** SCP: Secure Copy
+
+scp my_file_local user@remote_sustem:/path/right/access
+
+* shell scripts
+
+read un_mot
+
+peut etre utilise pour lire a partir du terminal
+
+#+begin_src shell
+#! /bin/bash
+ echo "ton NOM!"
+read da_name
+echo ta reponse: $da_mame
+
+#+end_src
+
+
+exit peut etre utiliser pour explicter la valeur de retour
+
+un bon test pour verifier la valeur de retour est de ls un fichier qui exist ou passwd
+#+begin_src shell
+ls ~/.zshrc
+echo $?
+#+end_src
+
+
+liste des character speciaux
+| character | description                                             |
+| #         | pour commenter sauf avec un !                           |
+| \         | continuer une fine de ligne ou echapper le prochin char |
+| ;         | la suite est une nouvelle commande                      |
+| \$        | pour indiquer un var d'env.                             |
+| >         | redirige output                                         |
+| >>        | append output                                           |
+| <         | redireige input                                         |
+| |          |  pipe le resulty dans la prochaine commande             |
+
+
+&& chain les commandes si elles retourne un succes
+
+command one && command two
+
+enchaine command one (ok) puis command two est executee
+
+\|| enchaine les commandes jusqu'a un succes
+
+
+les commmandes peuvent etres des binary (rm, ls) des built in de bash (cd, pwd) ou d'autres scripts
+
+help list les build in
+
+
+Pour passer des arguments:
+
+| parameter | sens                           |
+| $0        | non dus script                 |
+| $1        | premier parm et ainsi de suite |
+|       $*  | tous les params                |
+|    $#     | expansion poiur les arguments  |
+
+** command substitution
+
+$() va utiliser le resultat la command comme une partie de la command
+
+example: echo "je suis $(whoami)"
+
+pour exporter a sun child process il faut bien utiliser export
+
+
+les fonctions sont declares puis appelles
+
+function_name () {
+   command...
+}
+
+pour verifier qu'aucun argument n'est foruni
+
+if [ $# -eq 0 ] ; then
+      echo "Usage: $0 argument"
+      exit 1
+
+      https://stackoverflow.com/questions/4510640/what-is-the-purpose-of-in-a-shell-command
