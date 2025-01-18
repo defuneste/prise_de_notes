@@ -1530,3 +1530,30 @@ check lambdr for AWS
 check Joel Nitta: Managing bioinfo blog post from 2021
 
 *** Docker as a platform for R services
+
+
+using partition as index is a plus, space size partition is minus
+
+parquet file and parquet data set, directory
+
+conplex data type ares nice: nested lists
+
+
+
+Parquet related
+Official Arrow R package - does everything, the recommended package (recommended!)
+nanoparquet - reader and writer for parquet files with basic features (for simple data types - not used yet)
+Parquet (arrow) and dplyr - working with arrow datasets using dplyr
+Comparison size e.g. here and compressions possible here
+DuckDB - the most powerful way of using parquet files and takes advantage of all parquet and duckdb features:
+Reading and writing parquet files in duckdb
+Duckdb - arow integration
+Links shared during the first part in Noisy rooms:
+https://dewey.dunnington.ca/post/2022/building-bridges-arrow-parquet-and-geospatial-computing/
+https://docs.unidata.ucar.edu/nug/current/nczarr_head.html
+qsbase/qs: Quick serialization of R objects : https://github.com/qsbase/qs
+https://dev.to/alexmercedcoder/all-about-parquet-part-10-performance-tuning-and-best-practices-with-parquet-1ib1
+Geospatial data in Parquet https://geoparquet.org
+What is Apache Arrow? https://arrow.apache.org
+A Journey through Arrow in R Comm Call:  https://ropensci.org/commcalls/jun2023-arrow/
+Larger-Than-Memory Data Workflows with Apache Arrow, useR 2022 workshop on how to use the arrow R package to create seamless engineering-to-analysis data pipelines.
