@@ -1,0 +1,94 @@
+#+title: 2025journal
+
+
+* Printing
+
+le standard pour imprimer sur linux est le Common UNIX Printing System (CUPS)
+
+
+CUPS utilise:
+
+- des configs files: dans /etc/cups il y a des trucs pour le systenm et des trucs pour le printers
+- scheduler: gere l'ordre des impressions et permet de suivre l'avancement des taches
+- job files les demandes sont dans /var/spool/cups
+- log files: /var/log/cups
+- filter: convert a job into a printable formats
+- printer drivers: comment est conf l'imprimates
+- backend: ou est l'imprimate dans le reseau
+
+
+CUPS vient avec son serveur web pour aider a la configuration et fournit de la doc
+
+Il est disponible on localhost:631
+
+
+On peut utiliser shell pour imprimer des documents avec lp et lpr
+
+PostScript est un standard pour decrire une page, il gere les fonts et SVG et maintenant superseed par pdf
+
+convert part de imagemaick est pas mal pour passer de ps a pdf
+
+combvert input.ps output.pdf et vce versability
+
+enscript is usually the tools used to convert text to .ps
+
+* Linux security
+
+Type de compte:
+- root
+- system
+- normal
+- network
+
+  il faut isoler les processes.
+
+  visudo is a nice way to edit file with sudo right
+
+** process isolation
+
+- control groups (cgroups): permet de grouper des processus et de leur fournir des resources limitees
+- containers isolent multiple linux systems (containers) en urilisants les cgroups
+- virtualization: VM
+
+
+la couche abstraction par fichier permet de controler les acces.
+
+** systemd
+
+most dominant session manager in linux
+
+systemd utilise des ~.service~ files. les daemons ont leur propres cgroups
+
+systemctl est utilise pour gerer les services
+
+la syntax est la suivante:
+
+systemctl [options] command [nom]
+
+lister les services:
+
+systemctl list-units -t service -all
+
+lancer un service:
+
+sudo systemctl start foo
+
+pour arreter:
+
+sudo systemctl stop foo.service
+
+
+pour enable/disable un service (lors du system boot)
+
+sudo systemctl enable sshd.service
+sudo systemctl disable sshd.service
+
+sudo systemctl status foo
+
+permet de verifier le status
+
+*** timedatectl
+
+un cli pour mettre en place la date et l'heure d'un system
+
+alternative a which -> whereis
