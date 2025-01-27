@@ -92,3 +92,73 @@ permet de verifier le status
 un cli pour mettre en place la date et l'heure d'un system
 
 alternative a which -> whereis
+*** find
+
+la syntax de find est:
+
+find [location] [criteria] [actions]
+
+location: une adresse de directory
+
+criteria: un test pour filtrer les choses, le nom de fichier ou la date de creation
+
+actions: un truc a faire sur les resultats (rm, exec, etc)
+
+les criteria classi sont -name, -inane (case insensitive), -type, -ctime or -size
+
+-type d va lister tous les dirs
+
+-type f pour fichier
+
+-ls est aussi une option
+
+find . -name "*.tex" -exec rm {} \;
+
+ici {} est le paceholder pour les reusltats de find
+
+-ok will prompt yes or no
+
+* User account and envt
+
+il y a le principe du least privilege: "a process should have the minimum necessary ability to perform the task"
+
+cela ce fesait avant principalement avec la separation des privileges en utilisateurs et groupes.
+
+quand le system demarre il donnne toute les permissions a l'utilisateur root
+
+3 types de permissions rwx et trois classes d'utilisateurs users/owner (u), group (g), others (o): ugo
+
+
+le classic:
+
+| rwx | r-- | rw- | r-x |
+| 421 | 4   | 42  | 4 1 |
+|  7  | 4   |  6  |  5  |
+
+
+on peut utiliser la forme octal ou sa version symbolique
+
+o+w ajout de write a other
+
+
+** ssh
+
+par defaut ssh essaie de se connecter avec le meme utilisateur
+
+mais on peut le changer avec ssh -l user host
+
+scp -r some_dir randomvps.com:/tmp/some_dir
+
+*** ssh client config
+
+c'est dans .ssh/
+
+id_ed25519: la clef prive de l'utilisateur
+
+id_ed25519.pub: la clef public de l'utilisateur
+
+ authorized_keys: list des public keys qui peuvent se logger
+
+ know_hosts: Host qui ont ete authorize dans le passe
+
+ config: fichier pour des situation specifiques
