@@ -162,3 +162,39 @@ id_ed25519.pub: la clef public de l'utilisateur
  know_hosts: Host qui ont ete authorize dans le passe
 
  config: fichier pour des situation specifiques
+
+** sed
+
+sed `s/pattern/new_pattge/g` file g est pour global sinon c;est la premiere occurence
+
+sed -i est pous sauver sur le fichier streamer sinon on peut rediriger vers un autre fichier
+
+pliutot que passer une commande on peut ecrire la commande dans un fichier et appeller le fichier
+
+** awk
+
+fait pour travailler par ligne (record) et pas fields (columns) (-f )
+
+awk travail par ligne
+
+-F definit un file separator
+
+awk -f '{ print $1 $6 }' /etc/passwd
+
+man hier pour lire sur le FHS
+* FS
+
+** NFS
+
+encore, mais un peu plus, client/server model
+
+permet de faire un montage pour les faire apparaitre localement
+
+je vais devoir le faire avec la pi ou un autre ordi, tester si je peux monter au lancement
+
+* R Govy The Cran Cookbook, Improving the skills of R package maintainers
+
+
+Lot of same issue are always coming
+
+https://contributor.r-project.org/cran-cookbook/
